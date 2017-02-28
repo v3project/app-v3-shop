@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "487057fb04ee47d98510811392c89a2d",
+    "content-hash": "7e8ef8ff1a1dbb140b7e40f096837de0",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -92,16 +92,16 @@
         },
         {
             "name": "bower-asset/fancybox",
-            "version": "v2.1.6",
+            "version": "V2.1.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fancyapps/fancyBox.git",
-                "reference": "c00852a5394ef18517598bfa3b9e885cdf5c7450"
+                "url": "https://github.com/fancyapps/fancybox.git",
+                "reference": "b708e8060cefd45c97981143f85d4094e3d6e18c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fancyapps/fancyBox/zipball/c00852a5394ef18517598bfa3b9e885cdf5c7450",
-                "reference": "c00852a5394ef18517598bfa3b9e885cdf5c7450",
+                "url": "https://api.github.com/repos/fancyapps/fancybox/zipball/b708e8060cefd45c97981143f85d4094e3d6e18c",
+                "reference": "b708e8060cefd45c97981143f85d4094e3d6e18c",
                 "shasum": ""
             },
             "require": {
@@ -112,21 +112,32 @@
             "extra": {
                 "bower-asset-main": [
                     "source/jquery.fancybox.css",
-                    "source/jquery.fancybox.js",
+                    "source/jquery.fancybox.pack.js",
                     "source/blank.gif",
                     "source/fancybox_loading.gif",
                     "source/fancybox_loading@2x.gif",
                     "source/fancybox_overlay.png",
                     "source/fancybox_sprite.png",
-                    "source/fancybox_sprite@2x.png",
-                    "source/jquery.fancybox.pack.js"
+                    "source/fancybox_sprite@2x.png"
                 ],
                 "bower-asset-ignore": [
                     "**/.*",
                     "fancybox.jquery.json",
                     "demo"
                 ]
-            }
+            },
+            "license": [
+                "GPLv3"
+            ],
+            "description": "fancyBox offers an elegant way to present images, html content and multimedia for webpages",
+            "keywords": [
+                "effect",
+                "lightbox",
+                "modal",
+                "responsive",
+                "ui",
+                "window"
+            ]
         },
         {
             "name": "bower-asset/jquery",
@@ -1541,6 +1552,52 @@
             "time": "2016-12-28T06:07:33+00:00"
         },
         {
+            "name": "skeeks/cms-dadata-suggest",
+            "version": "1.0.0-rc3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skeeks-cms/cms-dadata-suggest.git",
+                "reference": "5ddc8f765b3be68a5fcd1e8947265b6f26c40a7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-dadata-suggest/zipball/5ddc8f765b3be68a5fcd1e8947265b6f26c40a7c",
+                "reference": "5ddc8f765b3be68a5fcd1e8947265b6f26c40a7c",
+                "shasum": ""
+            },
+            "require": {
+                "skeeks/cms": "*",
+                "skeeks/yii2-dadata-suggest-api": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "skeeks\\cms\\dadataSuggest\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Semenov Alexander",
+                    "email": "semenov@skeeks.com"
+                }
+            ],
+            "description": "Работа с подсказками dadata.ru for SkeekS CMS",
+            "homepage": "http://cms.skeeks.com/",
+            "keywords": [
+                "DaData",
+                "component",
+                "framework",
+                "skeeks",
+                "suggest",
+                "yii"
+            ],
+            "time": "2016-10-23T13:45:44+00:00"
+        },
+        {
             "name": "skeeks/cms-db-dumper",
             "version": "1.2.0",
             "source": {
@@ -2940,6 +2997,50 @@
             "time": "2016-03-05T12:57:36+00:00"
         },
         {
+            "name": "skeeks/cms-ya-map",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skeeks-cms/cms-ya-map.git",
+                "reference": "9de0d9715ef0b2ed788909b1df3053fa48fb5d3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-ya-map/zipball/9de0d9715ef0b2ed788909b1df3053fa48fb5d3a",
+                "reference": "9de0d9715ef0b2ed788909b1df3053fa48fb5d3a",
+                "shasum": ""
+            },
+            "require": {
+                "skeeks/cms": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "skeeks\\cms\\ya\\map\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Semenov Alexander",
+                    "email": "semenov@skeeks.com"
+                }
+            ],
+            "description": "Виджеты для работы с yandex картами",
+            "homepage": "http://www.skeeks.com/",
+            "keywords": [
+                "Sx",
+                "cms",
+                "module",
+                "skeeks",
+                "yii2"
+            ],
+            "time": "2016-09-13T08:48:35+00:00"
+        },
+        {
             "name": "skeeks/cms-ya-share",
             "version": "1.1.0",
             "source": {
@@ -3127,6 +3228,51 @@
                 "yii2"
             ],
             "time": "2015-06-24T23:18:43+00:00"
+        },
+        {
+            "name": "skeeks/yii2-dadata-suggest-api",
+            "version": "1.0.0-rc2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skeeks-semenov/yii2-dadata-suggest-api.git",
+                "reference": "9ff6e7af54344d059dce0ed08797880142d0ff6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skeeks-semenov/yii2-dadata-suggest-api/zipball/9ff6e7af54344d059dce0ed08797880142d0ff6b",
+                "reference": "9ff6e7af54344d059dce0ed08797880142d0ff6b",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-httpclient": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "skeeks\\yii2\\dadataSuggestApi\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Semenov Alexander",
+                    "email": "semenov@skeeks.com"
+                }
+            ],
+            "description": "Suggest yii2 api dadata.ru",
+            "homepage": "http://www.skeeks.com/",
+            "keywords": [
+                "api",
+                "app",
+                "framework",
+                "skeeks",
+                "yii"
+            ],
+            "time": "2016-11-10T12:19:27+00:00"
         },
         {
             "name": "skeeks/yii2-external-links",
@@ -3627,6 +3773,145 @@
                 "minifier"
             ],
             "time": "2015-07-04T07:35:09+00:00"
+        },
+        {
+            "name": "v3toys/skeeks",
+            "version": "1.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/v3project/skeeks.git",
+                "reference": "3ed7e062dedf9c85b1730075661ede1fc6567abd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/v3project/skeeks/zipball/3ed7e062dedf9c85b1730075661ede1fc6567abd",
+                "reference": "3ed7e062dedf9c85b1730075661ede1fc6567abd",
+                "shasum": ""
+            },
+            "require": {
+                "skeeks/cms": "*",
+                "skeeks/cms-dadata-suggest": "*",
+                "skeeks/cms-ya-map": "*",
+                "v3toys/yii2-api": "*",
+                "v3toys/yii2-v3project-api": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "v3toys\\skeeks\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Semenov Alexander",
+                    "email": "semenov@skeeks.com"
+                }
+            ],
+            "description": "Module for skeeks cms",
+            "homepage": "http://www.skeeks.com/",
+            "keywords": [
+                "Sx",
+                "app",
+                "cms",
+                "module",
+                "skeeks",
+                "yii2"
+            ],
+            "time": "2016-12-23T09:46:38+00:00"
+        },
+        {
+            "name": "v3toys/yii2-api",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/v3project/yii2-api.git",
+                "reference": "27cc8a0680bd4622624af50a025012f8b4549238"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/v3project/yii2-api/zipball/27cc8a0680bd4622624af50a025012f8b4549238",
+                "reference": "27cc8a0680bd4622624af50a025012f8b4549238",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-httpclient": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "v3toys\\yii2\\api\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Semenov Alexander",
+                    "email": "semenov@skeeks.com"
+                }
+            ],
+            "description": "V3toys yii2 api",
+            "homepage": "http://www.skeeks.com/",
+            "keywords": [
+                "api",
+                "app",
+                "framework",
+                "skeeks",
+                "yii"
+            ],
+            "time": "2016-12-06T16:18:04+00:00"
+        },
+        {
+            "name": "v3toys/yii2-v3project-api",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/v3project/yii2-v3project-api.git",
+                "reference": "9813f4690882f3455d25d7866b8c9ef95ea42c98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/v3project/yii2-v3project-api/zipball/9813f4690882f3455d25d7866b8c9ef95ea42c98",
+                "reference": "9813f4690882f3455d25d7866b8c9ef95ea42c98",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-httpclient": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "v3toys\\v3project\\api\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Semenov Alexander",
+                    "email": "semenov@skeeks.com"
+                }
+            ],
+            "description": "V3toys yii2 api",
+            "homepage": "http://www.skeeks.com/",
+            "keywords": [
+                "api",
+                "app",
+                "framework",
+                "skeeks",
+                "yii"
+            ],
+            "time": "2016-10-08T10:52:47+00:00"
         },
         {
             "name": "yiisoft/yii2",
