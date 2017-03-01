@@ -1,7 +1,7 @@
 Shop v3project on SkeekS CMS (Yii2)
 =========================
 
-[![skeeks!](https://en.cms.skeeks.com/uploads/all/35/fd/33/35fd33aa306823dbaf53a0142d43b3fa.png)](https://cms.skeeks.com)
+[![skeeks!](https://cms.skeeks.com/uploads/all/35/fd/33/35fd33aa306823dbaf53a0142d43b3fa.png)](https://cms.skeeks.com)
 
 ##Links
 * [Web site (SkeekS CMS)](https://cms.skeeks.com)
