@@ -1,4 +1,4 @@
-Shop all for animals on SkeekS CMS (Yii2)
+Shop v3project on SkeekS CMS (Yii2)
 =========================
 
 [![skeeks!](https://en.cms.skeeks.com/uploads/all/35/fd/33/35fd33aa306823dbaf53a0142d43b3fa.png)](https://cms.skeeks.com)
@@ -15,7 +15,7 @@ Shop all for animals on SkeekS CMS (Yii2)
 # Download latest version of composer
 curl -sS https://getcomposer.org/installer | COMPOSER_HOME=.composer php
 # Installing the base project SkeekS CMS
-COMPOSER_HOME=.composer php composer.phar create-project --no-install --prefer-dist skeeks/app-shop-smarty-animals demo.ru
+COMPOSER_HOME=.composer php composer.phar create-project --no-install --prefer-dist v3project/app-v3-shop demo.ru
 # Going into the project folder
 cd demo.ru
 # Download latest version of composer in project
