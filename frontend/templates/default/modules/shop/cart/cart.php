@@ -62,7 +62,7 @@ JS
                 </div>
                 <!-- RIGHT -->
                 <div class="col-lg-3 col-sm-4">
-                    <? $url = \yii\helpers\Url::to(['/shop/cart/checkout']); ?>
+                    <? $url = \yii\helpers\Url::to(['/v3toys/cart/checkout']); ?>
                     <?= $this->render("_result", [
                         'submit' => <<<HTML
     <a href="{$url}" class="btn btn-primary btn-lg btn-block size-15" data-pjax="0">

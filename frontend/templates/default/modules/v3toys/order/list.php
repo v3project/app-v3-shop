@@ -14,8 +14,10 @@
     'title' => 'Мои заказы',
 ]); ?>
 
-<div class="row">
-    <div class="col-lg-12">
+    <header class="title-page">
+        <h1>Мои заказы</h1>
+    </header>
+
     <?= \yii\widgets\ListView::widget([
         'dataProvider' => new \yii\data\ActiveDataProvider([
             'query' => \v3toys\skeeks\models\V3toysOrder::find()->where(['user_id' => \Yii::$app->user->identity->id])->orderBy(['id' => SORT_DESC]),
@@ -25,8 +27,8 @@
         ]),
         "layout" => "{items}\n{pager}",
         'options' => [
-            'tag' => 'div',
-            'class' => 'panel-group order-list',
+            'tag' => 'ul',
+            'class' => 'order-list',
             'id' => 'accordion-orders',
             'aria-multiselectable' => 'true',
         ],
@@ -35,7 +37,5 @@
             'tag' => false,
         ],
     ]); ?>
-    </div>
-</div>
 
 <?= \Yii::$app->view->render('@app/views/modules/cms/user/_footer'); ?>
