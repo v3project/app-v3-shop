@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f7c10d2039731719297266c5d89c30e",
+    "content-hash": "ef28c64fc4011a8a5be6e870e53dc562",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -2127,16 +2127,16 @@
         },
         {
             "name": "skeeks/cms",
-            "version": "dev-master",
+            "version": "4.0.0-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms.git",
-                "reference": "84de8515cb5a5368cd95bf8cc1071cfe3e493ab4"
+                "reference": "8d9f34a34a075457f7b626cb2070015c7100cd85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms/zipball/84de8515cb5a5368cd95bf8cc1071cfe3e493ab4",
-                "reference": "84de8515cb5a5368cd95bf8cc1071cfe3e493ab4",
+                "url": "https://api.github.com/repos/skeeks-cms/cms/zipball/8d9f34a34a075457f7b626cb2070015c7100cd85",
+                "reference": "8d9f34a34a075457f7b626cb2070015c7100cd85",
                 "shasum": ""
             },
             "require": {
@@ -2201,7 +2201,7 @@
                 "skeeks cms",
                 "yii2"
             ],
-            "time": "2017-06-18 20:53:32"
+            "time": "2017-06-20T19:31:59+00:00"
         },
         {
             "name": "skeeks/cms-admin",
@@ -2338,51 +2338,6 @@
                 "yii"
             ],
             "time": "2017-06-18T18:40:38+00:00"
-        },
-        {
-            "name": "skeeks/cms-authclient",
-            "version": "2.0.0-alpha",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/skeeks-cms/cms-authclient.git",
-                "reference": "140f37097d33a888b18b8673d52bdf6e55820093"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-authclient/zipball/140f37097d33a888b18b8673d52bdf6e55820093",
-                "reference": "140f37097d33a888b18b8673d52bdf6e55820093",
-                "shasum": ""
-            },
-            "require": {
-                "skeeks/cms": "*",
-                "yiisoft/yii2-authclient": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "skeeks\\cms\\authclient\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Semenov Alexander",
-                    "email": "semenov@skeeks.com"
-                }
-            ],
-            "description": "Authorization by social networks for SkeekS CMS",
-            "homepage": "http://cms.skeeks.com/",
-            "keywords": [
-                "authclient",
-                "component",
-                "framework",
-                "skeeks",
-                "yii"
-            ],
-            "time": "2017-06-18T15:27:15+00:00"
         },
         {
             "name": "skeeks/cms-backend",
@@ -3828,50 +3783,6 @@
             "time": "2017-02-09T07:27:49+00:00"
         },
         {
-            "name": "skeeks/cms-ssh-console",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/skeeks-cms/cms-ssh-console.git",
-                "reference": "6cc67b91d15e454b17350037b81d3957459f3f22"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-ssh-console/zipball/6cc67b91d15e454b17350037b81d3957459f3f22",
-                "reference": "6cc67b91d15e454b17350037b81d3957459f3f22",
-                "shasum": ""
-            },
-            "require": {
-                "skeeks/cms": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "skeeks\\cms\\sshConsole\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Semenov Alexander",
-                    "email": "semenov@skeeks.com"
-                }
-            ],
-            "description": "Ssh console for SkeekS CMS",
-            "homepage": "http://cms.skeeks.com/",
-            "keywords": [
-                "component",
-                "framework",
-                "skeeks",
-                "ssh",
-                "yii"
-            ],
-            "time": "2016-05-28T13:43:31+00:00"
-        },
-        {
             "name": "skeeks/cms-vk-comments",
             "version": "1.2.0",
             "source": {
@@ -4797,24 +4708,24 @@
         },
         {
             "name": "v3toys/skeeks",
-            "version": "2.0.1",
+            "version": "2.1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/v3project/skeeks.git",
-                "reference": "079af00c47abb85affb1992c86a41ed990a40d6c"
+                "reference": "f26960f1b814c457a881cec20285be9dd5e91891"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v3project/skeeks/zipball/079af00c47abb85affb1992c86a41ed990a40d6c",
-                "reference": "079af00c47abb85affb1992c86a41ed990a40d6c",
+                "url": "https://api.github.com/repos/v3project/skeeks/zipball/f26960f1b814c457a881cec20285be9dd5e91891",
+                "reference": "f26960f1b814c457a881cec20285be9dd5e91891",
                 "shasum": ""
             },
             "require": {
-                "skeeks/cms": "*",
-                "skeeks/cms-dadata-suggest": "*",
-                "skeeks/cms-ya-map": "*",
-                "v3toys/yii2-api": "*",
-                "v3toys/yii2-v3project-api": "*"
+                "skeeks/cms": "^4",
+                "skeeks/cms-dadata-suggest": "^1",
+                "skeeks/cms-ya-map": "^1",
+                "v3toys/yii2-api": "^1",
+                "v3toys/yii2-v3project-api": "^1"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -4842,7 +4753,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2017-06-20T18:57:28+00:00"
+            "time": "2017-06-21T11:19:29+00:00"
         },
         {
             "name": "v3toys/yii2-api",
@@ -5033,54 +4944,6 @@
                 "yii2"
             ],
             "time": "2017-06-05T14:33:41+00:00"
-        },
-        {
-            "name": "yiisoft/yii2-authclient",
-            "version": "2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-authclient.git",
-                "reference": "9929acc03d61d96e6eabbb5e31b02d6f9faab10d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/9929acc03d61d96e6eabbb5e31b02d6f9faab10d",
-                "reference": "9929acc03d61d96e6eabbb5e31b02d6f9faab10d",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2-httpclient": "~2.0.1"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\authclient\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Paul Klimov",
-                    "email": "klimov.paul@gmail.com"
-                }
-            ],
-            "description": "External authentication via OAuth and OpenID for the Yii framework",
-            "keywords": [
-                "OpenId",
-                "api",
-                "auth",
-                "oauth",
-                "yii2"
-            ],
-            "time": "2017-02-15T14:34:51+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -5380,9 +5243,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "skeeks/cms": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

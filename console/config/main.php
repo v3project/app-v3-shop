@@ -1,9 +1,9 @@
 <?php
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (ÑêèêÑ)
- * @date 30.04.2016
+ * @link https://skeeks.com/
+ * @copyright (c) 2010 SkeekS
+ * @date 21.06.2017
  */
 return [
     'id' => 'app-console',
@@ -19,6 +19,10 @@ return [
                 ],
             ],
         ],
+        'urlManager' => [
+            'baseUrl'   => '',
+            //'hostInfo' => 'https://demo.ru'
+        ]
     ],
 
     'params' => [],
