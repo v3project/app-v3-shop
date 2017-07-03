@@ -19,7 +19,7 @@
     "require": {
         "skeeks/cms": "^4.0",
         "skeeks/cms-shop": "^2",
-        "skeeks/cms-agent": "^1",
+        "skeeks/cms-agent": "^1.1",
         "skeeks/cms-mailer": "^2",
         "skeeks/cms-seo": "^2",
         "skeeks/cms-search": "^2",
