@@ -46,9 +46,11 @@ php yii dbDumper/mysql/restore
  
 2. Настроить проект в IDE
 
-[Смотреть видео](https://youtu.be/DpNzH701EWY)
+[Смотреть видео](https://youtu.be/7YdqD5ad1lA)
 
 ## Начальные работы по привязке шаблона
 
  * Создать AssetBundle для текущего проекта
  * Перенести html разметку шаблона в ``frontend/templates/default/layouts/main.php``
+
+[Смотреть видео](https://youtu.be/zA36nuQz2fg)
