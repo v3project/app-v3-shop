@@ -1,13 +1,16 @@
 # SkeekS CMS проект с интеграцией v3project
 
 ## Материалы для ознакомления
- * https://cms.skeeks.com/ - официальный сайт SkeekS CMS
- * http://www.yiiframework.com/ - официальный сайт Yii2 фреймоврка
- * https://github.com/v3project/skeeks - официальный модуль интеграции с v3project
- * https://docs.cms.skeeks.com/en/latest/ - документация по SkeekS CMS
- * https://github.com/v3project/app-v3-shop - официальный базовый проект на SkeekS CMS интегрированный с v3project
 
-##У становка проекта
+ * [https://cms.skeeks.com/](https://cms.skeeks.com/) - официальный сайт SkeekS CMS
+ * [http://www.yiiframework.com/](http://www.yiiframework.com/) - официальный сайт Yii2 фреймоврка
+ * [https://github.com/v3project/skeeks](https://github.com/v3project/skeeks) - официальный модуль интеграции с v3project
+ * [https://docs.cms.skeeks.com/en/latest/](https://docs.cms.skeeks.com/en/latest/) - документация по SkeekS CMS
+ * [https://github.com/v3project/app-v3-shop](https://github.com/v3project/app-v3-shop) - официальный базовый проект на SkeekS CMS интегрированный с v3project
+
+[Смотреть видео](https://youtu.be/sYAdOXiPWrg)
+
+## Установка проекта
 
 ```bash
 # Download latest version of composer
@@ -31,12 +34,20 @@ php yii cms/init
 php yii dbDumper/mysql/restore
 ```
 
+[Смотреть видео](https://youtu.be/DpNzH701EWY)
+
 ## Подготовительные работы
+
+1. создать git репозиторий
 
  * https://bitbucket.org
  * https://github.com/
  * https://git.skeeks.com
  
+2. Настроить проект в IDE
+
+[Смотреть видео](https://youtu.be/DpNzH701EWY)
+
 ## Начальные работы по привязке шаблона
 
  * Создать AssetBundle для текущего проекта
