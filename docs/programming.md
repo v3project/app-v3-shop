@@ -124,5 +124,5 @@
 ]); ?>
 ```
 
-[Смотреть видео](https://youtu.be/YZQ0EXnF3y8)
+[Смотреть видео](https://youtu.be/fmsvJ7QJpjA)
 
