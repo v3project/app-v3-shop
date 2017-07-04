@@ -107,5 +107,22 @@
 ]); ?>
 ```
 
-[Смотреть видео](https://youtu.be/DXyqOk-A6q8)
+[Смотреть видео](https://youtu.be/YZQ0EXnF3y8)
+
+## Блок "новости"
+
+Создать контент — новости
+Создать раздел новости
+Настроить главный раздел для новостей (соответствующий новости)
+В место слайдера вставить виджет:
+
+```php
+<?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+    'namespace' => 'home-news',
+    'label'     => 'Новости компании',
+    'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/home-news',
+]); ?>
+```
+
+[Смотреть видео](https://youtu.be/YZQ0EXnF3y8)
 
