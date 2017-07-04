@@ -3,13 +3,16 @@ Shop v3project on SkeekS CMS (Yii2)
 
 [![skeeks!](https://cms.skeeks.com/uploads/all/35/fd/33/35fd33aa306823dbaf53a0142d43b3fa.png)](https://cms.skeeks.com)
 
-##Links
+##Документация
+  * [Документация с примерами + видео](http://app-v3-shop.readthedocs.io/ru/latest/)
+  
+##Ссылки
 * [Web site (SkeekS CMS)](https://cms.skeeks.com)
 * [Docs (SkeekS CMS)](https://cms.skeeks.com/docs)
 * [Author](https://skeeks.com)
 * [ChangeLog](https://github.com/skeeks-cms/cms/blob/master/CHANGELOG.md)
 
-##Install
+##Установка
 
 ```bash
 # Download latest version of composer
@@ -34,7 +37,7 @@ php yii dbDumper/mysql/restore
 ```
 
 
-##Screenshots
+
 
 ___
 
