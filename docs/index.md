@@ -8,7 +8,7 @@
  * [https://docs.cms.skeeks.com/en/latest/](https://docs.cms.skeeks.com/en/latest/) - документация по SkeekS CMS
  * [https://github.com/v3project/app-v3-shop](https://github.com/v3project/app-v3-shop) - официальный базовый проект на SkeekS CMS интегрированный с v3project
 
-#### [Смотреть видео](https://youtu.be/sYAdOXiPWrg)
+[Смотреть видео](https://youtu.be/sYAdOXiPWrg)
 
 ## Установка проекта
 
@@ -46,13 +46,13 @@ php yii dbDumper/mysql/restore
  
 2. Настроить проект в IDE
 
-#### [Смотреть видео](https://youtu.be/7YdqD5ad1lA)
+[Смотреть видео](https://youtu.be/7YdqD5ad1lA)
 
 ## Начальные работы по привязке шаблона
 
  * Создать AssetBundle для текущего проекта
  * Перенести html разметку шаблона в ``frontend/templates/default/layouts/main.php``
 
-#### [Смотреть видео](https://youtu.be/zA36nuQz2fg)
+[Смотреть видео](https://youtu.be/zA36nuQz2fg)
 
 

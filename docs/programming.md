@@ -29,8 +29,48 @@
 </ul>
 ```
 
-#### [Смотреть видео](https://youtu.be/N8jXegwP6O0)
+[Смотреть видео](https://youtu.be/N8jXegwP6O0)
 
 
 ## Программирование вложенного меню каталога
 
+ * Поставить виджет в шаблон где необходимо меню
+```php
+<?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
+    'namespace' => 'catalog-menu',
+    'viewFile' => '@app/views/widgets/TreeMenuCmsWidget/catalog-menu',
+    //'label' => 'Title menu',
+    //'level' => 1,
+    //'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
+]); ?>
+```
+
+* Содержимое шаблона ``@app/views/widgets/TreeMenuCmsWidget/catalog-menu``
+
+```php
+<?php
+/* @var $this   yii\web\View */
+/* @var $widget \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget */
+/* @var $trees  \skeeks\cms\models\Tree[] */
+?>
+<ul class="menu">
+    <? if ($trees = $widget->activeQuery->all()) : ?>
+        <? foreach ($trees as $tree) : ?>
+            <li class="menu__item">
+                <a href="<?= $tree->url; ?>" title="<?= $tree->name; ?>"><?= $tree->name; ?></a>
+                <? if ($tree->children) : ?>
+                     <ul class="sub-menu">
+                         <? foreach ($tree->children as $childTree) : ?>
+                             <li class="sub-menu__item">
+                                 <a href="<?= $childTree->url; ?>" title="<?= $childTree->name; ?>"><?= $childTree->name; ?></a>
+                             </li>
+                         <? endforeach; ?>
+                      </ul>
+                <? endif; ?>
+            </li>
+        <? endforeach; ?>
+    <? endif; ?>
+</ul>
+```
+
+[Смотреть видео](https://youtu.be/N8jXegwP6O0)
