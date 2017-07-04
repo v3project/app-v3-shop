@@ -1,5 +1,7 @@
 ## Программирование верхнего и нижнего меню сайта
 
+[Документация по виджету](https://docs.cms.skeeks.com/en/latest/quickstart.html#skeeks-cms-cmswidgets-treemenu-treemenucmswidget)
+
  * Поставить виджет в шаблон где необходимо меню
 
 ```php
@@ -33,6 +35,8 @@
 
 
 ## Программирование вложенного меню каталога
+
+[Документация по виджету](https://docs.cms.skeeks.com/en/latest/quickstart.html#skeeks-cms-cmswidgets-treemenu-treemenucmswidget)
 
  * Поставить виджет в шаблон где необходимо меню
 ```php
@@ -73,4 +77,8 @@
 </ul>
 ```
 
-[Смотреть видео](https://youtu.be/N8jXegwP6O0)
+[Смотреть видео](https://youtu.be/YLLs3bQ8yO0)
+
+## Программирование редкатируемых областей
+
+[Документация по виджету](https://docs.cms.skeeks.com/en/latest/quickstart.html#skeeks-cms-cmswidgets-text-textcmswidget)
