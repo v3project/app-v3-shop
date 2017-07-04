@@ -106,3 +106,6 @@
     'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/slides',
 ]); ?>
 ```
+
+[Смотреть видео](https://youtu.be/DXyqOk-A6q8)
+
