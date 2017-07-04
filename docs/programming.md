@@ -91,4 +91,4 @@
 <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
 ```
 
-[Смотреть видео](https://youtu.be/YLLs3bQ8yO0)
+[Смотреть видео](https://youtu.be/DXyqOk-A6q8)
