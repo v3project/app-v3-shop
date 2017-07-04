@@ -126,3 +126,63 @@
 
 [Смотреть видео](https://youtu.be/fmsvJ7QJpjA)
 
+
+## Текстовый раздел + хлебные крошки
+
+
+Привести шаблон к виду шаблона исходной верстки ``\frontend\templates\default\modules\cms\tree\text.php``
+
+Виджет хлебных крошек:
+
+```php
+<?= \skeeks\cms\cmsWidgets\breadcrumbs\BreadcrumbsCmsWidget::widget([
+    'viewFile'       => '@app/views/widgets/BreadcrumbsCmsWidget/default',
+]); ?>
+```
+
+Шаблон ``@app/views/widgets/BreadcrumbsCmsWidget/default``
+
+```php
+<?php
+/* @var $this   yii\web\View */
+/* @var $widget \skeeks\cms\cmsWidgets\breadcrumbs\BreadcrumbsCmsWidget */
+?>
+<? if (\Yii::$app->breadcrumbs->parts) : ?>
+    <? $count = count(\Yii::$app->breadcrumbs->parts); ?>
+    <? $counter = 0; ?>
+    <? if ($count > 1) : ?>
+        <ul class="breadcrumb">
+            <? foreach (\Yii::$app->breadcrumbs->parts as $data) : ?>
+                <? $counter ++; ?>
+                <? if ($counter == $count): ?>
+                    <li class="active"><?= $data['name']; ?></li>
+                <? else : ?>
+                    <li><a href="<?= $data['url']; ?>" title="<?= $data['name']; ?>"><?= $data['name']; ?></a></li>
+                <? endif;?>
+            <? endforeach; ?>
+        </ul>
+    <? endif;?>
+<? endif;?>
+```
+
+
+[Смотреть видео](https://youtu.be/cp7Fdo9-xPs)
+
+
+
+## Страница контакты (кастомные страницы)
+
+Для того чтобы создать страницу в необычном шаблоне. 
+Необходимо создать раздел в дереве разделов, и назначить ему собственный шаблон.
+
+
+[Смотреть видео](https://youtu.be/am7FfTj7E6A)
+
+
+## Конструктор форм (обратная связь, заказать звонок)
+
+
+## Авторазиция / Регистрация
+
+
+
