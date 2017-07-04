@@ -1,4 +1,4 @@
-## Программирование верхнего и нижнего меню сайта
+## Верхнее и нижнее меню сайта
 
 [Документация по виджету](https://docs.cms.skeeks.com/en/latest/quickstart.html#skeeks-cms-cmswidgets-treemenu-treemenucmswidget)
 
@@ -34,7 +34,7 @@
 [Смотреть видео](https://youtu.be/N8jXegwP6O0)
 
 
-## Программирование вложенного меню каталога
+## Вложенное меню каталога
 
 [Документация по виджету](https://docs.cms.skeeks.com/en/latest/quickstart.html#skeeks-cms-cmswidgets-treemenu-treemenucmswidget)
 
@@ -79,6 +79,16 @@
 
 [Смотреть видео](https://youtu.be/YLLs3bQ8yO0)
 
-## Программирование редкатируемых областей
+
+## Редкатируемые области
 
 [Документация по виджету](https://docs.cms.skeeks.com/en/latest/quickstart.html#skeeks-cms-cmswidgets-text-textcmswidget)
+
+Для управления блоками текста на сайте, в шапке и в футере
+```php
+<? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('home-text'); ?>
+  <h1>Добро пожаловать!</h1>
+<? \skeeks\cms\cmsWidgets\text\TextCmsWidget::end(); ?>
+```
+
+[Смотреть видео](https://youtu.be/YLLs3bQ8yO0)
