@@ -85,6 +85,7 @@
 [Документация по виджету](https://docs.cms.skeeks.com/en/latest/quickstart.html#skeeks-cms-cmswidgets-text-textcmswidget)
 
 Для управления блоками текста на сайте, в шапке и в футере
+
 ```php
 <? \skeeks\cms\cmsWidgets\text\TextCmsWidget::beginWidget('home-text'); ?>
   <h1>Добро пожаловать!</h1>
@@ -92,3 +93,16 @@
 ```
 
 [Смотреть видео](https://youtu.be/DXyqOk-A6q8)
+
+
+## Слайдер
+
+Создать контент — слайды
+В место слайдера вставить виджет:
+
+```php
+<?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+    'namespace' => 'home-slides',
+    'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/slides',
+]); ?>
+```
