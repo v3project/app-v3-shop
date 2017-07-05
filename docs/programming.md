@@ -308,3 +308,11 @@ $additional = $model->relatedPropertiesModel->getEnumByAttribute('additional');
   </div>
 </div>
 ```
+
+
+[Смотреть видео](https://youtu.be/VeY2PJcCc38)
+
+
+
+## Корзина + добавление товаров в корзину
+
