@@ -405,5 +405,55 @@ $('.sx-to-cart').on('click', function()
 [Смотреть видео](https://youtu.be/AuldDehNXuQ)
 
 
+## Страница товаров + фильтры
+
+Конструирование виджета фильтров
+
+```php
+$shopFilters = new \skeeks\cms\shop\cmsWidgets\filters\ShopProductFiltersWidget([
+    'namespace' => 'ShopProductFiltersWidget-left1',
+    'onlyExistsFilters' => true,
+    'viewFile' => 'slider',
+]);
+
+$shopFilters->realatedProperties = \yii\helpers\ArrayHelper::map(
+    \skeeks\cms\models\CmsContentProperty::find()
+        ->andWhere(['!=', 'property_type', \skeeks\cms\relatedProperties\PropertyType::CODE_STRING])
+        ->all(), 'code', 'code'
+);
+```
+
+```php
+<? $filters = new \common\models\ProductFilters(); ?>
+<? $filters->load(\Yii::$app->request->get()); ?>
+
+<? $widgetElements = new \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget([
+    'namespace' => 'products-second',
+    'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/products',
+    'contentElementClass' => \skeeks\cms\shop\models\ShopCmsContentElement::className(),
+    'dataProviderCallback' => function (\yii\data\ActiveDataProvider $activeDataProvider)
+    use ($filters, $shopFilters)
+    {
+        $activeDataProvider->query->with('relatedProperties');
+        $activeDataProvider->query->with('shopProduct');
+        $activeDataProvider->query->with('shopProduct.baseProductPrice');
+        $activeDataProvider->query->with('shopProduct.minProductPrice');
+
+        $shopFilters->search($activeDataProvider);
+        $filters->search($activeDataProvider);
+
+        //$activeDataProvider->query->joinWith('shopProduct.baseProductPrice as basePrice');
+        //$activeDataProvider->query->orderBy(['basePrice' => SORT_ASC]);
+    },
+]); ?>
+
+<?
+$widgetElementsContent = $widgetElements->run();
+$shopFiltersContent = $shopFilters->run();
+?>
+```
+
+[Смотреть видео]()
+
 ## Страница одного товара
 
