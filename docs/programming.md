@@ -181,6 +181,26 @@
 
 ## Конструктор форм (обратная связь, заказать звонок)
 
+### Пример вызова формы
+
+```php
+<?= \skeeks\modules\cms\form2\cmsWidgets\form2\FormWidget::widget([
+    'namespace' => 'phone',
+    'form_code' => 'callback',
+    'viewFile' => 'with-messages'
+]); ?>
+```
+
+### Пример альтернативного вызова формы
+
+```php
+<? \skeeks\modules\cms\form2\cmsWidgets\form2\FormWidget::beginWidget('phone', [
+    'form_code' => 'callback',
+    'viewFile' => 'with-messages'
+]); ?>
+<? \skeeks\modules\cms\form2\cmsWidgets\form2\FormWidget::end(); ?>
+```
+### Пример в модальном окне bootstrap + js success callback
 
 ```php
 <? $modal = \yii\bootstrap\Modal::begin([
@@ -208,6 +228,7 @@ JS
     <? \skeeks\modules\cms\form2\cmsWidgets\form2\FormWidget::end(); ?>
 <? \yii\bootstrap\Modal::end(); ?>
 ```
+
 
 ## Авторазиция / Регистрация
 
