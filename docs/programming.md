@@ -230,7 +230,11 @@ JS
 ```
 
 
+[Смотреть видео](https://youtu.be/3NvoEKz51ss)
+
+
 ## Авторазиция / Регистрация
 
+Примеры в официальной документации [https://docs.cms.skeeks.com/ru/latest/quickstart.html#id9](https://docs.cms.skeeks.com/ru/latest/quickstart.html#id9)
 
-
+[Смотреть видео]()
