@@ -242,7 +242,7 @@ JS
 
 ## Вывод товаров на главную страницу
 
-### Пример вызова виджета
+Пример вызова виджета
 
 ```php
 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
@@ -252,7 +252,7 @@ JS
 ]); ?>
 ```
 
-### Пример шаблона ``@app/views/widgets/ContentElementsCmsWidget/home-news``
+Пример шаблона ``@app/views/widgets/ContentElementsCmsWidget/home-news``
 
 ```php
 <?php
@@ -316,7 +316,7 @@ $additional = $model->relatedPropertiesModel->getEnumByAttribute('additional');
 
 ## Корзина в шапке + добавление товаров в корзину
 
-### Корзина в шапке сайта
+Корзина в шапке сайта
 
 Вызов
 
@@ -354,7 +354,7 @@ JS
 <? \skeeks\cms\widgets\Pjax::end(); ?>
 ```
 
-### Добавление товара в корзину
+Добавление товара в корзину
 
 Отрисовка соответствующей кнопки уведомить или добавить в корзину
 ```php
@@ -392,7 +392,7 @@ JS
 
 ```
 
-### Добавление эффекта при добавлении в корзину
+Добавление эффекта при добавлении в корзину
 
 ```javascript
 $('.sx-to-cart').on('click', function()
