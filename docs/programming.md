@@ -314,5 +314,92 @@ $additional = $model->relatedPropertiesModel->getEnumByAttribute('additional');
 
 
 
-## Корзина + добавление товаров в корзину
+## Корзина в шапке + добавление товаров в корзину
 
+### Корзина в шапке сайта
+
+Вызов
+
+```php
+<?= \skeeks\cms\shop\widgets\cart\ShopCartWidget::widget([
+    'namespace' => 'ShopCartWidget-small-top',
+    'viewFile' => '@app/views/widgets/ShopCartWidget/small-top'
+]); ?>
+```
+Содержимое шаблона ``@app/views/widgets/ShopCartWidget/small-top``
+
+```php
+<?php
+/* @var $this yii\web\View */
+/* @var $widget \skeeks\cms\shop\widgets\cart\ShopCartWidget */
+\frontend\assets\CartAsset::register($this);
+$this->registerJs(<<<JS
+    (function(sx, $, _)
+    {
+        new sx.classes.shop.SmallCart(sx.Shop, 'sx-cart', {
+            'delay': 500
+        });
+    })(sx, sx.$, sx._);
+JS
+);
+?>
+<? \skeeks\cms\widgets\Pjax::begin([
+    'id' => 'sx-cart'
+]); ?>
+    <div class="text">
+        <span>Товаров:<a href="<?= \yii\helpers\Url::to(['/shop/cart']); ?>" data-pjax="0"><?= \Yii::$app->shop->shopFuser->countShopBaskets; ?> шт.</a></span>
+        <span>На<a href="<?= \yii\helpers\Url::to(['/shop/cart']); ?>" data-pjax="0"><?= \Yii::$app->money->convertAndFormat(\Yii::$app->shop->shopFuser->money); ?></a></span>
+        <a class="btn btn-orange" href="<?= \yii\helpers\Url::to(['/shop/cart']); ?>" data-pjax="0">Оформить заказ</a>
+    </div>
+<? \skeeks\cms\widgets\Pjax::end(); ?>
+```
+
+### Добавление товара в корзину
+
+Отрисовка соответствующей кнопки уведомить или добавить в корзину
+```php
+
+<? if ($shopProduct->quantity > 0) : ?>
+    <?= \yii\helpers\Html::tag('a', 'Купить', [
+      'class' => 'js-to-cart sx-to-cart btn btn-buy',
+      'type' => 'button',
+      'onclick' => new \yii\web\JsExpression("sx.Shop.addProduct({$shopProduct->id}, 1); return false;"),
+      'data' => \yii\helpers\ArrayHelper::merge($model->toArray(['name', 'id']), [
+          'url' => $model->url,
+          'image' => \skeeks\cms\helpers\Image::getSrc($model->image ? $model->image->src : null),
+          'price' => \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money),
+      ]),
+    ]); ?>
+<? else : ?>
+    <?= \skeeks\cms\shop\widgets\notice\NotifyProductEmailModalWidget::widget([
+        'product_id' => $model->id,
+        'success_modal_id' => 'readyNotifyEmail',
+        'header' => 'Уведомить о поступлении',
+        'closeButton' =>
+        [
+            'tag'   => 'button',
+            'class' => 'modal-close btn-circle fill',
+            'label' => '<i class="fa fa-remove"></i>',
+        ],
+        'toggleButton' => [
+            'label' => 'Уведомить',
+            'style' => '',
+            'class' => 'subscribe btn btn-buy',
+        ],
+    ]); ?>
+
+<? endif; ?>
+
+```
+
+### Добавление эффекта при добавлении в корзину
+
+```javascript
+$('.sx-to-cart').on('click', function()
+{
+    UIkit.modal("#sx-toCartModal").show();
+});
+```
+
+
+[Смотреть видео](https://youtu.be/AuldDehNXuQ)
