@@ -182,6 +182,33 @@
 ## Конструктор форм (обратная связь, заказать звонок)
 
 
+```php
+<? $modal = \yii\bootstrap\Modal::begin([
+    'header' => 'Заказать звонок',
+    'toggleButton' => [
+        'label' => '<i class="fa fa-phone"></i> Заказать звонок',
+        'class' => 'call-me btn btn-lg btn-blue hidden-xs',
+    ],
+]); ?>
+    <? \skeeks\modules\cms\form2\cmsWidgets\form2\FormWidget::beginWidget('phone', [
+        'form_code' => 'callback',
+        'viewFile' => 'with-messages',
+        'successJs' => <<<JS
+function(jForm, data)
+{
+_.delay(function()
+{
+$("#{$modal->id}").modal('hide');
+}, 1500);
+
+}
+JS
+,
+    ]); ?>
+    <? \skeeks\modules\cms\form2\cmsWidgets\form2\FormWidget::end(); ?>
+<? \yii\bootstrap\Modal::end(); ?>
+```
+
 ## Авторазиция / Регистрация
 
 
