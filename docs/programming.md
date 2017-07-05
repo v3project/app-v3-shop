@@ -240,3 +240,71 @@ JS
 [Смотреть видео](https://youtu.be/VeY2PJcCc38)
 
 
+## Вывод товаров на главную страницу
+
+### Пример вызова виджета
+
+```php
+<?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+    'namespace' => 'home-news',
+    'label'     => 'Новости компании',
+    'viewFile'  => '@app/views/widgets/ContentElementsCmsWidget/home-news',
+]); ?>
+```
+
+### Пример шаблона ``@app/views/widgets/ContentElementsCmsWidget/home-news``
+
+```php
+<?php
+/**
+ * @var \skeeks\cms\models\CmsContentElement $model
+ */
+$shopProduct = \skeeks\cms\shop\models\ShopProduct::getInstanceByContentElement($model);
+$additional = $model->relatedPropertiesModel->getEnumByAttribute('additional');
+?>
+
+<div class="col col-4">
+  <div class="catalog__item">
+    <div class="tag <?= $additional ? $additional->code : ""; ?>"></div>
+    <div class="img">
+        <a href="<?= $model->url; ?>" title="<?= $model->name; ?>" data-pjax="0">
+        <img src="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
+         new \skeeks\cms\components\imaging\filters\Thumbnail([
+             'w' => 0,
+             'h' => 200,
+         ]), $model->code
+     ) ?>" alt="<?= $model->name; ?>">
+        </a>
+    </div>
+
+      <? if ($ageFrom = $model->relatedPropertiesModel->getAttribute('ageFrom')) : ?>
+          <div class="age-limit">
+            <span><?= $ageFrom; ?>+</span>
+        </div>
+      <? endif; ?>
+
+
+    <h2><?= $model->name; ?></h2>
+    <div class="excerpt"><?= $model->description_short; ?></div>
+    <div class="buy">
+      <div class="row">
+        <div class="col col-6">
+          <div class="price">
+              <? if ($shopProduct->minProductPrice->id == $shopProduct->baseProductPrice->id) : ?>
+                <?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?>
+            <? else : ?>
+                <span
+                    class="line-through"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
+                <span
+                    class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?></span>
+            <? endif; ?>
+          </div>
+        </div>
+        <div class="col col-6">
+          <div class="button"><a class="btn btn-buy" href="#" onclick="sx.Shop.addProduct(<?= $shopProduct->id;  ?>, 1); return false;">Купить</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
