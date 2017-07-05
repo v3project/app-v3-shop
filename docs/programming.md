@@ -453,7 +453,7 @@ $shopFiltersContent = $shopFilters->run();
 ?>
 ```
 
-[Смотреть видео]()
+[Смотреть видео](https://youtu.be/fTr9jGpN9Nk)
 
 ## Страница одного товара
 
