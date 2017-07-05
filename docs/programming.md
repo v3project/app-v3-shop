@@ -403,3 +403,7 @@ $('.sx-to-cart').on('click', function()
 
 
 [Смотреть видео](https://youtu.be/AuldDehNXuQ)
+
+
+## Страница одного товара
+
