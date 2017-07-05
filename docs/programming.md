@@ -310,7 +310,7 @@ $additional = $model->relatedPropertiesModel->getEnumByAttribute('additional');
 ```
 
 
-[Смотреть видео](https://youtu.be/VeY2PJcCc38)
+[Смотреть видео](https://youtu.be/lDom8RvIqzo)
 
 
 
