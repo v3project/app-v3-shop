@@ -237,4 +237,6 @@ JS
 
 Примеры в официальной документации [https://docs.cms.skeeks.com/ru/latest/quickstart.html#id9](https://docs.cms.skeeks.com/ru/latest/quickstart.html#id9)
 
-[Смотреть видео]()
+[Смотреть видео](https://youtu.be/VeY2PJcCc38)
+
+
