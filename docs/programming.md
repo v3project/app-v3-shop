@@ -457,3 +457,74 @@ $shopFiltersContent = $shopFilters->run();
 
 ## Страница одного товара
 
+Виджет поделиться в соц. сетях
+
+```php
+<?= \skeeks\cms\yandex\share\widget\YaShareWidget::widget([
+    'namespace' => 'YaShareWidget-main'
+]); ?>
+```
+
+
+Виджет отзывы
+
+```php
+<?= \skeeks\cms\reviews2\widgets\reviews2\Reviews2Widget::widget([
+    'namespace' => 'Reviews2Widget',
+    'viewFile' => '@app/views/widgets/Reviews2Widget/package',
+    'cmsContentElement' => $model
+]); ?>
+```
+
+Необходимые данные по товару
+
+```php
+$shopProduct = \skeeks\cms\shop\models\ShopProduct::getInstanceByContentElement($model);
+$shopCmsContentElement = new \v3toys\skeeks\models\V3toysProductContentElement($model->toArray());
+
+$shopProduct->quantity;
+
+<dd>Артикул: <?= $shopCmsContentElement->v3toysProductProperty->sku; ?></dd>
+<dd>Код товара: <?= $shopCmsContentElement->v3toysProductProperty->v3toys_id; ?></dd>
+```
+
+Похожие товары
+
+```php
+<?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+    'namespace' => 'productpage-same-products',
+    'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/products-same',
+    'label'  =>  'Похожие товары',
+    'options'  =>  [
+        'class' => 'xd_gallery_third',
+        'navigateId' => 'cb_best_checkout_products_for_product_third'
+    ],
+    'contentElementClass' => \skeeks\cms\shop\models\ShopCmsContentElement::className(),
+    'dataProviderCallback' => function (\yii\data\ActiveDataProvider $activeDataProvider) use ($model)
+    {
+        $activeDataProvider->query->with('relatedProperties');
+        $activeDataProvider->query->with('shopProduct');
+        $activeDataProvider->query->with('shopProduct.baseProductPrice');
+        $activeDataProvider->query->with('shopProduct.minProductPrice');
+
+
+        $query = $activeDataProvider->query;
+
+        $query->andWhere(['cms_content_element.tree_id'     => $model->tree_id]);
+
+        /*$query
+            ->joinWith('relatedElementProperties map')
+            ->joinWith('relatedElementProperties.property property')
+
+            ->andWhere(['property.code'     => 'brand'])
+            ->andWhere(['map.value'         => $model->relatedPropertiesModel->getAttribute('brand')])
+        ;*/
+
+        $filters = new \common\models\ProductFilters([]);
+        $filters->search($activeDataProvider);
+
+    },
+  ]); ?>
+```
+[Смотреть видео](https://youtu.be/BYZueqGQl5g)
+
