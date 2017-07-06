@@ -583,4 +583,4 @@ $shopProduct->quantity;
   <? endif; ?>
 ```
 
-[Смотреть видео](https://youtu.be/UH4dyTvqdaA)
+[Смотреть видео](https://youtu.be/fnnAIJDfS5Y)
