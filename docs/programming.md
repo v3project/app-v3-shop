@@ -549,4 +549,38 @@ $shopProduct->quantity;
 ]); ?>
 ```
 
-[Смотреть видео](https://youtu.be/BYZueqGQl5g)
+[Смотреть видео](https://youtu.be/UH4dyTvqdaA)
+
+
+## Отзывы на главной странице
+
+```php
+<?
+  /**
+   * @var \skeeks\cms\reviews2\models\Reviews2Message $review
+   */
+  ?>
+  <? if ($reviews = \skeeks\cms\reviews2\models\Reviews2Message::find()->limit(5)->all()) : ?>
+      <div class="review">
+          <h5>Отзывы:</h5>
+          <div class="review__posts">
+          <? foreach ($reviews as $review) : ?>
+              <div class="review__post">
+                  <span class="author"><?= $review->createdBy ? $review->createdBy->displayName : $review->user_name; ?></span><span>
+                      <a href="<?= $review->element->url; ?>"><?= $review->comments; ?></a>
+                  </span><br>
+                  <select class="stars">
+                    <option value="1" <?= $review->rating == 1 ? "selected" : ""; ?>>1</option>
+                    <option value="2" <?= $review->rating == 2 ? "selected" : ""; ?>>2</option>
+                    <option value="3" <?= $review->rating == 3 ? "selected" : ""; ?>>3</option>
+                    <option value="4" <?= $review->rating == 4 ? "selected" : ""; ?>>4</option>
+                    <option value="5" <?= $review->rating == 5 ? "selected" : ""; ?>>5</option>
+                  </select>
+                </div>
+          <? endforeach; ?>
+          </div>
+      </div>
+  <? endif; ?>
+```
+
+[Смотреть видео](https://youtu.be/UH4dyTvqdaA)
