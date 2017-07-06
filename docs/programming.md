@@ -528,3 +528,25 @@ $shopProduct->quantity;
 ```
 [Смотреть видео](https://youtu.be/BYZueqGQl5g)
 
+
+## Определение местоположения + виджет выбора
+
+
+
+* Получить токен https://dadata.ru/
+* Указать этот токен в настройках компонента в системе управления сайтом
+
+Пример запуска виджета:
+
+```php
+<?= \skeeks\cms\dadataSuggest\widgets\address\DadataGetAddressWidget::widget([
+    'options' =>
+    [
+        'href' => '#',
+        'onclick' => 'new sx.classes.ModalRegionPageReload(); return false;',
+        'class' => 'sx-dadata-suggestion-city',
+    ]
+]); ?>
+```
+
+[Смотреть видео](https://youtu.be/BYZueqGQl5g)
