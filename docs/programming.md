@@ -584,3 +584,34 @@ $shopProduct->quantity;
 ```
 
 [Смотреть видео](https://youtu.be/fnnAIJDfS5Y)
+
+
+## Поиск по сайту
+
+Поисковая форма
+
+```php
+<form class="site-search search" action="/search" method="get">
+    <input type="text" class="uk-input" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>" value="<?= \Yii::$app->cmsSearch->searchQuery; ?>" placeholder="Искать товар..."/>
+    <button class="btn btn-grey">Поиск</button>
+</form>
+```
+
+Шаблон ``@app/views/modules/cmsSearch/result/index``
+
+```php
+<? \skeeks\cms\modules\admin\widgets\Pjax::begin(); ?>
+    <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+        'namespace' => 'ContentElementsCmsWidget-search-result',
+        'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/products',
+        'enabledCurrentTree' => \skeeks\cms\components\Cms::BOOL_N,
+        'active' => "Y",
+        'dataProviderCallback' => function (\yii\data\ActiveDataProvider $dataProvider) {
+            \Yii::$app->cmsSearch->buildElementsQuery($dataProvider->query);
+            \Yii::$app->cmsSearch->logResult($dataProvider);
+        },
+    ]) ?>
+<? \skeeks\cms\modules\admin\widgets\Pjax::end(); ?>
+```
+
+[Смотреть видео](https://youtu.be/L4_GVzXh0pY)
