@@ -615,3 +615,160 @@ $shopProduct->quantity;
 ```
 
 [Смотреть видео](https://youtu.be/L4_GVzXh0pY)
+
+
+## 1-й шаг оформления заказа (корзина) 
+
+Поправить шаблон: ``@app/views/modules/shop/cart/cart``
+
+```php
+<?php
+/* @var $this yii\web\View */
+?>
+<?
+\frontend\assets\CartAsset::register($this);
+\skeeks\cms\shop\widgets\ShopGlobalWidget::widget();
+$this->registerJs(<<<JS
+    (function(sx, $, _)
+    {
+        new sx.classes.shop.FullCart(sx.Shop, 'sx-cart-full');
+    })(sx, sx.$, sx._);
+JS
+);
+
+?>
+<div class="content order">
+    <? \skeeks\cms\modules\admin\widgets\Pjax::begin([
+        'id' => 'sx-cart-full',
+    ]) ?>
+    <? if (\Yii::$app->shop->shopFuser->isEmpty()) : ?>
+        <!-- EMPTY CART -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <strong>Ваша корзина пуста!</strong><br/>
+                В вашей корзине нет покупок.<br/>
+                Кликните <a href="/" data-pjax="0">сюда</a> для продолжения покупок. <br/>
+            </div>
+        </div>
+    <? else: ?>
+        <div class="order-progress">
+            <?= \skeeks\cms\shopCartStepsWidget\ShopCartStepsWidget::widget([
+                'viewFile' => '@app/views/modules/shop/cart/_steps'
+            ]); ?>
+        </div>
+        <div class="order-table-list">
+            <?
+            echo \skeeks\cms\shopCartItemsWidget\ShopCartItemsListWidget::widget([
+                'dataProvider' => new \yii\data\ActiveDataProvider([
+                    'query' => \Yii::$app->shop->shopFuser->getShopBaskets(),
+                    'pagination' =>
+                    [
+                        'defaultPageSize' => 100,
+                        'pageSizeLimit' => [1, 100],
+                    ]
+                ]),
+                'layout'            => "<table class=\"table no-border\">{header}\n{items}\n{pager}</table>{footer}",
+                'itemView'          => '@app/views/modules/shop/cart/items-list-item',
+                'headerView'        => '@app/views/modules/shop/cart/items-list-header',
+                'footerView'        => '@app/views/modules/shop/cart/items-list-footer'
+            ]); ?>
+            <hr />
+            <div class="order-submit">
+              <div class="all-total">Итого:&nbsp;<span><?= \Yii::$app->money->convertAndFormat(\Yii::$app->shop->shopFuser->money); ?></span></div>
+              <a href="<?= \yii\helpers\Url::to(['/v3toys/cart/checkout']); ?>" class="btn btn-orange big" data-pjax="0">К оформлению</a>
+            </div>
+        </div>
+    <? endif; ?>
+    <? \skeeks\cms\modules\admin\widgets\Pjax::end() ?>
+</div>
+
+```
+
+
+Шаблон ``@app/views/modules/shop/cart/_steps``
+
+```php
+<ul class="process-steps nav nav-justified">
+    <li class="active">
+        <a href="<?/*= \yii\helpers\Url::to(['/shop/cart']); */?>" data-pjax="0">1</a>
+        <h5><?/*= \Yii::t('skeeks/shop-cart-steps-widget', 'Cart'); */?></h5>
+    </li>
+    <li class="<?/*= in_array(\Yii::$app->controller->action->getUniqueId(), ['shop/cart/checkout', 'shop/order/finish']) ? "active" : ""; */?>">
+        <a href="<?/*= \yii\helpers\Url::to(['/shop/cart/checkout']); */?>" data-pjax="0">2</a>
+        <h5><?/*= \Yii::t('skeeks/shop-cart-steps-widget', 'Ordering'); */?></h5>
+    </li>
+    <li class="<?/*= \Yii::$app->controller->action->getUniqueId() == 'shop/order/finish' ? "active" : ""; */?>">
+        <a href="#">3</a>
+        <h5><?/*= \Yii::t('skeeks/shop-cart-steps-widget', 'Ready order'); */?></h5>
+    </li>
+</ul>
+```
+
+
+Шаблон ``@app/views/modules/shop/cart/items-list-item``
+
+```php
+<tr>
+  <td style="width: 250px;">
+    <div class="item-card">
+      <div class="img">
+          <a href="<?= $model->url; ?>" data-pjax="0">
+                <img src="<?= \skeeks\cms\helpers\Image::getSrc(
+                     \Yii::$app->imaging->getImagingUrl($model->image ? $model->image->src : null, new \skeeks\cms\components\imaging\filters\Thumbnail([
+                         'h' => 150,
+                         'w' => 150,
+                     ]))
+                 ) ?>">
+          </a>
+      </div>
+    </div>
+  </td>
+  <td style="width: 400px;">
+    <div class="item-card">
+      <div class="desc">
+        <div class="title">
+            <a href="<?= $model->url; ?>" data-pjax="0">
+                <?= $model->name; ?>
+            </a>
+        </div>
+          <br />
+        <a href="#" class="" data-toggle="tooltip"
+           onclick="sx.Shop.removeBasket('<?= $model->id; ?>'); return false;"
+           title="<?= \Yii::t('skeeks/shop-cart-items-widget', 'Remove this item'); ?>">
+            <i class="glyphicon glyphicon-remove"></i> удалить
+        </a>
+          <span></span>
+      </div>
+      <div class="meta">
+      </div>
+    </div>
+  </td>
+  <td>
+    <div class="price">
+        <? if ($model->moneyOriginal->getAmount() == $model->money->getAmount()) : ?>
+            <?= \Yii::$app->money->convertAndFormat($model->moneyOriginal); ?>
+        <? else : ?>
+            <span
+                class="line-through nopadding-left"><?= \Yii::$app->money->convertAndFormat($model->moneyOriginal); ?></span>
+            <?= \Yii::$app->money->convertAndFormat($model->money); ?>
+        <? endif; ?>
+    </div>
+  </td>
+  <td style="width: 150px;">
+    <div class="qnt">
+        <input type="number" value="<?= round($model->quantity); ?>" name="qty"
+               class="sx-basket-quantity uk-input slim" maxlength="3" max="999" min="1"
+               data-basket_id="<?= $model->id; ?>"/>
+
+      <!--<input class="uk-input slim" type="number" value="1">-->
+      <div class="available">В Наличии более 10 шт.</div>
+    </div>
+  </td>
+  <td>
+    <div class="total"><?= \Yii::$app->money->convertAndFormat($model->money->multiply($model->quantity)); ?></div>
+  </td>
+</tr>
+```
+
+[Смотреть видео](https://youtu.be/pSW7x5BRawM)
+
