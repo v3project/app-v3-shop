@@ -1128,3 +1128,55 @@ HTML
 
 ## 3-й шаг оформления заказа (готовый заказ)
 
+
+```php
+<div class="content order">
+<div class="order-progress">
+  <div class="row">
+    <div class="col col-4">
+      <div class="progress"><span class="number">1</span><span>Ваша корзина</span></div>
+    </div>
+    <div class="col col-4">
+      <div class="progress"><span class="number">2</span><span>Оформление заказа</span></div>
+    </div>
+    <div class="col col-4">
+      <div class="progress active"><span class="number">3</span><span>Покупка завершена</span></div>
+    </div>
+  </div>
+</div>
+<div class="title">
+  <h1>Заказ № <?= $model->id; ?> оформлен!</h1>
+  <h4>Наш менеджер свяжется с Вами в ближайшее время для подтверждения заказа.</h4>
+</div>
+<form>
+  <div class="row">
+    <div class="col col-6">
+      <h5>Данные заказа:</h5>
+      <dl>
+        <dd>Получатель: <?= $model->name; ?></dd>
+        <dd>Телефон: <?= $model->phone; ?></dd>
+        <dd>Доставка: <?= $model->deliveryFullName; ?></dd>
+      </dl>
+      <dl>
+        <dd>Итоговая стоимость с учётом доставки: <?= \Yii::$app->money->convertAndFormat($model->money); ?></dd>
+      </dl>
+      <dl>
+        <dd>Данные о заказе отправлены Вам на E-mail: <?= $model->email; ?></dd>
+        <dd>Статус заказа можете посмотреть в
+            <? if (\Yii::$app->user->isGuest) : ?>
+                <a href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login')->setCurrentRef(); ?>">Личном кабинете</a>
+            <? else: ?>
+                <a href="<?=\yii\helpers\Url::to(['/shop/order/list']); ?>">Личном кабинете</a>
+            <? endif; ?>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</form>
+<h2>Спасибо за заказ!</h2>
+</div>
+```
+
+[Смотреть видео](https://youtu.be/vqFgQLXh3PA)
+
+
