@@ -1180,3 +1180,219 @@ HTML
 [Смотреть видео](https://youtu.be/vqFgQLXh3PA)
 
 
+## Личный кабинет клиента
+
+Содержимое шаблона ``@app/views/modules/cms/user/edit``
+
+
+```php
+<?php
+use yii\helpers\Html;
+
+use yii\widgets\ActiveForm;
+/* @var $this       yii\web\View */
+/* @var $context    \frontend\controllers\UserController */
+/* @var $model      common\models\User */
+
+$context = $this->context;
+$model = $context->user;
+
+$this->title = $model->getDisplayName();
+
+$this->title = $model->getDisplayName();
+
+\Yii::$app->breadcrumbs->createBase()->append([
+    'name' => $model->displayName,
+    'url'  => $model->getPageUrl()
+])->append([
+    'name' => 'Упраление настройками'
+]);
+
+?>
+<div class="row">
+    <div class="col col-3">
+      <div class="sidebar">
+      <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
+            'namespace' => 'catalog-menu',
+            'viewFile' => '@app/views/widgets/TreeMenuCmsWidget/catalog-menu',
+            //'label' => 'Title menu',
+            //'level' => 1,
+            //'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
+        ]); ?>
+      </div>
+    </div>
+
+    <div class="col col-9">
+      <div class="content">
+
+          <?= \skeeks\cms\cmsWidgets\breadcrumbs\BreadcrumbsCmsWidget::widget([
+                'viewFile'       => '@app/views/widgets/BreadcrumbsCmsWidget/default',
+            ]); ?>
+        <!--<div class="breadcrumb">
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Страница</a></li>
+          </ul>
+        </div>-->
+        <div class="title">
+          <h1><?= $model->name; ?></h1>
+        </div>
+        <div class="page">
+
+            <div class="tab-v1">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#profile">Личные данные</a></li>
+                    <li><a data-toggle="tab" href="#passwordTab">Изменение пароля</a></li>
+
+                    <? if (isset(\Yii::$app->authClientCollection) && \Yii::$app->authClientCollection->clients) : ?>
+                        <li><a data-toggle="tab" href="#sx-social">Социальные профили</a></li>
+                    <? endif; ?>
+
+                </ul>
+                <div class="tab-content">
+                    <div id="profile" class="profile-edit tab-pane fade in active">
+
+                        <? $modelForm = $model; ?>
+                        <? $form = \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::begin([
+                            'validationUrl' => \skeeks\cms\helpers\UrlHelper::construct('cms/user/edit-info', ['username' => $model->username])->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
+                            'action'        => \skeeks\cms\helpers\UrlHelper::construct('cms/user/edit-info', ['username' => $model->username])->toString(),
+
+                            'afterValidateCallback' => new \yii\web\JsExpression(<<<JS
+                function(jForm, ajax)
+                {
+                    var handler = new sx.classes.AjaxHandlerStandartRespose(ajax, {
+                        'enableBlocker' : true,
+                        'blockerSelector' : '#' + jForm.attr('id')
+                    });
+            
+                    handler.bind('success', function(e, response)
+                    {});
+                }
+JS
+            )
+                        ]); ?>
+
+                            <?/*= $form->field($model, 'image_id')->widget(
+                                \skeeks\cms\widgets\formInputs\StorageImage::className()
+                            ) */?>
+
+                            <?= $form->field($model, 'username')->textInput(['maxlength' => 12])->hint('Уникальное имя пользователя. Используется для авторизации, для формирования ссылки на личный кабинет.'); ?>
+                            <?= $form->field($model, 'name')->textInput(); ?>
+
+
+
+                            <?= $form->field($model, 'email')->textInput(); ?>
+                            <?= $form->field($model, 'phone')->textInput(); ?>
+
+                            <?= $form->field($model, 'gender')->radioList([
+                                'men' => 'Муж',
+                                'women' => 'Жен',
+                            ]); ?>
+                            <?/*= $form->field($model, 'status_of_life')->textarea(); */?>
+
+                            <button class="btn btn-primary">Сохранить</button>
+                        <? \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::end(); ?>
+
+                    </div>
+
+                    <div id="passwordTab" class="profile-edit tab-pane fade">
+                        <? $modelForm = new \skeeks\cms\models\forms\PasswordChangeForm(); ?>
+                        <? $form = \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::begin([
+                            'validationUrl' => \skeeks\cms\helpers\UrlHelper::construct('cms/user/change-password', ['username' => $model->username])->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
+                            'action'        => \skeeks\cms\helpers\UrlHelper::construct('cms/user/change-password', ['username' => $model->username])->toString()
+                        ]); ?>
+                            <?= $form->field($modelForm, 'new_password')->passwordInput() ?>
+                            <?= $form->field($modelForm, 'new_password_confirm')->passwordInput() ?>
+                            <button class="btn btn-primary">Изменить</button>
+                        <? \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::end(); ?>
+                    </div>
+
+
+
+                    <? if (isset(\Yii::$app->authClientCollection) && \Yii::$app->authClientCollection->clients) : ?>
+                        <div id="sx-social" class="profile-edit tab-pane fade">
+                            <? \yii\bootstrap\Alert::begin([
+                                'options' => [
+                                  'class' => 'alert-info',
+                                ],
+                            ])?>
+                                Вы можете подключить профиль социальной сети, или стороннего приложения, и авторизовываться через него на нашем сайте.
+                            <? \yii\bootstrap\Alert::end()?>
+
+
+                            <? if (\Yii::$app->user->identity->cmsUserAuthClients) : ?>
+                                <h4>Уже подключены:</h4>
+                                <?=
+                                    \yii\grid\GridView::widget([
+                                        'dataProvider' => new \yii\data\ArrayDataProvider([
+                                            'allModels' => \Yii::$app->user->identity->cmsUserAuthClients
+                                        ]),
+                                        'columns' =>
+                                        [
+                                            'provider'
+                                        ]
+                                    ])
+                                ?>
+                            <? endif; ?>
+
+                            <hr />
+                            <h4>Подключить еще:</h4>
+                            <?= yii\authclient\widgets\AuthChoice::widget([
+                                 'baseAuthUrl'  => ['/cms/auth/client'],
+                                 'popupMode'    => true,
+                            ]) ?>
+                        </div>
+                    <? endif; ?>
+
+                </div>
+            </div>
+
+
+
+            <? if ($orders = \v3toys\skeeks\models\V3toysOrder::find()->where(['user_id' => $model->id])->orderBy(['id' => SORT_DESC])->all()) : ?>
+                <section class="order-list">
+                    <h4>Мои заказы</h4>
+                    <table class="table order">
+                      <thead>
+                        <tr>
+                          <!--<th class="no-border-left"></th>-->
+                          <th>Дата</th>
+                          <th>Номер заказа</th>
+                          <th>Сумма</th>
+                          <th>Статус</th>
+                          <th class="no-border-right"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <?
+                      /**
+                       * @var $order \v3toys\skeeks\models\V3toysOrder
+                       */
+                      ?>
+                        <? foreach ($orders as $order) : ?>
+                            <tr>
+                            <!--<td class="no-border-left">
+                                <i class="icon-time"></i>
+                            </td>-->
+                          <td><?= \Yii::$app->formatter->asDatetime($order->created_at); ?></td>
+                          <td><?= $order->id; ?></td>
+                          <td><?= \Yii::$app->money->convertAndFormat($order->money); ?></td>
+                          <td><?= $order->v3toys_status_id ? $order->status->name : "только что создан"; ?></td>
+                          <td class="no-border-right"><a href="<?= \yii\helpers\Url::to(['/v3toys/cart/finish', 'key' => $order->key]); ?>">подробнее о заказе</a></td>
+                            </tr>
+                        <? endforeach; ?>
+                      </tbody>
+                    </table>
+                </section>
+            <? endif; ?>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+
+```
+[Смотреть видео]()
