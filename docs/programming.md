@@ -772,3 +772,359 @@ JS
 
 [Смотреть видео](https://youtu.be/pSW7x5BRawM)
 
+
+
+## 2-й шаг оформления заказа (оформление) 
+
+Шаблон ``@app/views/modules/v3toys/cart/checkout``
+
+```php
+<?php
+/* @var $this yii\web\View */
+/* @var $model \v3toys\skeeks\models\V3toysOrder */
+?>
+<?
+\frontend\assets\CartAsset::register($this);
+\skeeks\cms\shop\widgets\ShopGlobalWidget::widget();
+?>
+
+
+
+<?
+$json = \yii\helpers\Json::encode([
+'getPrices' => \yii\helpers\Url::to(['/v3toys/cart/get-prices']),
+'save' => \yii\helpers\Url::to(['/v3toys/cart/save-session']),
+]);
+
+$this->registerJs(<<<JS
+(function(sx, $, _)
+{
+
+sx.classes.Checkout = sx.classes.Component.extend({
+
+    _onDomReady: function()
+    {
+        var self = this;
+
+        this.JForm = $('#sx-checkout');
+        $('.sx-deliveryChange, #v3toysorder-pickup_point_id', this.JForm).on('change', function()
+        {
+            self.updatePrices();
+        });
+
+        $('select, input, textarea', this.JForm).on('change', function()
+        {
+            self.save();
+        });
+    },
+
+    save: function()
+    {
+        var self = this;
+        var ajaxQuery = sx.ajax.preparePostQuery(this.get('save'), self.JForm.serialize());
+        ajaxQuery.execute();
+        return this;
+    },
+
+    updatePrices: function()
+    {
+        var self = this;
+        this.ajaxQuery = sx.ajax.preparePostQuery(this.get('getPrices'), self.JForm.serialize());
+
+        this.ajaxQuery.bind('success', function(e, data)
+        {
+            var result = data.response.data;
+
+            $('.sx-money').empty().append(result.money.convertAndFormat);
+            $('.sx-moneyDiscount').empty().append(result.moneyDiscount.convertAndFormat);
+            $('.sx-moneyDelivery').empty().append(result.moneyDelivery.convertAndFormat);
+            $('.sx-moneyOriginal').empty().append(result.moneyOriginal.convertAndFormat);
+        });
+
+        this.ajaxQuery.execute();
+    }
+});
+
+sx.Checkout = new sx.classes.Checkout({$json});
+})(sx, sx.$, sx._);
+JS
+);?>
+
+<? if (!\Yii::$app->shop->shopFuser->isEmpty()) : ?>
+
+<div class="content order">
+
+        <div class="order-progress">
+            <div class="row">
+                <div class="col col-4">
+                  <div class="progress"><span class="number">1</span><span>Ваша корзина</span></div>
+                </div>
+                <div class="col col-4">
+                  <div class="progress active"><span class="number">2</span><span>Оформление заказа</span></div>
+                </div>
+                <div class="col col-4">
+                  <div class="progress"><span class="number">3</span><span>Покупка завершена</span></div>
+                </div>
+              </div>
+        </div>
+
+
+            <?php $form = \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::begin([
+                'validationUrl'  => \yii\helpers\Url::to('/v3toys/cart/checkout-validate'),
+                'id'  => 'sx-checkout',
+                'enableClientValidation' => false,
+                'enableAjaxValidation' => true,
+                'options'                                 => [
+                    'class' => 'order-form'
+                ],
+                'afterValidateCallback'                     => new \yii\web\JsExpression(<<<JS
+                    function(jForm, ajax)
+                    {
+                        var handler = new sx.classes.AjaxHandlerStandartRespose(ajax, {
+                            'blockerSelector' : '#' + jForm.attr('id'),
+                            'enableBlocker' : true,
+                        });
+
+
+
+                        handler.bind('error', function(e, data)
+                        {
+                            $('.sx-success-message', jForm).hide();
+                            $('.sx-error-message', jForm).show();
+                            $('.sx-error-message .sx-body', jForm).empty().append(data.message);
+                        });
+
+                        handler.bind('success', function(e, data)
+                        {
+                            $('.sx-error-message', jForm).hide();
+                            $('.sx-success-message', jForm).show();
+                            $('.sx-success-message .sx-body', jForm).empty().append(data.message);
+
+                            $('input, textarea', jForm).each(function(value, key)
+                            {
+                                var name = $(this).attr('name');
+                                if (name != '_csrf' && name != 'sx-model-value' && name != 'sx-model')
+                                {
+                                    $(this).val('');
+                                }
+                            });
+
+                            $('.sx-btn-order-result').empty().text('Принято!');
+
+                            _.delay(function()
+                            {
+                                //$.fancybox.close();
+                                //window.location.reload();
+                                $('.modal-close', jForm).click();
+                            }, 3000);
+                        });
+                    }
+JS
+            ),
+            ]);
+            ?>
+
+            <section class="order-form--group">
+                <!--<label class="order-form--group--title">Контактная информация</label>-->
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-tbl">
+
+                        <?= $form->field($model, 'email', [
+                            'template'      => "<div class=\"tbl-cell lbl\">{label}</div>\n<div class='tbl-cell'><div class='form-control--wrapper required'>{input}</div>{hint}{error}</div>",
+                            'errorOptions'  => ['class' => 'form-note'],
+                            'options'  => ['class' => 'tbl-row form-group'],
+                        ])->textInput([
+                            'placeholder' => 'для получения деталей заказа',
+                            'type' => 'email'
+                        ]); ?>
+
+                        <?= $form->field($model, 'phone', [
+                            'template'      => "<div class=\"tbl-cell lbl\">{label}</div>\n<div class='tbl-cell'><div class='form-control--wrapper required'>{input}</div>{hint}{error}</div>",
+                            'errorOptions'  => ['class' => 'form-note'],
+                            'options'  => ['class' => 'tbl-row form-group'],
+                        ])->textInput([
+                            'class' => 'form-control input-mask-phone-placeholder',
+                            'placeholder' => 'для связи с вами',
+                            'type' => 'tel'
+                        ]); ?>
+
+
+
+<?
+$radioElement = new \v3toys\skeeks\widgets\delivery\V3toysDeliveryInputWidget([
+    'model' => $model,
+    'attribute' => 'shipping_method',
+    'options' => [
+        'class' => 'sx-deliveryChange'
+    ],
+]);
+$radioElement = $radioElement->run();
+
+$controller = $this->context;
+$region = \Yii::$app->dadataSuggest->address ? \Yii::$app->dadataSuggest->address->regionString : "Выбрать город";
+?>
+
+                        <div class="tbl-row form-group">
+                            <div class="tbl-cell lbl">
+                                <label class="form-label">Город</label>
+                            </div>
+                            <div class="tbl-cell">
+                                <div class="link-region">
+
+                                    <a href="#" onclick="new sx.classes.ModalRegionPjaxReload({
+                                        'id' : 'sx-cart-full'
+                                    }); return false;" style="border-bottom: dotted 1px;">
+                                        <?= \Yii::$app->dadataSuggest->address ? \Yii::$app->dadataSuggest->address->regionString : "Выбрать город"; ?>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <?= $form->field($model, 'name', [
+                            'template'      => "<div class=\"tbl-cell lbl\">{label}</div>\n<div class='tbl-cell'><div class='form-control--wrapper required'>{input}</div>{hint}{error}</div>",
+                            'options'  => ['class' => 'tbl-row form-group'],
+                            'errorOptions'  => ['class' => 'form-note'],
+                        ])->label('Имя и фамилия')->textInput(); ?>
+
+
+
+
+                        </div>
+        </div>
+    </div>
+</section>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+
+
+
+
+    <?= \v3toys\skeeks\widgets\delivery\V3toysDeliveryWidget::widget([
+            'contentSelectRegion' => <<<HTML
+&nbsp;
+HTML
+,
+            'contentPost' => $this->render('_post', [
+                'form' => $form,
+                'model' => $model,
+            ]),
+            'contentPickup' => $this->render('_pickup', [
+                                'form' => $form,
+                                'model' => $model,
+            ]),
+            'contentCourier' => $this->render('_courier', [
+                                'form' => $form,
+                                'model' => $model,
+            ]),
+
+            'contentRadioElement' => $radioElement,
+
+    ]); ?>
+
+
+    </div>
+</div>
+
+        <div class="order-form">
+<section class="order-form--group">
+    <!--<label class="order-form--group--title">Комментарии к заказу</label>-->
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="form-tbl">
+
+                    <?= $form->field($model, 'comment', [
+                        'template'      => "<div class=\"tbl-cell lbl\">{label}</div>\n<div class='tbl-cell'><div class='form-control--wrapper'>{input}</div>{hint}{error}</div>",
+                        'errorOptions'  => ['class' => 'form-note'],
+                        'options'  => ['class' => 'tbl-row form-group'],
+                    ])->textarea([
+                        'placeholder' => 'У вас есть пожелания к заказу?',
+                        'rows' => 7
+                    ]); ?>
+
+                            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+
+
+
+            <section>
+                <div class="form-inner">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="order-delivery--price">
+                                <span class="lbl">Сумма заказа:</span>
+                                <span class="amount sx-moneyOriginal"><?= \Yii::$app->money->convertAndFormat(\Yii::$app->shop->shopFuser->moneyOriginal); ?></span>
+                            </div>
+                            <div class="order-delivery--price">
+                                <span class="lbl">Доставка:</span>
+                                <span class="amount sx-moneyDelivery"><?= \Yii::$app->money->convertAndFormat($model->moneyDelivery); ?></span>
+                            </div>
+                            <!--<div class="order-delivery--price">
+                                <span class="lbl">Скидка:</span>
+                                <span class="amount sx-moneyDiscount">-<?/*= \Yii::$app->money->convertAndFormat(\Yii::$app->shop->shopFuser->moneyDiscount); */?></span>
+                            </div>-->
+                            <div class="order-delivery--total">
+                                Итого к оплате:
+                                <span class="text-nowrap"><span class="number amount sx-money"><?= \Yii::$app->money->convertAndFormat(\Yii::$app->shop->shopFuser->money); ?></span>
+                            </div>
+                            <button type="submit" class="btn btn-orange big">Оформить заказ</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            <div class="tbl-cart-bottom order" style="margin-top: 20px;">
+                <div class="col-left">
+                    <div class="back">
+                        <a href="<?= \yii\helpers\Url::to(['/shop/cart']); ?>">Изменить заказ</a>
+                    </div>
+                </div>
+
+                <!--<div class="col-right">
+                    <button type="submit" class="btn btn-lg">Перейти к оформлению</button>
+                </div>--><!--.col-right-->
+            </div>
+
+                    <div class="row">
+                        <?= \yii\bootstrap\Alert::widget([
+                            'options' => [
+                                'class' => 'alert-success sx-form-message sx-success-message',
+                                'style' => 'display: none;',
+                            ],
+                            'closeButton' => false,
+                            'body' => '<div class="sx-body">Ok</div>',
+                        ])?>
+
+                        <?= \yii\bootstrap\Alert::widget([
+                            'options' => [
+                                'class' => 'alert-danger sx-form-message sx-error-message',
+                                'style' => 'display: none;',
+                            ],
+                            'closeButton' => false,
+                            'body' => '<div class="sx-body">Ok</div>',
+                        ])?>
+
+                    </div>
+                <? $form::end(); ?>
+        </div>
+
+
+
+<? endif; ?>
+```
+
+
+[Смотреть видео](https://youtu.be/S9lb61GS2zQ)
+
+## 3-й шаг оформления заказа (готовый заказ)
+
