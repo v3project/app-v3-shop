@@ -1,6 +1,6 @@
 {
     "name": "v3project/app-v3-shop",
-    "description": "Магазин v3project на базе SkeekS CMS",
+    "description": "Магазин V3Project на базе SkeekS CMS",
     "keywords": ["framework", "cms", "skeeks", "sx", "app", "yii2"],
     "homepage": "https://cms.skeeks.com",
     "type": "project",

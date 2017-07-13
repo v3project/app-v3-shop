@@ -1,12 +1,12 @@
-# SkeekS CMS проект с интеграцией v3project
+# SkeekS CMS проект с интеграцией V3Project
 
 ## Материалы для ознакомления
 
  * [https://cms.skeeks.com/](https://cms.skeeks.com/) - официальный сайт SkeekS CMS
  * [http://www.yiiframework.com/](http://www.yiiframework.com/) - официальный сайт Yii2 фреймоврка
- * [https://github.com/v3project/skeeks](https://github.com/v3project/skeeks) - официальный модуль интеграции с v3project
+ * [https://github.com/v3project/skeeks](https://github.com/v3project/skeeks) - официальный модуль интеграции с V3Project
  * [https://docs.cms.skeeks.com/en/latest/](https://docs.cms.skeeks.com/en/latest/) - документация по SkeekS CMS
- * [https://github.com/v3project/app-v3-shop](https://github.com/v3project/app-v3-shop) - официальный базовый проект на SkeekS CMS интегрированный с v3project
+ * [https://github.com/v3project/app-v3-shop](https://github.com/v3project/app-v3-shop) - официальный базовый проект на SkeekS CMS интегрированный с V3Project
 
 [Смотреть видео](https://youtu.be/sYAdOXiPWrg)
 

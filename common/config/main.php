@@ -49,7 +49,7 @@ $config = [
         ],
 
         'cmsAgent' => [
-            'onHitsEnabled'     => true
+            'onHitsEnabled'     => false
         ],
     ],
 ];
