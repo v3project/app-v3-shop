@@ -18,13 +18,9 @@ Shop V3Project on SkeekS CMS (Yii2)
 # Download latest version of composer
 curl -sS https://getcomposer.org/installer | COMPOSER_HOME=.composer php
 # Installing the base project SkeekS CMS
-COMPOSER_HOME=.composer php composer.phar create-project --no-install --prefer-dist v3project/app-v3-shop demo.ru
+COMPOSER_HOME=.composer php composer.phar create-project --prefer-dist --stability=dev v3project/app-v3-shop demo.ru
 # Going into the project folder
 cd demo.ru
-# Download latest version of composer in project
-curl -sS https://getcomposer.org/installer | COMPOSER_HOME=.composer php
-# Download dependency
-COMPOSER_HOME=.composer php composer.phar install -o
 # Run the command to initialize the project, the installer executable file and the necessary rights to the directory
 php yii cms/init
 
