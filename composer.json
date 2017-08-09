@@ -79,8 +79,8 @@
             "yii\\composer\\Installer::postInstall"
         ],
         "post-install-cmd": [
-            "skeeks\\cms\\console\\Composer::postInstall",
-            "yii\\composer\\Installer::postInstall"
+            "yii\\composer\\Installer::postInstall",
+            "skeeks\\cms\\console\\Composer::postInstall"
         ],
         "post-update-cmd": [
             "skeeks\\cms\\console\\Composer::postUpdate",
