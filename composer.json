@@ -79,8 +79,20 @@
             "php yii cms/cache/flush-all"
         ]
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "config": {
         "process-timeout": 1800,
-        "discard-changes": true
+        "discard-changes": true,
+        "fxp-asset":{
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        }
     }
 }
