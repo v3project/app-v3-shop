@@ -21,8 +21,6 @@ curl -sS https://getcomposer.org/installer | COMPOSER_HOME=.composer php
 COMPOSER_HOME=.composer php composer.phar create-project --prefer-dist --stability=dev v3project/app-v3-shop demo.ru
 # Going into the project folder
 cd demo.ru
-# Run the command to initialize the project, the installer executable file and the necessary rights to the directory
-php yii cms/init
 
 #Edit the file to access the database, it is located at common/config/db.php
 
