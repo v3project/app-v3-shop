@@ -75,8 +75,13 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "skeeks\\cms\\console\\Composer::postInstall"
+            "skeeks\\cms\\console\\Composer::postInstall",
+            "yii\\composer\\Installer::postInstall"
         ],
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject",
+            "yii\\composer\\Installer::postInstall"
+        ]
         "post-update-cmd": [
             "skeeks\\cms\\console\\Composer::postUpdate",
             "php yii cms/cache/flush-all",
