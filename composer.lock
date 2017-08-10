@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b0d9f58a25f3c519e2fc5d7c76284ca",
+    "content-hash": "ff7101fe9c4ecd241ce5e94e0d7b0c5b",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -2224,16 +2224,16 @@
         },
         {
             "name": "skeeks/cms",
-            "version": "dev-master",
+            "version": "4.0.0-alpha9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms.git",
-                "reference": "c3bf149db39523de40004b33927b1d7a7bc5c740"
+                "reference": "7e346f91a03472502b03125f385e558427a2b211"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms/zipball/c3bf149db39523de40004b33927b1d7a7bc5c740",
-                "reference": "c3bf149db39523de40004b33927b1d7a7bc5c740",
+                "url": "https://api.github.com/repos/skeeks-cms/cms/zipball/7e346f91a03472502b03125f385e558427a2b211",
+                "reference": "7e346f91a03472502b03125f385e558427a2b211",
                 "shasum": ""
             },
             "require": {
@@ -2298,7 +2298,7 @@
                 "skeeks cms",
                 "yii2"
             ],
-            "time": "2017-08-10T07:07:47+00:00"
+            "time": "2017-08-10T09:54:13+00:00"
         },
         {
             "name": "skeeks/cms-admin",
@@ -4805,25 +4805,64 @@
             "time": "2017-05-16T13:45:26+00:00"
         },
         {
-            "name": "v3toys/skeeks",
-            "version": "2.1.0",
+            "name": "v3project/yii2-helpers",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/v3project/skeeks.git",
-                "reference": "9e479a682e84c3557bc6be3e4c959f5cabb09a3f"
+                "url": "https://github.com/v3project/yii2-helpers.git",
+                "reference": "74e831fd1cf47ae8883a9d206101b96f8855aafb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v3project/skeeks/zipball/9e479a682e84c3557bc6be3e4c959f5cabb09a3f",
-                "reference": "9e479a682e84c3557bc6be3e4c959f5cabb09a3f",
+                "url": "https://api.github.com/repos/v3project/yii2-helpers/zipball/74e831fd1cf47ae8883a9d206101b96f8855aafb",
+                "reference": "74e831fd1cf47ae8883a9d206101b96f8855aafb",
                 "shasum": ""
             },
             "require": {
-                "skeeks/cms": "*",
-                "skeeks/cms-dadata-suggest": "*",
-                "skeeks/cms-ya-map": "*",
-                "v3toys/yii2-api": "*",
-                "v3toys/yii2-v3project-api": "*"
+                "php": ">=5.3.0",
+                "yiisoft/yii2": "^2.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "v3project\\helpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Kirill Znamenskiy",
+                    "email": "k.znamenskiy@gmail.com"
+                }
+            ],
+            "description": "Yii2 helpers",
+            "keywords": [
+                "helpers",
+                "yii2"
+            ],
+            "time": "2017-08-01T00:57:35+00:00"
+        },
+        {
+            "name": "v3toys/skeeks",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/v3project/skeeks.git",
+                "reference": "c3d98b0f4d9a1dba8c33d518bb08809c152465ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/v3project/skeeks/zipball/c3d98b0f4d9a1dba8c33d518bb08809c152465ba",
+                "reference": "c3d98b0f4d9a1dba8c33d518bb08809c152465ba",
+                "shasum": ""
+            },
+            "require": {
+                "skeeks/cms": "^4",
+                "skeeks/cms-dadata-suggest": "^1",
+                "skeeks/cms-ya-map": "^1",
+                "v3project/yii2-helpers": "^1",
+                "v3toys/yii2-api": "^1",
+                "v3toys/yii2-v3project-api": "^1"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -4851,7 +4890,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2017-06-20T19:59:24+00:00"
+            "time": "2017-07-31T23:30:30+00:00"
         },
         {
             "name": "v3toys/yii2-api",
@@ -5341,9 +5380,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "skeeks/cms": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

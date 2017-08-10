@@ -26,7 +26,7 @@ $config = [
             ],
             'request' => [
                 // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-                'cookieValidationKey' => '',
+                'cookieValidationKey' => 'A-1Lng7i0JtS9Lz4T6KFOuwkSbx1yLOP',
             ],
             'user' =>
                 [
@@ -48,6 +48,12 @@ $config = [
                                     ],
                             ]
                     ],
+            ],
+
+            'canurl' => [
+                'class' => 'v3project\helpers\CanUrl',
+                'schema' => 'http',
+                'host' => 'app-v3-shop.ru.vps69.s2.h.skeeks.com',
             ],
         ]
 ];
