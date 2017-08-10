@@ -14,6 +14,7 @@ Shop V3Project on SkeekS CMS (Yii2)
 
 ##Установка
 
+1. Выполнить команды
 ```bash
 # Download latest version of composer
 curl -sS https://getcomposer.org/installer | COMPOSER_HOME=.composer php
@@ -28,7 +29,7 @@ cd demo.ru
 php yii dbDumper/mysql/restore
 ```
 
-### Обновить настройки своего домена ``frontend/config/main.php``
+2. Обновить настройки своего домена ``frontend/config/main.php``
 
 ```php
 'canurl' => [
@@ -36,6 +37,20 @@ php yii dbDumper/mysql/restore
     'schema' => 'http', //Указать ваш протокол
     'host' => 'app-v3-shop.ru.vps69.s2.h.skeeks.com', //Указать ваш хост
 ],
+```
+
+3. Прописать ключ сервиса ``dadata.ru``
+    * Получить ключ
+    * Перейти: в систему управелния сайтом -> настройки -> Сервис подсказок dadata.ru -> Авторизационный токен
+
+## Обновление
+
+1. Выполнить команды
+```bash
+# Download latest version of composer
+COMPOSER_HOME=.composer php composer.phar self-update
+# Download dependency
+COMPOSER_HOME=.composer php composer.phar update -o
 ```
 
 

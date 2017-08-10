@@ -25,10 +25,12 @@ $config = [
                 'search'                                => 'cmsSearch/result',
                 [
                     'class'             => \skeeks\cms\components\urlRules\UrlRuleContentElement::className(),
+                    'suffix'            => '/',
                 ],
 
                 [
                     'class'             => \skeeks\cms\components\urlRules\UrlRuleTree::className(),
+                    'suffix'            => '/',
                 ]
             ]
         ],
