@@ -28,6 +28,15 @@ cd demo.ru
 php yii dbDumper/mysql/restore
 ```
 
+### Обновить настройки своего домена ``frontend/config/main.php``
+
+```php
+'canurl' => [
+    'class' => 'v3project\helpers\CanUrl',
+    'schema' => 'http', //Указать ваш протокол
+    'host' => 'app-v3-shop.ru.vps69.s2.h.skeeks.com', //Указать ваш хост
+],
+```
 
 
 
