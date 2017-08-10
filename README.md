@@ -3,18 +3,22 @@ Shop V3Project on SkeekS CMS (Yii2)
 
 [![skeeks!](https://cms.skeeks.com/uploads/all/35/fd/33/35fd33aa306823dbaf53a0142d43b3fa.png)](https://cms.skeeks.com)
 
-##Документация
+Документация
+-------------
   * [Документация с примерами + видео](http://app-v3-shop.readthedocs.io/ru/latest/)
   
-##Ссылки
+Ссылки
+------
 * [Web site (SkeekS CMS)](https://cms.skeeks.com)
 * [Docs (SkeekS CMS)](https://cms.skeeks.com/docs)
 * [Author](https://skeeks.com)
 * [ChangeLog](https://github.com/skeeks-cms/cms/blob/master/CHANGELOG.md)
 
-##Установка
+Установка
+---------
 
 1. Выполнить команды
+
 ```bash
 # Download latest version of composer
 curl -sS https://getcomposer.org/installer | COMPOSER_HOME=.composer php
@@ -43,7 +47,8 @@ php yii dbDumper/mysql/restore
     * Получить ключ
     * Перейти: в систему управелния сайтом -> настройки -> Сервис подсказок dadata.ru -> Авторизационный токен
 
-## Обновление
+Обновление
+-----------
 
 1. Выполнить команды
 ```bash
