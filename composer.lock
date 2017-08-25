@@ -153,7 +153,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/blueimp/jQuery-File-Upload/zipball/0b4af3c57b86b3c7147c4d7c75deb71a0133f0e3",
                 "reference": "0b4af3c57b86b3c7147c4d7c75deb71a0133f0e3",
-                "shasum": ""
+                "shasum": null
             },
             "require": {
                 "bower-asset/blueimp-canvas-to-blob": ">=2.1.1",
@@ -161,47 +161,9 @@
                 "bower-asset/blueimp-tmpl": ">=2.5.4",
                 "bower-asset/jquery": ">=1.6"
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "js/jquery.fileupload.js"
-                ],
-                "bower-asset-ignore": [
-                    "/*.*",
-                    "/cors",
-                    "css/demo-ie8.css",
-                    "css/demo.css",
-                    "css/style.css",
-                    "js/app.js",
-                    "js/main.js",
-                    "server",
-                    "test"
-                ]
-            },
+            "type": "bower-asset",
             "license": [
                 "MIT"
-            ],
-            "description": "File Upload widget with multiple file selection, drag&amp;drop support, progress bar, validation and preview images.",
-            "keywords": [
-                "bootstrap",
-                "chunk",
-                "cross-domain",
-                "cross-site",
-                "drag",
-                "drop",
-                "file",
-                "gae",
-                "go",
-                "jquery",
-                "multiple",
-                "php",
-                "preview",
-                "progress",
-                "python",
-                "resume",
-                "selection",
-                "upload",
-                "widget"
             ]
         },
         {
@@ -216,9 +178,9 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/blueimp/Gallery/zipball/8336bb5934cb623608808601129db3fbf9201a09",
                 "reference": "8336bb5934cb623608808601129db3fbf9201a09",
-                "shasum": ""
+                "shasum": null
             },
-            "type": "bower-asset-library"
+            "type": "bower-asset"
         },
         {
             "name": "bower-asset/blueimp-load-image",
@@ -264,41 +226,14 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/twbs/bootstrap/zipball/0b9c4a4007c44201dce9a6cc1a38407005c26c86",
                 "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86",
-                "shasum": ""
+                "shasum": null
             },
             "require": {
                 "bower-asset/jquery": ">=1.9.1,<4.0"
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "less/bootstrap.less",
-                    "dist/js/bootstrap.js"
-                ],
-                "bower-asset-ignore": [
-                    "/.*",
-                    "_config.yml",
-                    "CNAME",
-                    "composer.json",
-                    "CONTRIBUTING.md",
-                    "docs",
-                    "js/tests",
-                    "test-infra"
-                ]
-            },
+            "type": "bower-asset",
             "license": [
                 "MIT"
-            ],
-            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-            "keywords": [
-                "css",
-                "framework",
-                "front-end",
-                "js",
-                "less",
-                "mobile-first",
-                "responsive",
-                "web"
             ]
         },
         {
@@ -329,30 +264,14 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/fancyapps/fancybox/zipball/3607c5562130ff4eb4ced258e30de6613dc7c2c1",
                 "reference": "3607c5562130ff4eb4ced258e30de6613dc7c2c1",
-                "shasum": ""
+                "shasum": null
             },
             "require": {
                 "bower-asset/jquery": ">=1.9.0"
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "dist/jquery.fancybox.min.css",
-                    "dist/jquery.fancybox.min.js"
-                ]
-            },
+            "type": "bower-asset",
             "license": [
                 "GPL-3.0"
-            ],
-            "description": "Touch enabled, responsive and fully customizable jQuery lightbox script",
-            "keywords": [
-                "fancybox",
-                "gallery",
-                "jQuery",
-                "lightbox",
-                "plugin",
-                "responsive",
-                "touch"
             ]
         },
         {
@@ -367,23 +286,11 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/c0185ab7c75aab88762c5aae780b9d83b80eda72",
                 "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72",
-                "shasum": ""
+                "shasum": null
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "dist/jquery.js",
-                "bower-asset-ignore": [
-                    "package.json"
-                ]
-            },
+            "type": "bower-asset",
             "license": [
                 "MIT"
-            ],
-            "keywords": [
-                "browser",
-                "javascript",
-                "jquery",
-                "library"
             ]
         },
         {
@@ -398,18 +305,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/components/jqueryui/zipball/c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
                 "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
-                "shasum": ""
+                "shasum": null
             },
             "require": {
                 "bower-asset/jquery": ">=1.6"
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "jquery-ui.js"
-                ],
-                "bower-asset-ignore": []
-            }
+            "type": "bower-asset"
         },
         {
             "name": "bower-asset/jquery.inputmask",
@@ -423,51 +324,14 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/9835731cb78cac749734d94a1cb5bd70da4d3b10",
                 "reference": "9835731cb78cac749734d94a1cb5bd70da4d3b10",
-                "shasum": ""
+                "shasum": null
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "./dist/inputmask/inputmask.js",
-                    "./dist/inputmask/inputmask.extensions.js",
-                    "./dist/inputmask/inputmask.date.extensions.js",
-                    "./dist/inputmask/inputmask.numeric.extensions.js",
-                    "./dist/inputmask/inputmask.phone.extensions.js",
-                    "./dist/inputmask/jquery.inputmask.js",
-                    "./dist/inputmask/global/document.js",
-                    "./dist/inputmask/global/window.js",
-                    "./dist/inputmask/phone-codes/phone.js",
-                    "./dist/inputmask/phone-codes/phone-be.js",
-                    "./dist/inputmask/phone-codes/phone-nl.js",
-                    "./dist/inputmask/phone-codes/phone-ru.js",
-                    "./dist/inputmask/phone-codes/phone-uk.js",
-                    "./dist/inputmask/dependencyLibs/inputmask.dependencyLib.jqlite.js",
-                    "./dist/inputmask/dependencyLibs/inputmask.dependencyLib.jquery.js",
-                    "./dist/inputmask/dependencyLibs/inputmask.dependencyLib.js",
-                    "./dist/inputmask/bindings/inputmask.binding.js"
-                ],
-                "bower-asset-ignore": [
-                    "**/*",
-                    "!dist/*",
-                    "!dist/inputmask/*",
-                    "!dist/min/*",
-                    "!dist/min/inputmask/*"
-                ]
-            },
+            "type": "bower-asset",
             "license": [
                 "http://opensource.org/licenses/mit-license.php"
-            ],
-            "description": "Inputmask is a javascript library which creates an input mask.  Inputmask can run against vanilla javascript, jQuery and jqlite.",
-            "keywords": [
-                "form",
-                "input",
-                "inputmask",
-                "jquery",
-                "mask",
-                "plugins"
             ]
         },
         {
@@ -482,21 +346,9 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/bestiejs/punycode.js/zipball/38c8d3131a82567bfef18da09f7f4db68c84f8a3",
                 "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3",
-                "shasum": ""
+                "shasum": null
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "punycode.js",
-                "bower-asset-ignore": [
-                    "coverage",
-                    "tests",
-                    ".*",
-                    "component.json",
-                    "Gruntfile.js",
-                    "node_modules",
-                    "package.json"
-                ]
-            }
+            "type": "bower-asset"
         },
         {
             "name": "bower-asset/underscore",
@@ -510,32 +362,9 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/jashkenas/underscore/zipball/e4743ab712b8ab42ad4ccb48b155034d02394e4d",
                 "reference": "e4743ab712b8ab42ad4ccb48b155034d02394e4d",
-                "shasum": ""
+                "shasum": null
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "underscore.js",
-                "bower-asset-ignore": [
-                    "docs",
-                    "test",
-                    "*.yml",
-                    "CNAME",
-                    "index.html",
-                    "favicon.ico",
-                    "CONTRIBUTING.md",
-                    ".*",
-                    "component.json",
-                    "package.json",
-                    "karma.*"
-                ]
-            },
-            "keywords": [
-                "browser",
-                "client",
-                "functional",
-                "server",
-                "util"
-            ]
+            "type": "bower-asset"
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -549,24 +378,12 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/60728da6ade5879e807a49ce59ef9a72039b8978",
                 "reference": "60728da6ade5879e807a49ce59ef9a72039b8978",
-                "shasum": ""
+                "shasum": null
             },
             "require": {
                 "bower-asset/jquery": ">=1.8"
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "./jquery.pjax.js",
-                "bower-asset-ignore": [
-                    ".travis.yml",
-                    "Gemfile",
-                    "Gemfile.lock",
-                    "CONTRIBUTING.md",
-                    "vendor/",
-                    "script/",
-                    "test/"
-                ]
-            },
+            "type": "bower-asset",
             "license": [
                 "MIT"
             ]
@@ -2224,16 +2041,16 @@
         },
         {
             "name": "skeeks/cms",
-            "version": "4.0.0-alpha11",
+            "version": "4.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms.git",
-                "reference": "2baf8fe88cd5d35f7e29fbe6a7de180f4013f825"
+                "reference": "f1564b8675e8f7b9361f2c257b68ff0798aa92e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms/zipball/2baf8fe88cd5d35f7e29fbe6a7de180f4013f825",
-                "reference": "2baf8fe88cd5d35f7e29fbe6a7de180f4013f825",
+                "url": "https://api.github.com/repos/skeeks-cms/cms/zipball/f1564b8675e8f7b9361f2c257b68ff0798aa92e3",
+                "reference": "f1564b8675e8f7b9361f2c257b68ff0798aa92e3",
                 "shasum": ""
             },
             "require": {
@@ -2248,7 +2065,7 @@
                 "paulzi/yii2-auto-tree": "^1.0",
                 "paulzi/yii2-materialized-path": "^2.0",
                 "php": ">=5.5.0",
-                "skeeks/cms-admin": "^2",
+                "skeeks/cms-admin": "dev-master",
                 "skeeks/cms-backend": "^1",
                 "skeeks/cms-backend-admin": "^1",
                 "skeeks/cms-marketplace": "^1",
@@ -2298,20 +2115,20 @@
                 "skeeks cms",
                 "yii2"
             ],
-            "time": "2017-08-10T10:54:49+00:00"
+            "time": "2017-08-25T21:45:54+00:00"
         },
         {
             "name": "skeeks/cms-admin",
-            "version": "2.0.0-alpha3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-admin.git",
-                "reference": "cf99fcf2004b5fe7fcfcb49d38113aa59dacd6dd"
+                "reference": "e7e6109fd4598dbd31a69b6ff43ef4c48860ca1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-admin/zipball/cf99fcf2004b5fe7fcfcb49d38113aa59dacd6dd",
-                "reference": "cf99fcf2004b5fe7fcfcb49d38113aa59dacd6dd",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-admin/zipball/e7e6109fd4598dbd31a69b6ff43ef4c48860ca1e",
+                "reference": "e7e6109fd4598dbd31a69b6ff43ef4c48860ca1e",
                 "shasum": ""
             },
             "require": {
@@ -2342,7 +2159,7 @@
                 "skeeks",
                 "yii"
             ],
-            "time": "2017-06-29T18:56:07+00:00"
+            "time": "2017-08-25T21:35:53+00:00"
         },
         {
             "name": "skeeks/cms-agent",
@@ -2438,16 +2255,16 @@
         },
         {
             "name": "skeeks/cms-backend",
-            "version": "1.0.0-alpha4",
+            "version": "1.0.0-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-backend.git",
-                "reference": "c38d379148ad911c7a9c41d87f5a8255a35a8bf1"
+                "reference": "b455b08e6f0f321593cafd93c9feb9b6a13c03df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-backend/zipball/c38d379148ad911c7a9c41d87f5a8255a35a8bf1",
-                "reference": "c38d379148ad911c7a9c41d87f5a8255a35a8bf1",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-backend/zipball/b455b08e6f0f321593cafd93c9feb9b6a13c03df",
+                "reference": "b455b08e6f0f321593cafd93c9feb9b6a13c03df",
                 "shasum": ""
             },
             "require": {
@@ -2477,20 +2294,20 @@
                 "skeeks",
                 "yii"
             ],
-            "time": "2017-08-10T10:58:28+00:00"
+            "time": "2017-08-25T21:35:17+00:00"
         },
         {
             "name": "skeeks/cms-backend-admin",
-            "version": "1.0.0-alpha3",
+            "version": "1.0.0-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-backend-admin.git",
-                "reference": "fa078be6a123ef2a3f2b6d46a3586597b91fb987"
+                "reference": "2a5b482c6bdde65e344f784ede39bad7f3364d1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-backend-admin/zipball/fa078be6a123ef2a3f2b6d46a3586597b91fb987",
-                "reference": "fa078be6a123ef2a3f2b6d46a3586597b91fb987",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-backend-admin/zipball/2a5b482c6bdde65e344f784ede39bad7f3364d1d",
+                "reference": "2a5b482c6bdde65e344f784ede39bad7f3364d1d",
                 "shasum": ""
             },
             "require": {
@@ -2521,7 +2338,7 @@
                 "skeeks",
                 "yii"
             ],
-            "time": "2017-06-22T08:52:05+00:00"
+            "time": "2017-08-25T21:36:17+00:00"
         },
         {
             "name": "skeeks/cms-dadata-suggest",
@@ -3066,16 +2883,16 @@
         },
         {
             "name": "skeeks/cms-log-db-target",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-log-db-target.git",
-                "reference": "b0cf145003c9e0f80253707120c28ec87afaea0e"
+                "reference": "55892dc2614e0113d6f525725cc247be39da3453"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-log-db-target/zipball/b0cf145003c9e0f80253707120c28ec87afaea0e",
-                "reference": "b0cf145003c9e0f80253707120c28ec87afaea0e",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-log-db-target/zipball/55892dc2614e0113d6f525725cc247be39da3453",
+                "reference": "55892dc2614e0113d6f525725cc247be39da3453",
                 "shasum": ""
             },
             "require": {
@@ -3110,7 +2927,7 @@
                 "target",
                 "yii2"
             ],
-            "time": "2017-06-18T17:24:44+00:00"
+            "time": "2017-08-18T09:35:05+00:00"
         },
         {
             "name": "skeeks/cms-mailer",
@@ -3250,16 +3067,16 @@
         },
         {
             "name": "skeeks/cms-module-form2",
-            "version": "2.4.0.2",
+            "version": "2.4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-module-form2.git",
-                "reference": "890d8e187791c9fa2d74c9e45712daae86770b03"
+                "reference": "e0d8d07de6d6748578c23c965d1f5b8586663ec2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-module-form2/zipball/890d8e187791c9fa2d74c9e45712daae86770b03",
-                "reference": "890d8e187791c9fa2d74c9e45712daae86770b03",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-module-form2/zipball/e0d8d07de6d6748578c23c965d1f5b8586663ec2",
+                "reference": "e0d8d07de6d6748578c23c965d1f5b8586663ec2",
                 "shasum": ""
             },
             "require": {
@@ -3291,7 +3108,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2017-07-26T19:02:42+00:00"
+            "time": "2017-08-14T20:41:59+00:00"
         },
         {
             "name": "skeeks/cms-module-money",
@@ -3564,16 +3381,16 @@
         },
         {
             "name": "skeeks/cms-seo",
-            "version": "2.0.0",
+            "version": "2.0.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-seo.git",
-                "reference": "354bb538d1dc48585fb5dd572c88356fd08384cb"
+                "reference": "d1cb0fddcbb8732a78d17d0f6e2aff9848b7f348"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-seo/zipball/354bb538d1dc48585fb5dd572c88356fd08384cb",
-                "reference": "354bb538d1dc48585fb5dd572c88356fd08384cb",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-seo/zipball/d1cb0fddcbb8732a78d17d0f6e2aff9848b7f348",
+                "reference": "d1cb0fddcbb8732a78d17d0f6e2aff9848b7f348",
                 "shasum": ""
             },
             "require": {
@@ -3604,20 +3421,20 @@
                 "skeeks",
                 "yii"
             ],
-            "time": "2017-07-27T22:47:34+00:00"
+            "time": "2017-08-17T22:34:31+00:00"
         },
         {
             "name": "skeeks/cms-shop",
-            "version": "2.0.0-alpha5",
+            "version": "2.0.0-alpha7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-shop.git",
-                "reference": "7adcc95f604471aa4f816edfb1c2df6927f9883e"
+                "reference": "1021d5bd46ba6133850b0d98dd348a876206ba53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-shop/zipball/7adcc95f604471aa4f816edfb1c2df6927f9883e",
-                "reference": "7adcc95f604471aa4f816edfb1c2df6927f9883e",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-shop/zipball/1021d5bd46ba6133850b0d98dd348a876206ba53",
+                "reference": "1021d5bd46ba6133850b0d98dd348a876206ba53",
                 "shasum": ""
             },
             "require": {
@@ -3652,7 +3469,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2017-07-03T13:37:59+00:00"
+            "time": "2017-08-25T21:34:49+00:00"
         },
         {
             "name": "skeeks/cms-shop-cart-items-widget",
@@ -4060,16 +3877,16 @@
         },
         {
             "name": "skeeks/yii2-ajax-file-upload",
-            "version": "1.0.0-alpha3",
+            "version": "1.0.0-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-semenov/yii2-ajax-file-upload.git",
-                "reference": "124ac85e513b5bdf28ece4c28c9afd665d2e6559"
+                "reference": "bc335bb3c0079ad9bf0ac3cc8e4522284ddd8d10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-semenov/yii2-ajax-file-upload/zipball/124ac85e513b5bdf28ece4c28c9afd665d2e6559",
-                "reference": "124ac85e513b5bdf28ece4c28c9afd665d2e6559",
+                "url": "https://api.github.com/repos/skeeks-semenov/yii2-ajax-file-upload/zipball/bc335bb3c0079ad9bf0ac3cc8e4522284ddd8d10",
+                "reference": "bc335bb3c0079ad9bf0ac3cc8e4522284ddd8d10",
                 "shasum": ""
             },
             "require": {
@@ -4103,7 +3920,7 @@
                 "skeeks",
                 "yii"
             ],
-            "time": "2017-06-21T16:25:37+00:00"
+            "time": "2017-08-15T22:03:42+00:00"
         },
         {
             "name": "skeeks/yii2-assets-auto-compress",
@@ -4806,16 +4623,16 @@
         },
         {
             "name": "v3project/yii2-helpers",
-            "version": "1.0.6",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/v3project/yii2-helpers.git",
-                "reference": "74e831fd1cf47ae8883a9d206101b96f8855aafb"
+                "reference": "e166d4f4042c80d20ed57a7da40700329b25ee12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v3project/yii2-helpers/zipball/74e831fd1cf47ae8883a9d206101b96f8855aafb",
-                "reference": "74e831fd1cf47ae8883a9d206101b96f8855aafb",
+                "url": "https://api.github.com/repos/v3project/yii2-helpers/zipball/e166d4f4042c80d20ed57a7da40700329b25ee12",
+                "reference": "e166d4f4042c80d20ed57a7da40700329b25ee12",
                 "shasum": ""
             },
             "require": {
@@ -4840,20 +4657,20 @@
                 "helpers",
                 "yii2"
             ],
-            "time": "2017-08-01T00:57:35+00:00"
+            "time": "2017-08-21T09:26:33+00:00"
         },
         {
             "name": "v3toys/skeeks",
-            "version": "2.1.2",
+            "version": "2.1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/v3project/skeeks.git",
-                "reference": "c3d98b0f4d9a1dba8c33d518bb08809c152465ba"
+                "reference": "f45a5cae132d2a943d2ba20a3c17d7ab2fe72988"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v3project/skeeks/zipball/c3d98b0f4d9a1dba8c33d518bb08809c152465ba",
-                "reference": "c3d98b0f4d9a1dba8c33d518bb08809c152465ba",
+                "url": "https://api.github.com/repos/v3project/skeeks/zipball/f45a5cae132d2a943d2ba20a3c17d7ab2fe72988",
+                "reference": "f45a5cae132d2a943d2ba20a3c17d7ab2fe72988",
                 "shasum": ""
             },
             "require": {
@@ -4890,7 +4707,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2017-07-31T23:30:30+00:00"
+            "time": "2017-08-16T14:42:47+00:00"
         },
         {
             "name": "v3toys/yii2-api",
