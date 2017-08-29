@@ -15,7 +15,11 @@ use \skeeks\cms\helpers\UrlHelper;
 $this->title = $title;
 \Yii::$app->breadcrumbs->createBase()->append($this->title);
 
-\yii\authclient\widgets\AuthChoiceAsset::register($this);
+if (isset(\Yii::$app->authClientCollection))
+{
+    \yii\authclient\widgets\AuthChoiceAsset::register($this);
+}
+//
 
 $this->registerCss(<<<CSS
     div.auth-clients

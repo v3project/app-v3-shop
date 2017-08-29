@@ -36,7 +36,7 @@ use \skeeks\cms\helpers\UrlHelper;
         <?= Html::a('Забыли пароль?', UrlHelper::constructCurrent()->setRoute('cms/auth/forget')->toString()) ?> |
         <?= Html::a('Регистрация', UrlHelper::constructCurrent()->setRoute('cms/auth/register')->toString()) ?>
 
-        <? if (\Yii::$app->authClientCollection->clients) : ?>
+        <? if (isset(\Yii::$app->authClientCollection) && \Yii::$app->authClientCollection->clients) : ?>
             <hr />
             <?= yii\authclient\widgets\AuthChoice::widget([
                  'baseAuthUrl'  => ['/cms/auth/client'],
