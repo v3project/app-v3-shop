@@ -3,6 +3,10 @@ Shop V3Project on SkeekS CMS (Yii2)
 
 [![skeeks!](https://cms.skeeks.com/uploads/all/35/fd/33/35fd33aa306823dbaf53a0142d43b3fa.png)](https://cms.skeeks.com)
 
+[![Latest Stable Version](https://poser.pugx.org/v3project/app-v3-shop/v/stable.png)](https://packagist.org/packages/v3project/app-v3-shop)
+[![Total Downloads](https://poser.pugx.org/v3project/app-v3-shop/downloads.png)](https://packagist.org/packages/v3project/app-v3-shop)
+[![Dependency Status](https://www.versioneye.com/php/v3project:app-v3-shop/dev-master/badge.png)](https://www.versioneye.com/php/v3project:app-v3-shop/dev-master)
+
 Документация
 -------------
   * [Документация с примерами + видео](http://app-v3-shop.readthedocs.io/ru/latest/)
