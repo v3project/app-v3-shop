@@ -53,6 +53,11 @@ $config = [
         'cmsAgent' => [
             'onHitsEnabled'     => false
         ],
+
+        'money' =>
+        [
+            'class' => 'common\components\CommonMoney',
+        ],
     ],
 ];
 
