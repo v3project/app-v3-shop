@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "70411127ddef384fcaf842689519208a",
+    "content-hash": "0e299565ad8cb9b4f649544da3586f7c",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -4770,16 +4770,16 @@
             "time": "2017-05-16T13:45:26+00:00"
         },
         {
-            "name": "v3project/core-app",
+            "name": "v3project/aff-core-app",
             "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/v3project/core-app.git",
+                "url": "https://github.com/v3project/aff-core-app.git",
                 "reference": "2ed84f06c7662d0e659ec10b25e26a18498ba123"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v3project/core-app/zipball/2ed84f06c7662d0e659ec10b25e26a18498ba123",
+                "url": "https://api.github.com/repos/v3project/aff-core-app/zipball/2ed84f06c7662d0e659ec10b25e26a18498ba123",
                 "reference": "2ed84f06c7662d0e659ec10b25e26a18498ba123",
                 "shasum": ""
             },

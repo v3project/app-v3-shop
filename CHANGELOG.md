@@ -1,6 +1,10 @@
 CHANGELOG
 ==============
 
+1.2.0.1
+-----------------
+  * Renamed v3project/aff-core-app
+  
 1.2.0
 -----------------
   * Used v3project/core-app
