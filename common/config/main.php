@@ -9,9 +9,6 @@
  * @since 1.0.0
  */
 $config = [
-    'name' => 'SkeekS CMS',
-    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-
     'on beforeRequest' => function ($event) {
         \Yii::setAlias('template', '@app/views');
     },
