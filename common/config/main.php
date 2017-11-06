@@ -35,23 +35,9 @@ $config = [
             ]
         ],
 
-
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
-        ],
-
-        'assetManager' =>
-        [
-            'linkAssets'        => false,
-        ],
-
         'settings' =>
         [
             'class'        => 'common\components\SettingsComponent',
-        ],
-
-        'cmsAgent' => [
-            'onHitsEnabled'     => false
         ],
 
         'money' =>
