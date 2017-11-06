@@ -70,7 +70,7 @@ COMPOSER_HOME=.composer php composer.phar update -o
 
 ___
 
-> [![skeeks!](https://gravatar.com/userimage/74431132/13d04d83218593564422770b616e5622.jpg)](https://skeeks.com)  
-<i>SkeekS CMS (Yii2) — quickly, easily and effectively!</i>  
+> [![skeeks!](https://skeeks.com/img/logo/logo-no-title-80px.png)](https://skeeks.com)  
+<i>SkeekS CMS (Yii2) — fast, simple, effective!</i>  
 [skeeks.com](https://skeeks.com) | [cms.skeeks.com](https://cms.skeeks.com)
 
