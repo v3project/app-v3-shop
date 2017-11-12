@@ -61,6 +61,32 @@
                 "frontend/runtime/cache",
                 "frontend/web/assets"
             ]
+        },
+        "config-plugin": {
+            "web": [
+                "common/config/main.php",
+                "frontend/config/main.php"
+            ],
+            "web-dev": [
+                "$web",
+                "?frontend/config/env/dev/main.php"
+            ],
+            "web-prod": [
+                "$web",
+                "?frontend/config/env/prod/main.php"
+            ],
+            "console": [
+                "common/config/main.php",
+                "console/config/main.php"
+            ],
+            "console-dev": [
+                "$console",
+                "?console/config/env/dev/main.php"
+            ],
+            "console-prod": [
+                "$console",
+                "?console/config/env/prod/main.php"
+            ]
         }
     },
     "repositories": [
