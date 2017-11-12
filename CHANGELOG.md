@@ -1,7 +1,7 @@
 CHANGELOG
 ==============
 
-2.0.0-alpha
+2.0.0
 -----------------
   * "v3project/aff-core-app": "~2.0.0"
   

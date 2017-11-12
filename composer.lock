@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "553636e4f58de8c0d9539018bb825939",
+    "content-hash": "98d3d621fcd2094de0523693cc67c348",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -2718,26 +2718,38 @@
         },
         {
             "name": "skeeks/cms-dadata-suggest",
-            "version": "1.0.0-rc3",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-dadata-suggest.git",
-                "reference": "5ddc8f765b3be68a5fcd1e8947265b6f26c40a7c"
+                "reference": "1420405d534c91376170b6253dc47a2496e65ad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-dadata-suggest/zipball/5ddc8f765b3be68a5fcd1e8947265b6f26c40a7c",
-                "reference": "5ddc8f765b3be68a5fcd1e8947265b6f26c40a7c",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-dadata-suggest/zipball/1420405d534c91376170b6253dc47a2496e65ad3",
+                "reference": "1420405d534c91376170b6253dc47a2496e65ad3",
                 "shasum": ""
             },
             "require": {
-                "skeeks/cms": "*",
+                "skeeks/cms": "~5.0.0 || dev-master",
                 "skeeks/yii2-dadata-suggest-api": "*"
             },
             "type": "yii2-extension",
+            "extra": {
+                "config-plugin": {
+                    "web": [
+                        "src/config/common.php",
+                        "src/config/web.php"
+                    ],
+                    "console": [
+                        "src/config/common.php",
+                        "src/config/console.php"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
-                    "skeeks\\cms\\dadataSuggest\\": ""
+                    "skeeks\\cms\\dadataSuggest\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2751,7 +2763,7 @@
                 }
             ],
             "description": "Работа с подсказками dadata.ru for SkeekS CMS",
-            "homepage": "http://cms.skeeks.com/",
+            "homepage": "https://cms.skeeks.com/",
             "keywords": [
                 "DaData",
                 "component",
@@ -2760,7 +2772,7 @@
                 "suggest",
                 "yii"
             ],
-            "time": "2016-10-23T13:45:44+00:00"
+            "time": "2017-11-12T11:53:42+00:00"
         },
         {
             "name": "skeeks/cms-db-dumper",
@@ -3936,16 +3948,16 @@
         },
         {
             "name": "skeeks/cms-shop",
-            "version": "2.0.1-alpha4",
+            "version": "2.0.1-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-shop.git",
-                "reference": "8cfe3a3363efae57e619f77d9d955b47a780402d"
+                "reference": "f06209d511006425814c3160996ab373cba0119e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-shop/zipball/8cfe3a3363efae57e619f77d9d955b47a780402d",
-                "reference": "8cfe3a3363efae57e619f77d9d955b47a780402d",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-shop/zipball/f06209d511006425814c3160996ab373cba0119e",
+                "reference": "f06209d511006425814c3160996ab373cba0119e",
                 "shasum": ""
             },
             "require": {
@@ -3993,7 +4005,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2017-11-10T21:05:44+00:00"
+            "time": "2017-11-12T12:53:31+00:00"
         },
         {
             "name": "skeeks/cms-shop-cart-items-widget",
@@ -4174,6 +4186,62 @@
                 "yii2"
             ],
             "time": "2017-08-31T19:42:29+00:00"
+        },
+        {
+            "name": "skeeks/cms-tree-redirect",
+            "version": "1.0.0-alpha",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skeeks-semenov/cms-tree-redirect.git",
+                "reference": "f44d397bf81eb56dc18f0d40ffd7646159972895"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skeeks-semenov/cms-tree-redirect/zipball/f44d397bf81eb56dc18f0d40ffd7646159972895",
+                "reference": "f44d397bf81eb56dc18f0d40ffd7646159972895",
+                "shasum": ""
+            },
+            "require": {
+                "skeeks/cms": "~5.0 || dev-master"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "config-plugin": {
+                    "console": [
+                        "src/config/common.php",
+                        "src/config/console.php"
+                    ],
+                    "web": [
+                        "src/config/common.php",
+                        "src/config/web.php"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "skeeks\\cms\\treeredirect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Semenov Alexander",
+                    "email": "semenov@skeeks.com"
+                }
+            ],
+            "description": "Agents for SkeekS CMS",
+            "homepage": "https://cms.skeeks.com/",
+            "keywords": [
+                "Agent",
+                "component",
+                "framework",
+                "skeeks",
+                "yii"
+            ],
+            "time": "2017-11-12T22:49:39+00:00"
         },
         {
             "name": "skeeks/cms-vk-comments",
@@ -5212,27 +5280,28 @@
         },
         {
             "name": "v3project/aff-core-app",
-            "version": "2.0.0-alpha",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/v3project/aff-core-app.git",
-                "reference": "ae880235025e4c87a4aacbcb21421c007faa4406"
+                "reference": "551c4ed87e90043a2d04652b2dfff207b7edd563"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v3project/aff-core-app/zipball/ae880235025e4c87a4aacbcb21421c007faa4406",
-                "reference": "ae880235025e4c87a4aacbcb21421c007faa4406",
+                "url": "https://api.github.com/repos/v3project/aff-core-app/zipball/551c4ed87e90043a2d04652b2dfff207b7edd563",
+                "reference": "551c4ed87e90043a2d04652b2dfff207b7edd563",
                 "shasum": ""
             },
             "require": {
                 "skeeks/cms-basic-shop": "~1.0.0",
                 "skeeks/cms-external-links": "~1.2.0",
                 "skeeks/cms-instagram-widget": "~1.1.0",
+                "skeeks/cms-tree-redirect": "~1.0.0",
                 "skeeks/cms-vk-comments": "~1.2.0",
                 "skeeks/cms-vk-community": "~1.2.0",
                 "skeeks/cms-ya-share": "~2.0.0",
                 "skeeks/yii2-template-smarty-asset": "1.1.5",
-                "v3toys/skeeks": "~2.1.2",
+                "v3toys/skeeks": "~2.1.5",
                 "yiisoft/yii2-debug": "*"
             },
             "type": "yii2-extension",
@@ -5267,7 +5336,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2017-11-11T21:36:33+00:00"
+            "time": "2017-11-12T22:57:14+00:00"
         },
         {
             "name": "v3project/yii2-helpers",
@@ -5309,25 +5378,25 @@
         },
         {
             "name": "v3toys/skeeks",
-            "version": "2.1.3",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/v3project/skeeks.git",
-                "reference": "aa3100696c315c517c5355b746e2c92e0583efa7"
+                "reference": "baed886a75e8c6244a08611f81e164f80b503f8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v3project/skeeks/zipball/aa3100696c315c517c5355b746e2c92e0583efa7",
-                "reference": "aa3100696c315c517c5355b746e2c92e0583efa7",
+                "url": "https://api.github.com/repos/v3project/skeeks/zipball/baed886a75e8c6244a08611f81e164f80b503f8e",
+                "reference": "baed886a75e8c6244a08611f81e164f80b503f8e",
                 "shasum": ""
             },
             "require": {
                 "skeeks/cms": "~5.0.0 || dev-master",
-                "skeeks/cms-dadata-suggest": "^1",
-                "skeeks/cms-ya-map": "^1",
-                "v3project/yii2-helpers": "^1",
-                "v3toys/yii2-api": "^1",
-                "v3toys/yii2-v3project-api": "^1"
+                "skeeks/cms-dadata-suggest": "~1.1.2",
+                "skeeks/cms-ya-map": "~1.1.0",
+                "v3project/yii2-helpers": "~1.0.8",
+                "v3toys/yii2-api": "~1.0.1",
+                "v3toys/yii2-v3project-api": "~1.0.1"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -5355,7 +5424,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2017-11-11T21:59:53+00:00"
+            "time": "2017-11-12T11:55:16+00:00"
         },
         {
             "name": "v3toys/yii2-api",
