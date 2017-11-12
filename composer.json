@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "v3project/aff-core-app": "^1.0"
+        "v3project/aff-core-app": "~2.0.0"
     },
     "minimum-stability" : "dev",
     "prefer-stable" : true,
@@ -31,7 +31,6 @@
             "skeeks\\cms\\composer\\Installer::postInstall"
         ],
         "post-update-cmd": [
-            "skeeks\\cms\\composer\\Installer::postUpdate",
             "skeeks\\cms\\composer\\Installer::clearDirs",
             "php yii cms/migrate --interactive=0",
             "skeeks\\cms\\composer\\Installer::clearDirs",

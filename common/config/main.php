@@ -15,7 +15,7 @@ $config = [
 
     'components'    =>
     [
-        'db' => include_once __DIR__ . '/db.php',
+        'db' => require __DIR__ . '/db.php',
 
         'urlManager' => [
             'rules' => [
