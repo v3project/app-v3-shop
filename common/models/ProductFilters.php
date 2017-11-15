@@ -5,6 +5,7 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 08.04.2016
  */
+
 namespace common\models;
 
 use yii\base\Model;
@@ -43,10 +44,8 @@ class ProductFilters extends Model
          */
 
 
-        if ($this->sort)
-        {
-            switch($this->sort)
-            {
+        if ($this->sort) {
+            switch ($this->sort) {
                 case ('-sort'):
                     $query->orderBy(['priority' => SORT_DESC]);
                     break;
@@ -64,23 +63,22 @@ class ProductFilters extends Model
                     $query->orderBy(['baseProductPrice.price' => SORT_ASC]);*/
 
                     $joined = [];
-                    if ($query->join)
-                    {
-                        $joined = (array) ArrayHelper::map($query->join, 1, 1);
+                    if ($query->join) {
+                        $joined = (array)ArrayHelper::map($query->join, 1, 1);
                     }
 
 
-                    if (ArrayHelper::getValue($joined, 'shop_product_price'))
-                    {
+                    if (ArrayHelper::getValue($joined, 'shop_product_price')) {
                         $query->orderBy(['shop_product_price.price' => SORT_ASC]);
-                    } else if (ArrayHelper::getValue($joined, 'shop_product'))
-                    {
-                        $query->leftJoin('shop_product_price', '`shop_product_price`.`product_id` = `shop_product`.`id`');
-                        $query->orderBy(['shop_product_price.price' => SORT_ASC]);
-                    } else
-                    {
-                        $query->joinWith('shopProduct.baseProductPrice as basePrice');
-                        $query->orderBy(['basePrice.price' => SORT_ASC]);
+                    } else {
+                        if (ArrayHelper::getValue($joined, 'shop_product')) {
+                            $query->leftJoin('shop_product_price',
+                                '`shop_product_price`.`product_id` = `shop_product`.`id`');
+                            $query->orderBy(['shop_product_price.price' => SORT_ASC]);
+                        } else {
+                            $query->joinWith('shopProduct.baseProductPrice as basePrice');
+                            $query->orderBy(['basePrice.price' => SORT_ASC]);
+                        }
                     }
 
 
@@ -90,22 +88,21 @@ class ProductFilters extends Model
                     /*$query->joinWith('shopProduct.baseProductPrice as basePrice');
                     $query->orderBy(['baseProductPrice.price' => SORT_DESC]);*/
                     $joined = [];
-                    if ($query->join)
-                    {
-                        $joined = (array) ArrayHelper::map($query->join, 1, 1);
+                    if ($query->join) {
+                        $joined = (array)ArrayHelper::map($query->join, 1, 1);
                     }
 
-                    if (ArrayHelper::getValue($joined, 'shop_product_price'))
-                    {
+                    if (ArrayHelper::getValue($joined, 'shop_product_price')) {
                         $query->orderBy(['shop_product_price.price' => SORT_DESC]);
-                    } else if (ArrayHelper::getValue($joined, 'shop_product'))
-                    {
-                        $query->leftJoin('shop_product_price', '`shop_product_price`.`product_id` = `shop_product`.`id`');
-                        $query->orderBy(['shop_product_price.price' => SORT_DESC]);
-                    } else
-                    {
-                        $query->joinWith('shopProduct.baseProductPrice as basePrice');
-                        $query->orderBy(['basePrice.price' => SORT_DESC]);
+                    } else {
+                        if (ArrayHelper::getValue($joined, 'shop_product')) {
+                            $query->leftJoin('shop_product_price',
+                                '`shop_product_price`.`product_id` = `shop_product`.`id`');
+                            $query->orderBy(['shop_product_price.price' => SORT_DESC]);
+                        } else {
+                            $query->joinWith('shopProduct.baseProductPrice as basePrice');
+                            $query->orderBy(['basePrice.price' => SORT_DESC]);
+                        }
                     }
 
 
@@ -113,8 +110,7 @@ class ProductFilters extends Model
             }
         }
 
-        if ($this->inStock  == 1)
-        {
+        if ($this->inStock == 1) {
             $query->joinWith('shopProduct as shopProduct');
             $query->andWhere(['>=', 'shopProduct.quantity', 1]);
         }

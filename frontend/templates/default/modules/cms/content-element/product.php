@@ -11,7 +11,10 @@
 \frontend\assets\ZoomAsset::register($this);
 \frontend\assets\LightBoxAsset::register($this);
 
-\Yii::$app->cmsToolbar->editUrl = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/shop/admin-cms-content-element/update', 'pk' => $model->id])
+\Yii::$app->cmsToolbar->editUrl = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams([
+    '/shop/admin-cms-content-element/update',
+    'pk' => $model->id
+])
     ->enableEmptyLayout()->url;
 /*\Yii::$app->cmsToolbar->editUrl = \skeeks\cms\helpers\UrlHelper::construct(['/shop/admin-cms-content-element/update', 'pk' => $model->id])
     ->setSystemParam(\skeeks\cms\modules\admin\Module::SYSTEM_QUERY_EMPTY_LAYOUT, true)
@@ -60,9 +63,9 @@ $shopProduct->createNewView();
 <!-- Product page -->
 <section class="padding-xxs">
     <div class="row" itemscope itemtype="http://schema.org/Product">
-        <meta itemprop="name" content="<?= \yii\helpers\Html::encode($model->name); ?>" />
-        <meta itemprop="image" content="<?= $model->image->absoluteSrc; ?>" />
-        <meta itemprop="url" content="<?= $model->absoluteUrl; ?>" />
+        <meta itemprop="name" content="<?= \yii\helpers\Html::encode($model->name); ?>"/>
+        <meta itemprop="image" content="<?= $model->image->absoluteSrc; ?>"/>
+        <meta itemprop="url" content="<?= $model->absoluteUrl; ?>"/>
 
         <div class="col-md-12">
             <div class="col-lg-9 col-md-9 col-sm-9 col-lg-push-3 col-md-push-3 col-sm-push-3">
@@ -86,10 +89,12 @@ $shopProduct->createNewView();
                                         .top-right
                                         .top-left
                                 -->
-                                <a class="lightbox sx-fancy bottom-right " title="<?= $model->image ? $model->image->name : ''; ?>"
+                                <a class="lightbox sx-fancy bottom-right "
+                                   title="<?= $model->image ? $model->image->name : ''; ?>"
                                    href="<?= $model->image ? \Yii::$app->imaging->thumbnailUrlOnRequest($model->image ? $model->image->src : null,
                                        new \common\thumbnails\MediumWatermark(), $model->code
-                                   ) : \skeeks\cms\helpers\Image::getCapSrc(); ?>" data-plugin-options='{"type":"image"}'>
+                                   ) : \skeeks\cms\helpers\Image::getCapSrc(); ?>"
+                                   data-plugin-options='{"type":"image"}'>
                                     <i class="glyphicon glyphicon-search"></i>
                                 </a>
                                 <!--
@@ -98,16 +103,17 @@ $shopProduct->createNewView();
                                     Extra: add .image-bw class to force black and white!
                                 -->
                                 <a class="sx-fancybox-gallary" style="display: none;" data-fancybox-group="gallery"
-                                   href="<?= $model->image ? $model->image->src : ''; ?>" title="<?= $model->image ? $model->image->name : ''; ?>"></a>
+                                   href="<?= $model->image ? $model->image->src : ''; ?>"
+                                   title="<?= $model->image ? $model->image->name : ''; ?>"></a>
                                 <img src="<?= \Yii::$app->settings->imageLoader; ?>" class="img-responsive sx-lazy"
-                                     data-original="<?= $model->image ? $model->image->src : \skeeks\cms\helpers\Image::getCapSrc(); ?>" title="<?= $model->name; ?>"
+                                     data-original="<?= $model->image ? $model->image->src : \skeeks\cms\helpers\Image::getCapSrc(); ?>"
+                                     title="<?= $model->name; ?>"
                                      alt="<?= $model->name; ?>" width="1200">
                             </figure>
                         </div>
                         <?
                         $gallery = [];
-                        if ($model->image)
-                        {
+                        if ($model->image) {
                             $gallery = [$model->image];
                         }
                         ?>
@@ -124,8 +130,10 @@ $shopProduct->createNewView();
                                  style="opacity: 1; display: block;">
                                 <? foreach ($gallery as $image) : ?>
                                     <a class="sx-fancybox-gallary" style="display: none;" data-fancybox-group="gallery"
-                                       href="<?= $image ? $image->src : ''; ?>" title="<?= $image ? $image->name : ''; ?>"></a>
-                                    <a class="thumbnail" href="<?= $image ? $image->src : ''; ?>" title="<?= $image ? $image->name : ''; ?>">
+                                       href="<?= $image ? $image->src : ''; ?>"
+                                       title="<?= $image ? $image->name : ''; ?>"></a>
+                                    <a class="thumbnail" href="<?= $image ? $image->src : ''; ?>"
+                                       title="<?= $image ? $image->name : ''; ?>">
                                         <img src="<?= \Yii::$app->settings->imageLoader; ?>"
                                              data-original="<?= \Yii::$app->imaging->thumbnailUrlOnRequest($image ? $image->src : null,
                                                  new \skeeks\cms\components\imaging\filters\Thumbnail([
@@ -205,29 +213,33 @@ JS
                         <!-- price -->
                         <div class="shop-item-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                             <? if ($offer) : ?>
-                              <meta itemprop="priceCurrency" content="<?= $offer->shopProduct->baseProductPrice->money->getCurrency()->getCurrencyCode(); ?>" />
-                              <meta itemprop="price" content="<?= $offer->shopProduct->baseProductPrice->money->getValue(); ?>" />
+                                <meta itemprop="priceCurrency"
+                                      content="<?= $offer->shopProduct->baseProductPrice->money->getCurrency()->getCurrencyCode(); ?>"/>
+                                <meta itemprop="price"
+                                      content="<?= $offer->shopProduct->baseProductPrice->money->getValue(); ?>"/>
 
                                 <? if ($offer->shopProduct->minProductPrice->id == $offer->shopProduct->baseProductPrice->id) : ?>
                                     <?= \Yii::$app->money->convertAndFormat($offer->shopProduct->minProductPrice->money); ?>
                                 <? else : ?>
                                     <span
-                                        class="line-through nopadding-left"><?= \Yii::$app->money->convertAndFormat($offer->shopProduct->baseProductPrice->money); ?></span>
+                                            class="line-through nopadding-left"><?= \Yii::$app->money->convertAndFormat($offer->shopProduct->baseProductPrice->money); ?></span>
                                     <div
-                                        class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($offer->shopProduct->minProductPrice->money); ?></div>
+                                            class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($offer->shopProduct->minProductPrice->money); ?></div>
                                 <? endif; ?>
                             <? else : ?>
-                                <meta itemprop="priceCurrency" content="<?= $shopProduct->baseProductPrice->money->getCurrency()->getCurrencyCode(); ?>" />
-                              <meta itemprop="price" content="<?= $shopProduct->baseProductPrice->money->getValue(); ?>" />
+                                <meta itemprop="priceCurrency"
+                                      content="<?= $shopProduct->baseProductPrice->money->getCurrency()->getCurrencyCode(); ?>"/>
+                                <meta itemprop="price"
+                                      content="<?= $shopProduct->baseProductPrice->money->getValue(); ?>"/>
 
 
                                 <? if ($shopProduct->minProductPrice->id == $shopProduct->baseProductPrice->id) : ?>
                                     <?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?>
                                 <? else : ?>
                                     <span
-                                        class="line-through nopadding-left"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
+                                            class="line-through nopadding-left"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
                                     <div
-                                        class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?></div>
+                                            class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?></div>
                                 <? endif; ?>
                             <? endif; ?>
                         </div>
@@ -235,8 +247,8 @@ JS
                         <hr>
                         <div class="clearfix margin-bottom-30">
                             <? if ($model->description_short) : ?>
-                            <p><?= $model->description_short; ?></p>
-                            <hr/>
+                                <p><?= $model->description_short; ?></p>
+                                <hr/>
                             <? endif; ?>
                             <?
                             $brand = null;
@@ -246,8 +258,8 @@ JS
                             }
                             ?>
                             <? if ($brand && $brand->image) : ?>
-                            <span class="pull-right text-danger"><img src="<?= $brand->image->src ?>"
-                                                                      style="max-height: 80px; max-width: 180px;"></span>
+                                <span class="pull-right text-danger"><img src="<?= $brand->image->src ?>"
+                                                                          style="max-height: 80px; max-width: 180px;"></span>
                             <? endif; ?>
                             <!--
                             <span class="pull-right text-danger"><i class="glyphicon glyphicon-remove"></i> Out of Stock</span>
@@ -259,36 +271,37 @@ JS
                                 //'visible_only_has_values' => true,
                                 //'viewFile' => '@app/views/your-file',
                             ]); ?>
-                                <?/* $widget->viewFile = '@app/views/modules/cms/content-element/_product-properties';*/?>
+                            <? /* $widget->viewFile = '@app/views/modules/cms/content-element/_product-properties';*/ ?>
                             <? \skeeks\cms\rpViewWidget\RpViewWidget::end(); ?>
 
 
 
 
                             <? if ($propPaint = $model->relatedPropertiesModel->getAttribute('propPaint')) : ?>
-                            <div class="icons-group">
-                                <ul class="icons-list flat cf">
+                                <div class="icons-group">
+                                    <ul class="icons-list flat cf">
 
-                                <?
-                                $enums = $model->relatedPropertiesModel->getRelatedProperty('propPaint')->getEnums()->andWhere([
-                                    'id' => $propPaint
-                                ])->all();
-                                /**
-                                 * @var \skeeks\cms\models\CmsContentPropertyEnum $enum
-                                 */
-                                ?>
+                                        <?
+                                        $enums = $model->relatedPropertiesModel->getRelatedProperty('propPaint')->getEnums()->andWhere([
+                                            'id' => $propPaint
+                                        ])->all();
+                                        /**
+                                         * @var \skeeks\cms\models\CmsContentPropertyEnum $enum
+                                         */
+                                        ?>
 
-                                <? foreach($enums as $enum) : ?>
-                                    <li class="hint-owner baza-p" style="background-image: url(<?= \frontend\assets\AppAsset::getAssetUrl('img/icons/' . $enum->code . '.png')?>);"
-                                        title="<?= $enum->value; ?>" data-toggle="tooltip">
-                                        <div class="hint bottom left">
-                                            <!--<p><?/*= $enum->value; */?></p>-->
-                                        </div>
-                                    </li>
+                                        <? foreach ($enums as $enum) : ?>
+                                            <li class="hint-owner baza-p"
+                                                style="background-image: url(<?= \frontend\assets\AppAsset::getAssetUrl('img/icons/' . $enum->code . '.png') ?>);"
+                                                title="<?= $enum->value; ?>" data-toggle="tooltip">
+                                                <div class="hint bottom left">
+                                                    <!--<p><? /*= $enum->value; */ ?></p>-->
+                                                </div>
+                                            </li>
 
-                                <? endforeach; ?>
-                                </ul>
-                            </div>
+                                        <? endforeach; ?>
+                                    </ul>
+                                </div>
                             <? endif; ?>
 
 
@@ -316,7 +329,7 @@ JS
                                     ]); ?>
                                     <a class="btn btn-default btn-primary product-add-cart noradius" href="#"
                                        onclick="sx.Shop.addProduct($('#sx-offer').val(), 1); return false;"><i
-                                            class="fa fa-cart-plus"></i> В корзину</a>
+                                                class="fa fa-cart-plus"></i> В корзину</a>
                                     <br/>
                                     <!--<p><a href="/size" target="_blank" data-pjax="0">Как выбрать размер?</a></p>-->
                                     <br/>
@@ -327,7 +340,7 @@ JS
                         <? else : ?>
                             <a class="btn btn-default btn-primary btn-lg product-add-cart noradius" href="#"
                                onclick="sx.Shop.addProduct(<?= $model->id; ?>, 1); return false;"><i
-                                    class="fa fa-cart-plus"></i> В корзину</a><br/><br/>
+                                        class="fa fa-cart-plus"></i> В корзину</a><br/><br/>
                         <? endif; ?>
                         <!--<hr>
 
@@ -408,11 +421,12 @@ JS
                             <? if ($extra = $model->relatedPropertiesModel->getAttribute('extra')) : ?>
                                 <table class="prod-char">
                                     <? $counter = 0; ?>
-                                    <? foreach($extra as $row) : ?>
-                                        <? $counter ++; ?>
-                                        <tr class="<?= $counter % 2 == 0 ? "even-tr" : ""?>">
+                                    <? foreach ($extra as $row) : ?>
+                                        <? $counter++; ?>
+                                        <tr class="<?= $counter % 2 == 0 ? "even-tr" : "" ?>">
                                             <td><?= \yii\helpers\ArrayHelper::getValue($row, 'name'); ?></td>
-                                            <td class="rtd"><?= \yii\helpers\ArrayHelper::getValue($row, 'value'); ?></td>
+                                            <td class="rtd"><?= \yii\helpers\ArrayHelper::getValue($row,
+                                                    'value'); ?></td>
                                         </tr>
                                     <? endforeach; ?>
                                 </table>
@@ -422,7 +436,7 @@ JS
                     <div role="tabpanel" class="tab-pane fade" id="sx-vk">
                         <?= \skeeks\cms\vk\comments\VkCommentsWidget::widget([
                             'namespace' => 'VkCommentsWidget-main',
-                            'apiId'     => 5705491
+                            'apiId' => 5705491
                         ]); ?>
                     </div>
 
@@ -435,36 +449,36 @@ JS
                         ]); ?>
                     </div>
                     <!--<div role="tabpanel" class="tab-pane fade" id="sx-feedback">
-                        <?/*=
+                        <? /*=
                         \skeeks\modules\cms\form2\cmsWidgets\form2\FormWidget::widget([
                             'form_code' => 'credit'
                         ]);
-                        */?>
+                        */ ?>
                     </div>-->
                 </div>
 
 
                 <? if ($simmilarIds = $model->relatedPropertiesModel->getAttribute('simillar')) : ?>
                     <div style="margin-bottom: 20px;">
-                    <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
-                        'contentElementClass' => \skeeks\cms\shop\models\ShopCmsContentElement::className(),
-                        'namespace' => 'ContentElementsCmsWidget-need',
-                        'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/sameProducts',
-                        'label' => 'Вам могут понадобиться',
-                        'enabledCurrentTree' => "N",
-                        'limit' => 10,
-                        'activeQueryCallback' => function (\yii\db\ActiveQuery $query) use ($model, $simmilarIds) {
+                        <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+                            'contentElementClass' => \skeeks\cms\shop\models\ShopCmsContentElement::className(),
+                            'namespace' => 'ContentElementsCmsWidget-need',
+                            'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/sameProducts',
+                            'label' => 'Вам могут понадобиться',
+                            'enabledCurrentTree' => "N",
+                            'limit' => 10,
+                            'activeQueryCallback' => function (\yii\db\ActiveQuery $query) use ($model, $simmilarIds) {
 
-                            $query->andWhere([
-                                'id' => $simmilarIds
-                            ]);
+                                $query->andWhere([
+                                    'id' => $simmilarIds
+                                ]);
 
-                            $query->with('shopProduct');
-                            $query->with('shopProduct.baseProductPrice');
-                            $query->with('shopProduct.minProductPrice');
-                            //$query->with('shopProduct.baseProductPrice');
-                        }
-                    ]); ?>
+                                $query->with('shopProduct');
+                                $query->with('shopProduct.baseProductPrice');
+                                $query->with('shopProduct.minProductPrice');
+                                //$query->with('shopProduct.baseProductPrice');
+                            }
+                        ]); ?>
                     </div>
                 <? endif; ?>
 
@@ -472,8 +486,7 @@ JS
 
                 <?
                 $treeIds = [];
-                if ($model->cmsTree && $model->cmsTree->parent)
-                {
+                if ($model->cmsTree && $model->cmsTree->parent) {
                     $treeIds = \yii\helpers\ArrayHelper::map($model->cmsTree->parent->children, 'id', 'id');
                 }
                 ?>
@@ -501,8 +514,8 @@ JS
 
                         $query->andWhere([
                             'and',
-                            ['<', 'price', (float) $value + 1000],
-                            ['>', 'price', (float) $value - 1000],
+                            ['<', 'price', (float)$value + 1000],
+                            ['>', 'price', (float)$value - 1000],
                         ]);
 
                         $query->andWhere(['!=', \skeeks\cms\models\CmsContentElement::tableName() . ".id", $model->id]);
@@ -525,14 +538,14 @@ JS
 
                 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
                     'namespace' => 'ContentElementsCmsWidget-VisitedProducts',
-                    'viewFile' 	=> '@app/views/widgets/ContentElementsCmsWidget/visitedProducts',
-                    'label' 	=> 'Вы посмотрели',
-                    'limit' 	=> 6,
-                    'activeQueryCallback' 	=> function(\yii\db\ActiveQuery $query) use ($model)
-                    {
+                    'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/visitedProducts',
+                    'label' => 'Вы посмотрели',
+                    'limit' => 6,
+                    'activeQueryCallback' => function (\yii\db\ActiveQuery $query) use ($model) {
                         $query->andWhere(['!=', \skeeks\cms\models\CmsContentElement::tableName() . ".id", $model->id]);
                         $query->leftJoin('shop_product', '`shop_product`.`id` = `cms_content_element`.`id`');
-                        $query->leftJoin('shop_viewed_product', '`shop_viewed_product`.`shop_product_id` = `shop_product`.`id`');
+                        $query->leftJoin('shop_viewed_product',
+                            '`shop_viewed_product`.`shop_product_id` = `shop_product`.`id`');
 
                         $query->andWhere(['shop_fuser_id' => \Yii::$app->shop->shopFuser->id]);
                         //$query->orderBy(['shop_viewed_product.created_at' => SORT_DESC]);
@@ -541,12 +554,12 @@ JS
 
                 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
                     'contentElementClass' => \skeeks\cms\shop\models\ShopCmsContentElement::className(),
-                    'namespace'         => 'ContentElementsCmsWidget-catalog-main-left-1',
-                    'viewFile' 	        => '@app/views/widgets/ContentElementsCmsWidget/visitedProducts',
-                    'label'             => 'Спецпредложения',
-                    'pageSize'          => 5,
-                    'enabledCurrentTree'=> \skeeks\cms\components\Cms::BOOL_N,
-                    'dataProviderCallback' 	=> function(\yii\data\ActiveDataProvider $activeDataProvider) use ($model) {
+                    'namespace' => 'ContentElementsCmsWidget-catalog-main-left-1',
+                    'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/visitedProducts',
+                    'label' => 'Спецпредложения',
+                    'pageSize' => 5,
+                    'enabledCurrentTree' => \skeeks\cms\components\Cms::BOOL_N,
+                    'dataProviderCallback' => function (\yii\data\ActiveDataProvider $activeDataProvider) use ($model) {
                         $query = $activeDataProvider->query;
 
                         $query->with('shopProduct');

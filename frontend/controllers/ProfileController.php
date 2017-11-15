@@ -8,6 +8,7 @@
  * @date 14.10.2014
  * @since 1.0.0
  */
+
 namespace frontend\controllers;
 
 use Yii;
@@ -21,6 +22,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+
 /**
  * Class ProfileController
  * @package frontend\controllers

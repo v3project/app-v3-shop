@@ -10,14 +10,16 @@
  */
 
 namespace yii\web;
+
 use common\components\SettingsComponent;
 
 
 /**
- * @property SettingsComponent                    $settings
+ * @property SettingsComponent $settings
  *
  * Class Application
  * @package yii\web
  */
 class Application
-{}
+{
+}

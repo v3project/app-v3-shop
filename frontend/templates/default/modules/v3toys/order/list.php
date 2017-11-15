@@ -14,28 +14,28 @@
     'title' => 'Мои заказы',
 ]); ?>
 
-    <header class="title-page">
-        <h1>Мои заказы</h1>
-    </header>
+<header class="title-page">
+    <h1>Мои заказы</h1>
+</header>
 
-    <?= \yii\widgets\ListView::widget([
-        'dataProvider' => new \yii\data\ActiveDataProvider([
-            'query' => \v3toys\skeeks\models\V3toysOrder::find()->where(['user_id' => \Yii::$app->user->identity->id])->orderBy(['id' => SORT_DESC]),
-            'pagination' => [
-                'pageSize' => 20,
-            ],
-        ]),
-        "layout" => "{items}\n{pager}",
-        'options' => [
-            'tag' => 'ul',
-            'class' => 'order-list',
-            'id' => 'accordion-orders',
-            'aria-multiselectable' => 'true',
+<?= \yii\widgets\ListView::widget([
+    'dataProvider' => new \yii\data\ActiveDataProvider([
+        'query' => \v3toys\skeeks\models\V3toysOrder::find()->where(['user_id' => \Yii::$app->user->identity->id])->orderBy(['id' => SORT_DESC]),
+        'pagination' => [
+            'pageSize' => 20,
         ],
-        'itemView' => '_list',
-        'itemOptions' => [
-            'tag' => false,
-        ],
-    ]); ?>
+    ]),
+    "layout" => "{items}\n{pager}",
+    'options' => [
+        'tag' => 'ul',
+        'class' => 'order-list',
+        'id' => 'accordion-orders',
+        'aria-multiselectable' => 'true',
+    ],
+    'itemView' => '_list',
+    'itemOptions' => [
+        'tag' => false,
+    ],
+]); ?>
 
 <?= \Yii::$app->view->render('@app/views/modules/cms/user/_footer'); ?>

@@ -13,33 +13,33 @@ $config = [
         \Yii::setAlias('template', '@app/views');
     },
 
-    'components'    =>
-    [
-        'urlManager' => [
-            'rules' => [
-                'search'                                => 'cmsSearch/result',
+    'components' =>
+        [
+            'urlManager' => [
+                'rules' => [
+                    'search' => 'cmsSearch/result',
+                    [
+                        'class' => \skeeks\cms\components\urlRules\UrlRuleContentElement::className(),
+                        'suffix' => '/',
+                    ],
+
+                    [
+                        'class' => \skeeks\cms\components\urlRules\UrlRuleTree::className(),
+                        'suffix' => '/',
+                    ]
+                ]
+            ],
+
+            'settings' =>
                 [
-                    'class'             => \skeeks\cms\components\urlRules\UrlRuleContentElement::className(),
-                    'suffix'            => '/',
+                    'class' => 'common\components\SettingsComponent',
                 ],
 
+            'money' =>
                 [
-                    'class'             => \skeeks\cms\components\urlRules\UrlRuleTree::className(),
-                    'suffix'            => '/',
-                ]
-            ]
+                    'class' => 'common\components\CommonMoney',
+                ],
         ],
-
-        'settings' =>
-        [
-            'class'        => 'common\components\SettingsComponent',
-        ],
-
-        'money' =>
-        [
-            'class' => 'common\components\CommonMoney',
-        ],
-    ],
 ];
 
 

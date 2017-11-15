@@ -6,6 +6,7 @@
  * @date 25.03.2015
  */
 /* @var $this yii\web\View */
+
 /* @var $model \skeeks\cms\models\forms\PasswordResetRequestFormEmailOrLogin */
 
 use yii\helpers\Html;
@@ -25,11 +26,11 @@ use \skeeks\cms\helpers\UrlHelper;
         <?php $form = ActiveForm::begin([
             'validationUrl' => UrlHelper::construct('cms/auth/forget')->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString()
         ]); ?>
-            <?= $form->field($model, 'identifier') ?>
+        <?= $form->field($model, 'identifier') ?>
 
-            <div class="form-group">
-                <?= Html::submitButton("Отправить", ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
+        <div class="form-group">
+            <?= Html::submitButton("Отправить", ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+        </div>
 
         <?php ActiveForm::end(); ?>
         <?= Html::a('Авторизация', UrlHelper::constructCurrent()->setRoute('cms/auth/login')->toString()) ?> |

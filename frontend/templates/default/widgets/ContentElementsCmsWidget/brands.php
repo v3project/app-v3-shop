@@ -21,18 +21,18 @@ CSS
 <? endif; ?>
 
 <? echo \yii\widgets\ListView::widget([
-    'dataProvider'      => $widget->dataProvider,
-    'itemView'          => 'brand-item',
-    'emptyText'          => '',
-    'options'           =>
-    [
-        'tag'   => 'div',
-    ],
+    'dataProvider' => $widget->dataProvider,
+    'itemView' => 'brand-item',
+    'emptyText' => '',
+    'options' =>
+        [
+            'tag' => 'div',
+        ],
     'itemOptions' => [
         'tag' => false
     ],
-    'layout'            => "\n{items}\n<p class=\"row\">{pager}</p>"
-])?>
+    'layout' => "\n{items}\n<p class=\"row\">{pager}</p>"
+]) ?>
 
 <? if ($widget->enabledPjaxPagination = \skeeks\cms\components\Cms::BOOL_Y) : ?>
     <? \skeeks\cms\modules\admin\widgets\Pjax::end(); ?>

@@ -6,11 +6,13 @@
  * @date 25.03.2015
  */
 /* @var $this yii\web\View */
+
 /* @var $model \skeeks\cms\models\forms\SignupForm */
 
 use yii\helpers\Html;
 use skeeks\cms\base\widgets\ActiveFormAjaxSubmit as ActiveForm;
 use \skeeks\cms\helpers\UrlHelper;
+
 ?>
 <?= $this->render("_header", ['title' => 'Регистрация']); ?>
 <div class="col-md-6 col-md-offset-3">
@@ -24,20 +26,21 @@ use \skeeks\cms\helpers\UrlHelper;
             'action' => UrlHelper::construct('cms/auth/register-by-email')->toString(),
             'validationUrl' => UrlHelper::construct('cms/auth/register-by-email')->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
         ]); ?>
-            <?= $form->field($model, 'email') ?>
+        <?= $form->field($model, 'email') ?>
 
-            <div class="form-group">
-                <?= Html::submitButton("<i class=\"glyphicon glyphicon-off\"></i> Зарегистрироваться", ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
+        <div class="form-group">
+            <?= Html::submitButton("<i class=\"glyphicon glyphicon-off\"></i> Зарегистрироваться",
+                ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+        </div>
 
         <?php ActiveForm::end(); ?>
         <?= Html::a('Авторизация', UrlHelper::constructCurrent()->setRoute('cms/auth/login')->toString()) ?>
 
         <? if (\Yii::$app->authClientCollection->clients) : ?>
-            <hr />
+            <hr/>
             <?= yii\authclient\widgets\AuthChoice::widget([
-                 'baseAuthUrl'  => ['/cms/auth/client'],
-                 'popupMode'    => true,
+                'baseAuthUrl' => ['/cms/auth/client'],
+                'popupMode' => true,
             ]) ?>
         <? endif; ?>
 

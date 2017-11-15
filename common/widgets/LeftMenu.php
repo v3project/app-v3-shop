@@ -5,6 +5,7 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 10.11.2015
  */
+
 namespace common\widgets;
 
 use skeeks\cms\models\Tree;

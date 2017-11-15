@@ -38,7 +38,7 @@
                         <?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?>
                     <? else : ?>
                         <span
-                            class="line-through"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
+                                class="line-through"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
                         <?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?>
                     <? endif; ?>
                 </div>

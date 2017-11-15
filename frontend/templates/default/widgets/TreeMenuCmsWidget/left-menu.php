@@ -15,12 +15,12 @@
 </div>
 
 <? if ($models = $widget->activeQuery->all()) : ?>
-<ul class="list-group list-group-bordered list-group-noicon uppercase">
-    <? foreach ($models as $model) : ?>
-        <?= $this->render("_one-left", [
-            "widget"        => $widget,
-            "model"         => $model,
-        ]); ?>
-    <? endforeach; ?>
+    <ul class="list-group list-group-bordered list-group-noicon uppercase">
+        <? foreach ($models as $model) : ?>
+            <?= $this->render("_one-left", [
+                "widget" => $widget,
+                "model" => $model,
+            ]); ?>
+        <? endforeach; ?>
     </ul>
 <? endif; ?>

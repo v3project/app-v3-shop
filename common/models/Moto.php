@@ -2,10 +2,12 @@
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  * @link http://skeeks.com/
- * @copyright 2010 SkeekS (ÑêèêÑ)
+ * @copyright 2010 SkeekS (ï¿½ï¿½ï¿½ï¿½ï¿½)
  * @date 01.10.2015
  */
+
 namespace common\models;
+
 use skeeks\cms\helpers\CmsContentElementHelper;
 use skeeks\cms\models\CmsContentElement;
 
@@ -27,7 +29,7 @@ class Moto
 {
     public function getType()
     {
-        return CmsContentElement::findOne((int) $this->model->relatedPropertiesModel->getAttribute('type'));
+        return CmsContentElement::findOne((int)$this->model->relatedPropertiesModel->getAttribute('type'));
     }
 
     /**
@@ -35,7 +37,7 @@ class Moto
      */
     public function getMarka()
     {
-        return CmsContentElement::findOne((int) $this->model->relatedPropertiesModel->getAttribute('marka'));
+        return CmsContentElement::findOne((int)$this->model->relatedPropertiesModel->getAttribute('marka'));
     }
 
     /**
@@ -43,7 +45,7 @@ class Moto
      */
     public function getVolume()
     {
-        return (int) $this->model->relatedPropertiesModel->getAttribute('volume');
+        return (int)$this->model->relatedPropertiesModel->getAttribute('volume');
     }
 
     /**
@@ -53,7 +55,7 @@ class Moto
     {
         $val = $this->model->relatedPropertiesModel->getAttribute('mileage');
         $val = str_replace(" ", "", $val);
-        return (int) $val;
+        return (int)$val;
     }
 
     /**
@@ -61,7 +63,7 @@ class Moto
      */
     public function getYear()
     {
-        return (int) $this->model->relatedPropertiesModel->getAttribute('year');
+        return (int)$this->model->relatedPropertiesModel->getAttribute('year');
     }
 
     /**
@@ -69,7 +71,7 @@ class Moto
      */
     public function getColor()
     {
-        return (string) $this->model->relatedPropertiesModel->getAttribute('color');
+        return (string)$this->model->relatedPropertiesModel->getAttribute('color');
     }
 
     /**
@@ -77,7 +79,7 @@ class Moto
      */
     public function getVin()
     {
-        return (string) $this->model->relatedPropertiesModel->getAttribute('vin');
+        return (string)$this->model->relatedPropertiesModel->getAttribute('vin');
     }
 
     /**
@@ -85,7 +87,7 @@ class Moto
      */
     public function getReviewsRating()
     {
-        return (float) $this->model->relatedPropertiesModel->getAttribute('reviews2_rating');
+        return (float)$this->model->relatedPropertiesModel->getAttribute('reviews2_rating');
     }
 
     /**
@@ -94,7 +96,7 @@ class Moto
     public function getIsAbs()
     {
         $enum = $this->model->relatedPropertiesModel->getEnumByAttribute('abs');
-        return (bool) ($enum->code == "Y");
+        return (bool)($enum->code == "Y");
     }
 
     /**
@@ -102,6 +104,6 @@ class Moto
      */
     public function getReviewsCount()
     {
-        return (int) $this->model->relatedPropertiesModel->getAttribute('reviews2_count');
+        return (int)$this->model->relatedPropertiesModel->getAttribute('reviews2_count');
     }
 }

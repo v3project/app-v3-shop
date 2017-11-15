@@ -5,6 +5,7 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 20.03.2015
  */
+
 namespace common\widgets;
 
 use yii\base\Widget;

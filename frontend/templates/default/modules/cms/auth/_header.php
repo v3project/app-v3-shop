@@ -6,6 +6,7 @@
  * @date 25.03.2015
  */
 /* @var $this yii\web\View */
+
 /* @var $model \skeeks\cms\models\forms\LoginFormUsernameOrEmail */
 
 use yii\helpers\Html;
@@ -15,8 +16,7 @@ use \skeeks\cms\helpers\UrlHelper;
 $this->title = $title;
 \Yii::$app->breadcrumbs->createBase()->append($this->title);
 
-if (isset(\Yii::$app->authClientCollection))
-{
+if (isset(\Yii::$app->authClientCollection)) {
     \yii\authclient\widgets\AuthChoiceAsset::register($this);
 }
 //
@@ -42,9 +42,9 @@ CSS
 
 ?>
 
-<?/*= $this->render('@template/include/breadcrumbs', [
+<? /*= $this->render('@template/include/breadcrumbs', [
     'title' => $this->title
-])*/?>
+])*/ ?>
 
 <? \skeeks\cms\modules\admin\widgets\Pjax::begin(); ?>
 

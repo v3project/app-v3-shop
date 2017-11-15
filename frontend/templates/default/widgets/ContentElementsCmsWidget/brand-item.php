@@ -17,12 +17,13 @@ $url = "/catalog?" . http_build_query($dataQuery);
 <div class="blog-post-item col-md-2 col-sm-3">
 
     <!-- IMAGE -->
-            <figure>
-                <a href="<?= $url ?>">
-                    <img src="<?= \skeeks\cms\helpers\Image::getSrc($model->image ? $model->image->src : null); ?>" alt="<?= $model->name; ?>" title="<?= $model->name; ?>" class="img-responsive"
-                         style="max-height: 150px; max-width: 150px;"/>
-                </a>
-            </figure>
+    <figure>
+        <a href="<?= $url ?>">
+            <img src="<?= \skeeks\cms\helpers\Image::getSrc($model->image ? $model->image->src : null); ?>"
+                 alt="<?= $model->name; ?>" title="<?= $model->name; ?>" class="img-responsive"
+                 style="max-height: 150px; max-width: 150px;"/>
+        </a>
+    </figure>
 
     <h2><a href="<?= $url ?>" title="<?= $model->name; ?>"><?= $model->name; ?></a></h2>
 </div>

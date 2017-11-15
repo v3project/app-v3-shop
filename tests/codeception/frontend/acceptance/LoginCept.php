@@ -1,4 +1,5 @@
 <?php
+
 use tests\codeception\frontend\AcceptanceTester;
 use tests\codeception\common\_pages\LoginPage;
 

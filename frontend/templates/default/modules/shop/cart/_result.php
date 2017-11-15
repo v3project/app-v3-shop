@@ -58,14 +58,14 @@
                 </span>
             <? endif; ?>
 
-            <hr />
+            <hr/>
 
             <span class="clearfix">
                 <span class="pull-right size-20"><?= \Yii::$app->money->convertAndFormat(\Yii::$app->shop->shopFuser->money); ?></span>
                 <strong class="pull-left">ИТОГ:</strong>
             </span>
 
-            <hr />
+            <hr/>
 
             <?= @$submit; ?>
         </div>

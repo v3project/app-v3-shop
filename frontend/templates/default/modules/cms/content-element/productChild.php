@@ -7,7 +7,6 @@
  */
 /* @var $this yii\web\View */
 /* @var $model \skeeks\cms\models\CmsContentElement */
-if ($model->parentContentElement)
-{
+if ($model->parentContentElement) {
     \Yii::$app->response->redirect($model->parentContentElement->url . "?sx-offer=" . $model->id);
 }

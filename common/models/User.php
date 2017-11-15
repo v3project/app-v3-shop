@@ -10,7 +10,9 @@
  */
 
 namespace common\models;
+
 use skeeks\cms\models\CmsUser;
+
 /**
  * Class User
  * @package common\models

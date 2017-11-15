@@ -13,10 +13,10 @@ $opacity = $model->relatedPropertiesModel->getAttribute("opacity");
 
 <?= $this->render('@template/include/breadcrumbs', [
     'model' => $model
-])?>
+]) ?>
 
 <!--=== Content Part ===-->
-<section class="padding-xxs" <?= $opacity ? "style='opacity: {$opacity};'": ""?>>
+<section class="padding-xxs" <?= $opacity ? "style='opacity: {$opacity};'" : "" ?>>
     <div class="container content">
         <div class="row">
             <div class="col-md-12 sx-content">

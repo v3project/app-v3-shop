@@ -15,54 +15,55 @@
     'title' => 'Мои заказы',
 ]); ?>
 
-    <header class="title-page">
-        <h1>Информация о заказе №<?= $model->id; ?></h1>
-    </header>
+<header class="title-page">
+    <h1>Информация о заказе №<?= $model->id; ?></h1>
+</header>
 
 
-    <div class="order-info--status">от <?= \Yii::$app->formatter->asDatetime($model->created_at); ?>, <?= $model->v3toys_status_id ? $model->status->name : ""; ?></div>
-    <div class="order-info--params">
-        <table class="tbl-chars">
-            <tr>
-                <td><span>Доставка</span></td>
-                <td><?= $model->deliveryFullName; ?></td>
-            </tr>
-            <!--<tr>
+<div class="order-info--status">от <?= \Yii::$app->formatter->asDatetime($model->created_at); ?>
+    , <?= $model->v3toys_status_id ? $model->status->name : ""; ?></div>
+<div class="order-info--params">
+    <table class="tbl-chars">
+        <tr>
+            <td><span>Доставка</span></td>
+            <td><?= $model->deliveryFullName; ?></td>
+        </tr>
+        <!--<tr>
                 <td><span>Куда доставить</span></td>
-                <td><?/*= $model->addre; */?></td>
+                <td><? /*= $model->addre; */ ?></td>
             </tr>-->
-            <tr>
-                <td><span>Способ оплаты</span></td>
-                <td><?= $model->paymentName; ?></td>
-            </tr>
-            <tr>
-                <td><span>Имя и фамилия</span></td>
-                <td><?= $model->name; ?></td>
-            </tr>
-            <tr>
-                <td><span>Телефон</span></td>
-                <td><span class="text-nowrap"><?= $model->phone; ?></span></td>
-            </tr>
-            <tr>
-                <td><span>Электронная почта</span></td>
-                <td><?= $model->email; ?></td>
-            </tr>
-        </table>
-    </div><!--.order-info--params-->
+        <tr>
+            <td><span>Способ оплаты</span></td>
+            <td><?= $model->paymentName; ?></td>
+        </tr>
+        <tr>
+            <td><span>Имя и фамилия</span></td>
+            <td><?= $model->name; ?></td>
+        </tr>
+        <tr>
+            <td><span>Телефон</span></td>
+            <td><span class="text-nowrap"><?= $model->phone; ?></span></td>
+        </tr>
+        <tr>
+            <td><span>Электронная почта</span></td>
+            <td><?= $model->email; ?></td>
+        </tr>
+    </table>
+</div><!--.order-info--params-->
 
-    <? if ($model->baskets) : ?>
-        <div class="tbl-cart-container">
-            <table class="tbl-cart tbl-order-info">
-                <tr>
-                    <th colspan="2">Товар</th>
-                    <th class="cell-num">Кол-во</th>
-                    <th class="cell-total">Стоимость</th>
-                </tr>
+<? if ($model->baskets) : ?>
+    <div class="tbl-cart-container">
+        <table class="tbl-cart tbl-order-info">
+            <tr>
+                <th colspan="2">Товар</th>
+                <th class="cell-num">Кол-во</th>
+                <th class="cell-total">Стоимость</th>
+            </tr>
 
-            <? foreach($model->baskets as $shopBasket) : ?>
+            <? foreach ($model->baskets as $shopBasket) : ?>
                 <tr>
                     <td class="cell-photo">
-                        <a href="<?= $shopBasket->url ? $shopBasket->url : "#"?>">
+                        <a href="<?= $shopBasket->url ? $shopBasket->url : "#" ?>">
                             <img src="<?= $shopBasket->image ? $shopBasket->image->src : "#" ?>" alt="">
                         </a>
                     </td>
@@ -70,25 +71,28 @@
                         <div class="title">
                             <a href="<?= $shopBasket->url; ?>"><?= $shopBasket->name; ?></a>
                         </div>
-                        <!--<div class="art">Артикул: <?/**/?></div>-->
+                        <!--<div class="art">Артикул: <? /**/ ?></div>-->
                     </td>
                     <td class="cell-num">
-                        <div class="static-number"><strong><?= $shopBasket->quantity; ?></strong> × <?= \Yii::$app->money->convertAndFormat($shopBasket->money); ?></div>
+                        <div class="static-number"><strong><?= $shopBasket->quantity; ?></strong>
+                            × <?= \Yii::$app->money->convertAndFormat($shopBasket->money); ?></div>
                     </td>
                     <td class="cell-total">
                         <!--<div class="old">25000руб.</div>-->
-                        <div class="new"><span class="amount"><?= \Yii::$app->money->convertAndFormat($shopBasket->money->multiply($shopBasket->quantity)); ?></span> <!--<span class="rb">руб.</span>--></div>
+                        <div class="new"><span
+                                    class="amount"><?= \Yii::$app->money->convertAndFormat($shopBasket->money->multiply($shopBasket->quantity)); ?></span>
+                            <!--<span class="rb">руб.</span>--></div>
                     </td>
                 </tr>
 
             <? endforeach; ?>
-            </table>
-        </div>
-    <? endif;?>
-
-    <div class="tbl-cart-total tbl-order-info-total">
-        <div class="lbl">Итого: </div>
-        <div class="amount"><span class="number">62 800</span> <span class="rb">руб.</span></div>
+        </table>
     </div>
+<? endif; ?>
+
+<div class="tbl-cart-total tbl-order-info-total">
+    <div class="lbl">Итого:</div>
+    <div class="amount"><span class="number">62 800</span> <span class="rb">руб.</span></div>
+</div>
 
 <?= \Yii::$app->view->render('@app/views/modules/cms/user/_footer'); ?>

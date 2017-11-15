@@ -11,8 +11,7 @@
 $hasChildrens = $model->children;
 
 $activeClass = '';
-if (strpos(\Yii::$app->request->pathInfo, $model->dir) !== false)
-{
+if (strpos(\Yii::$app->request->pathInfo, $model->dir) !== false) {
     $activeClass = ' active';
 }
 ?>
@@ -24,15 +23,15 @@ if (strpos(\Yii::$app->request->pathInfo, $model->dir) !== false)
         </a>
 
         <ul>
-        <? foreach($model->getChildren()
-                       ->andWhere(['active' => $widget->active])
-                       ->orderBy([$widget->orderBy => $widget->order])
-                       ->all() as $childTree) : ?>
-                <li class="<?= strpos(\Yii::$app->request->pathInfo, $childTree->dir) !== false ? "active" : ""?>">
+            <? foreach ($model->getChildren()
+                            ->andWhere(['active' => $widget->active])
+                            ->orderBy([$widget->orderBy => $widget->order])
+                            ->all() as $childTree) : ?>
+                <li class="<?= strpos(\Yii::$app->request->pathInfo, $childTree->dir) !== false ? "active" : "" ?>">
                     <a href="<?= $childTree->url; ?>" title="<?= $childTree->name; ?>"><?= $childTree->name; ?></a>
                 </li>
-        <? endforeach; ?>
-            </ul>
+            <? endforeach; ?>
+        </ul>
     <? else: ?>
         <a href="<?= $model->url; ?>" title="<?= $model->name; ?>"><?= $model->name; ?></a>
     <? endif; ?>

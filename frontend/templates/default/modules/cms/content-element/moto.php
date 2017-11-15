@@ -143,9 +143,9 @@ $shopProduct->createNewView();
                                 <?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?>
                             <? else : ?>
                                 <span
-                                    class="line-through nopadding-left"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
+                                        class="line-through nopadding-left"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
                                 <div
-                                    class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?></div>
+                                        class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?></div>
                             <? endif; ?>
                         </div>
                         <!-- /price -->
@@ -169,10 +169,18 @@ $shopProduct->createNewView();
 
 
                             <? if ($product->marka->name) : ?><strong>Марка:</strong> <a
-                                href="<?= \yii\helpers\Url::to(['/cms/tree/view', 'model' => $model->cmsTree, 'SearchRelatedPropertiesModel' => ['marka' => $product->marka->id]]); ?>"><?= $product->marka->name; ?></a>
+                                    href="<?= \yii\helpers\Url::to([
+                                        '/cms/tree/view',
+                                        'model' => $model->cmsTree,
+                                        'SearchRelatedPropertiesModel' => ['marka' => $product->marka->id]
+                                    ]); ?>"><?= $product->marka->name; ?></a>
                                 <br><? endif; ?>
                             <? if ($product->type->name) : ?><strong>Тип:</strong> <a
-                                href="<?= \yii\helpers\Url::to(['/cms/tree/view', 'model' => $model->cmsTree, 'SearchRelatedPropertiesModel' => ['type' => $product->type->id]]); ?>"><?= $product->type->name; ?></a>
+                                    href="<?= \yii\helpers\Url::to([
+                                        '/cms/tree/view',
+                                        'model' => $model->cmsTree,
+                                        'SearchRelatedPropertiesModel' => ['type' => $product->type->id]
+                                    ]); ?>"><?= $product->type->name; ?></a>
                                 <br><? endif; ?>
                             <strong>Категория:</strong>
                             <a href="<?= $model->cmsTree->url; ?>"><?= $model->cmsTree->name; ?></a><br/>
@@ -195,7 +203,7 @@ $shopProduct->createNewView();
                         <hr>
                         <a class="btn btn-default btn-primary btn-lg product-add-cart noradius" href="#"
                            onclick="sx.Shop.addProduct(<?= $model->id; ?>, 1); return false;"><i
-                                class="fa fa-cart-plus"></i> В корзину</a><br/><br/>
+                                    class="fa fa-cart-plus"></i> В корзину</a><br/><br/>
                         <a class="btn btn-default btn-primary btn-lg product-add-cart noradius sx-fancybox"
                            href="#sx-form-feedback">
                             <i class="fa fa-cart-plus"></i> Купить в кредит
@@ -291,10 +299,18 @@ $shopProduct->createNewView();
                             <? endif; ?>
 
                             <? if ($product->marka->name) : ?><strong>Марка:</strong> <a
-                                href="<?= \yii\helpers\Url::to(['/cms/tree/view', 'model' => $model->cmsTree, 'SearchRelatedPropertiesModel' => ['marka' => $product->marka->id]]); ?>"><?= $product->marka->name; ?></a>
+                                    href="<?= \yii\helpers\Url::to([
+                                        '/cms/tree/view',
+                                        'model' => $model->cmsTree,
+                                        'SearchRelatedPropertiesModel' => ['marka' => $product->marka->id]
+                                    ]); ?>"><?= $product->marka->name; ?></a>
                                 <br><? endif; ?>
                             <? if ($product->type->name) : ?><strong>Тип:</strong> <a
-                                href="<?= \yii\helpers\Url::to(['/cms/tree/view', 'model' => $model->cmsTree, 'SearchRelatedPropertiesModel' => ['type' => $product->type->id]]); ?>"><?= $product->type->name; ?></a>
+                                    href="<?= \yii\helpers\Url::to([
+                                        '/cms/tree/view',
+                                        'model' => $model->cmsTree,
+                                        'SearchRelatedPropertiesModel' => ['type' => $product->type->id]
+                                    ]); ?>"><?= $product->type->name; ?></a>
                                 <br><? endif; ?>
                             <strong>Категория:</strong>
                             <a href="<?= $model->cmsTree->url; ?>"><?= $model->cmsTree->name; ?></a><br/>
@@ -343,7 +359,8 @@ $shopProduct->createNewView();
                     'limit' => 10,
                     'activeQueryCallback' => function (\yii\db\ActiveQuery $query) use ($model) {
                         $query->andWhere(['!=', \skeeks\cms\models\CmsContentElement::tableName() . ".id", $model->id]);
-                        $query->leftJoin('cms_content_element_property', '`cms_content_element_property`.`element_id` = `cms_content_element`.`id`');
+                        $query->leftJoin('cms_content_element_property',
+                            '`cms_content_element_property`.`element_id` = `cms_content_element`.`id`');
                     }
                 ]); ?>
             </div>
@@ -366,9 +383,14 @@ $shopProduct->createNewView();
                         'label' => 'Просмотренные товары',
                         'limit' => 6,
                         'activeQueryCallback' => function (\yii\db\ActiveQuery $query) use ($model) {
-                            $query->andWhere(['!=', \skeeks\cms\models\CmsContentElement::tableName() . ".id", $model->id]);
+                            $query->andWhere([
+                                '!=',
+                                \skeeks\cms\models\CmsContentElement::tableName() . ".id",
+                                $model->id
+                            ]);
                             $query->leftJoin('shop_product', '`shop_product`.`id` = `cms_content_element`.`id`');
-                            $query->leftJoin('shop_viewed_product', '`shop_viewed_product`.`shop_product_id` = `shop_product`.`id`');
+                            $query->leftJoin('shop_viewed_product',
+                                '`shop_viewed_product`.`shop_product_id` = `shop_product`.`id`');
                             $query->andWhere(['shop_fuser_id' => \Yii::$app->shop->shopFuser->id]);
                             //$query->orderBy(['shop_viewed_product.created_at' => SORT_DESC]);
                         }

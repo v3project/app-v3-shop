@@ -1,7 +1,9 @@
 <?php
+
 use yii\helpers\Html;
 
 use yii\widgets\ActiveForm;
+
 /**
  * index
  *
@@ -26,8 +28,8 @@ $this->title = $model->getDisplayName();
 ?>
 
 <?= $this->render('_header', [
-    'model'     => $model,
-    'title'     => 'Профиль',
+    'model' => $model,
+    'title' => 'Профиль',
 ]); ?>
 
 

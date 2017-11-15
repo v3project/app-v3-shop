@@ -15,13 +15,13 @@
     <? if ($count > 2) : ?>
         <ol class="breadcrumb">
             <? foreach (\Yii::$app->breadcrumbs->parts as $data) : ?>
-                <? $counter ++; ?>
+                <? $counter++; ?>
                 <? if ($counter == $count): ?>
-                    <!--<li class="active"><?/*= $data['name']; */?></li>-->
+                    <!--<li class="active"><? /*= $data['name']; */ ?></li>-->
                 <? else : ?>
                     <li><a href="<?= $data['url']; ?>" title="<?= $data['name']; ?>"><?= $data['name']; ?></a></li>
-                <? endif;?>
+                <? endif; ?>
             <? endforeach; ?>
         </ol>
-    <? endif;?>
-<? endif;?>
+    <? endif; ?>
+<? endif; ?>

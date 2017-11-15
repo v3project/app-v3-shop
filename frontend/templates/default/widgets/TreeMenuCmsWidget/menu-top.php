@@ -18,8 +18,8 @@
     <? if ($trees = $widget->activeQuery->all()) : ?>
         <? foreach ($trees as $tree) : ?>
             <?= $this->render("_one", [
-                "widget"        => $widget,
-                "model"         => $tree,
+                "widget" => $widget,
+                "model" => $tree,
             ]); ?>
         <? endforeach; ?>
     <? endif; ?>

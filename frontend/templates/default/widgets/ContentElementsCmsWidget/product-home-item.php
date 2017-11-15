@@ -30,7 +30,7 @@ $model->name = $model->name . " ({$model->relatedPropertiesModel->getSmartAttrib
             <div class="shop-option-over">
                 <!-- replace data-item-id width the real item ID - used by js/view/demo.shop.js -->
                 <a class="btn btn-default" data-pjax="0" href="<?= $model->url; ?>"><i
-                        class="fa fa-cart-plus size-20"></i></a>
+                            class="fa fa-cart-plus size-20"></i></a>
             </div>
             <!-- /hover buttons -->
             <!-- product more info -->
@@ -58,9 +58,9 @@ $model->name = $model->name . " ({$model->relatedPropertiesModel->getSmartAttrib
                         <?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?>
                     <? else : ?>
                         <span
-                            class="line-through"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
+                                class="line-through"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
                         <span
-                            class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?></span>
+                                class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?></span>
                     <? endif; ?>
                 </div>
                 <!-- /price -->

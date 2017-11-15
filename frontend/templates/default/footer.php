@@ -107,7 +107,8 @@ CSS
         <div class="container">
             <ul class="pull-right nomargin list-inline mobile-block">
                 <li><a href="http://skeeks.com" title="Студия SkeekS">Разработка сайта — SkeekS.com</a> (<a
-                        href="http://cms.skeeks.com" title="Система управления сайтом SkeekS CMS (Yii2 cms)">SkeekS CMS
+                            href="http://cms.skeeks.com" title="Система управления сайтом SkeekS CMS (Yii2 cms)">SkeekS
+                        CMS
                         Yii2</a>)
                 </li>
             </ul>

@@ -5,7 +5,9 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 21.09.2015
  */
+
 namespace frontend\assets;
+
 /**
  * Class AppAsset
  * @package frontend\assets

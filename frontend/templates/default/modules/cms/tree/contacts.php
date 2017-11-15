@@ -21,7 +21,8 @@ CSS
 ]) ?>
 <!--=== Content Part ===-->
 <section style="padding: 0px;">
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=ZIzv2My7at8ytlpC47tEiPvETsD3CdRt&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+    <script type="text/javascript" charset="utf-8" async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=ZIzv2My7at8ytlpC47tEiPvETsD3CdRt&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
     <div class="container">
         <p></p>
 
@@ -33,12 +34,14 @@ CSS
                 <h2>Контакты</h2>
                 <hr/>
                 <p>
-                    <span class="block"><strong><i class="fa fa-map-marker"></i> Адрес:</strong> г. Солнечногорск...</span>
+                    <span class="block"><strong><i
+                                    class="fa fa-map-marker"></i> Адрес:</strong> г. Солнечногорск...</span>
                     <span class="block"><strong><i class="fa fa-phone"></i> Телефон:</strong>
-                        <a href="tel:+74950057926" style="font-size: 21px; text-decoration: none;">(+7 495) 005-79-26</a>
+                        <a href="tel:+74950057926"
+                           style="font-size: 21px; text-decoration: none;">(+7 495) 005-79-26</a>
                     </span>
                     <span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a
-                            href="mailto:info@skeeks.com">info@skeeks.com</a></span>
+                                href="mailto:info@skeeks.com">info@skeeks.com</a></span>
                 </p>
 
                 <div class="margin-top-20">

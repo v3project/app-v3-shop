@@ -18,39 +18,37 @@ JS
 
 <?= $this->render('@template/include/breadcrumbs', [
     'model' => $model
-])?>
-
+]) ?>
 
 
 <section style="padding-top: 20px;">
-        <div class="container">
+    <div class="container">
 
-                <div class="col-md-12">
-
-
-<? $widgetElements = new \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget([
-    'namespace' => 'ContentElementsCmsWidget-second',
-    'viewFile' 	=> '@app/views/widgets/ContentElementsCmsWidget/products',
-    'contentElementClass'         => \skeeks\cms\shop\models\ShopCmsContentElement::className(),
-    'dataProviderCallback' 	=> function(\yii\data\ActiveDataProvider $activeDataProvider)
-    {
-
-        $activeDataProvider->query->with('relatedProperties');
-        $activeDataProvider->query->with('shopProduct');
-        $activeDataProvider->query->with('shopProduct.baseProductPrice');
-        $activeDataProvider->query->with('shopProduct.minProductPrice');
-        //$activeDataProvider->query->joinWith('shopProduct.baseProductPrice as basePrice');
-        //$activeDataProvider->query->orderBy(['basePrice' => SORT_ASC]);
-    },
-]); ?>
-
-<? $resultElements = $widgetElements->run(); ?>
-
-                            <?= $resultElements; ?>
+        <div class="col-md-12">
 
 
-                        </div>
-            </div>
+            <? $widgetElements = new \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget([
+                'namespace' => 'ContentElementsCmsWidget-second',
+                'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/products',
+                'contentElementClass' => \skeeks\cms\shop\models\ShopCmsContentElement::className(),
+                'dataProviderCallback' => function (\yii\data\ActiveDataProvider $activeDataProvider) {
+
+                    $activeDataProvider->query->with('relatedProperties');
+                    $activeDataProvider->query->with('shopProduct');
+                    $activeDataProvider->query->with('shopProduct.baseProductPrice');
+                    $activeDataProvider->query->with('shopProduct.minProductPrice');
+                    //$activeDataProvider->query->joinWith('shopProduct.baseProductPrice as basePrice');
+                    //$activeDataProvider->query->orderBy(['basePrice' => SORT_ASC]);
+                },
+            ]); ?>
+
+            <? $resultElements = $widgetElements->run(); ?>
+
+            <?= $resultElements; ?>
+
+
+        </div>
+    </div>
 
 </section>
 

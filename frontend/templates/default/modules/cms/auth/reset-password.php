@@ -5,6 +5,7 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 25.03.2015
  */
+
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
@@ -22,7 +23,8 @@ use \skeeks\cms\helpers\UrlHelper;
             <h2 class="size-20"><?= $message; ?></h2>
         </div>
 
-        <?= Html::a('Запросить восстановление еще раз', UrlHelper::constructCurrent()->setRoute('cms/auth/forget')->toString()) ?> |
+        <?= Html::a('Запросить восстановление еще раз',
+            UrlHelper::constructCurrent()->setRoute('cms/auth/forget')->toString()) ?> |
         <?= Html::a('Авторизация', UrlHelper::constructCurrent()->setRoute('cms/auth/login')->toString()) ?> |
         <?= Html::a('Регистрация', UrlHelper::constructCurrent()->setRoute('cms/auth/register')->toString()) ?>
 

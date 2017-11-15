@@ -11,16 +11,16 @@ $config = [
     'bootstrap' => ['debug'],
     'modules' => [
         'gii' =>
-        [
-            'allowedIPs' => ['*'],
-            'class' => '\yii\gii\Module',
-        ],
+            [
+                'allowedIPs' => ['*'],
+                'class' => '\yii\gii\Module',
+            ],
 
         'debug' =>
-        [
-            'allowedIPs' => ['*'], // adjust this to your needs
-            'class' => 'yii\debug\Module',
-        ]
+            [
+                'allowedIPs' => ['*'], // adjust this to your needs
+                'class' => 'yii\debug\Module',
+            ]
     ],
 ];
 

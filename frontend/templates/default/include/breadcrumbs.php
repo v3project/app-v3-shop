@@ -6,12 +6,10 @@
  * @date 24.03.2015
  */
 
-if (!@$title)
-{
+if (!@$title) {
 
-    if ($model)
-    {
-        $title = $model->name?$model->name:$model->username;
+    if ($model) {
+        $title = $model->name ? $model->name : $model->username;
     }
 }
 
@@ -40,17 +38,17 @@ if (!@$title)
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <?= \skeeks\cms\cmsWidgets\breadcrumbs\BreadcrumbsCmsWidget::widget([
-                    'viewFile'       => '@template/widgets/BreadcrumbsCmsWidget/default',
+                    'viewFile' => '@template/widgets/BreadcrumbsCmsWidget/default',
                 ]); ?>
 
                 <h1><?= $title; ?></h1>
             </div>
-        <!-- breadcrumbs -->
-        <!--<ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pages</a></li>
-            <li class="active">Blank Page</li>
-        </ol>--><!-- /breadcrumbs -->
+            <!-- breadcrumbs -->
+            <!--<ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pages</a></li>
+                <li class="active">Blank Page</li>
+            </ol>--><!-- /breadcrumbs -->
 
         </div>
     </div>

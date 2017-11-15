@@ -2,7 +2,7 @@
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
+ * @copyright 2010 SkeekS (пїЅпїЅпїЅпїЅпїЅ)
  * @date 06.03.2015
  */
 /* @var $this \yii\web\View */
@@ -11,7 +11,7 @@
 
 <?= $this->render('@template/include/breadcrumbs', [
     'model' => $model
-])?>
+]) ?>
 
 <!--=== Content Part ===-->
 <div class="container content">

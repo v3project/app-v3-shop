@@ -2,7 +2,7 @@
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  * @link http://skeeks.com/
- * @copyright 2010 SkeekS (ÑêèêÑ)
+ * @copyright 2010 SkeekS (ï¿½ï¿½ï¿½ï¿½ï¿½)
  * @date 06.03.2015
  */
 /* @var $this \yii\web\View */
@@ -13,10 +13,10 @@ $opacity = $model->relatedPropertiesModel->getAttribute("opacity");
 
 <?= $this->render('@template/include/breadcrumbs', [
     'model' => $model
-])?>
+]) ?>
 
 <!--=== Content Part ===-->
-<section class="padding-xxs" <?= $opacity ? "style='opacity: {$opacity};'": ""?>>
+<section class="padding-xxs" <?= $opacity ? "style='opacity: {$opacity};'" : "" ?>>
     <div class="container content">
         <div class="row">
             <div class="col-md-12 sx-content">
@@ -26,7 +26,7 @@ $opacity = $model->relatedPropertiesModel->getAttribute("opacity");
                     'namespace' => 'FormWidget-feedback-callback',
                     'form_code' => 'feedback',
                     'viewFile' => 'whith-messages',
-                ])?>
+                ]) ?>
 
 
             </div>

@@ -19,13 +19,14 @@ $product = \common\models\Moto::instance($model);
             <!-- product image(s) -->
             <div class="pull-left col-md-4" style="text-align: center;">
                 <a class="shop-item-image" href="<?= $model->url; ?>" data-pjax="0">
-                    <img src="<?= \Yii::$app->settings->imageLoader; ?>" data-original="<?= \skeeks\cms\helpers\Image::getSrc(
-                        \Yii::$app->imaging->getImagingUrl($model->image ? $model->image->src : null,
-                            new \skeeks\cms\components\imaging\filters\Thumbnail([
-                                'w' => 0,
-                                'h' => 200,
-                            ])
-                        )); ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>"
+                    <img src="<?= \Yii::$app->settings->imageLoader; ?>"
+                         data-original="<?= \skeeks\cms\helpers\Image::getSrc(
+                             \Yii::$app->imaging->getImagingUrl($model->image ? $model->image->src : null,
+                                 new \skeeks\cms\components\imaging\filters\Thumbnail([
+                                     'w' => 0,
+                                     'h' => 200,
+                                 ])
+                             )); ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>"
                          class="img_list_catalog sx-lazy"/>
                 </a>
             </div>
@@ -77,9 +78,9 @@ $product = \common\models\Moto::instance($model);
                             <?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?>
                         <? else : ?>
                             <span
-                                class="line-through"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
+                                    class="line-through"><?= \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money); ?></span>
                             <span
-                                class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?></span>
+                                    class="sx-discount-price"><?= \Yii::$app->money->convertAndFormat($shopProduct->minProductPrice->money); ?></span>
                         <? endif; ?>
                     </div>
                     <!-- /price -->
@@ -87,14 +88,16 @@ $product = \common\models\Moto::instance($model);
 
                 <div class="sx-to-cart-btn-wrapper" style="margin-top: 10px;">
                     <? if ($shopProduct && $shopProduct->product_type == \skeeks\cms\shop\models\ShopProduct::TYPE_SIMPLE) : ?>
-                        <input type="number" id="sx-number-<?= $model->id; ?>" value="1" name="qty" class="form-control pull-left sx-basket-quantity" style="width: 50px;
+                        <input type="number" id="sx-number-<?= $model->id; ?>" value="1" name="qty"
+                               class="form-control pull-left sx-basket-quantity" style="width: 50px;
     border: #ddd 1px solid;
     border-radius: 0px;" maxlength="3" max="999" min="1" data-basket_id="786">
                         <a class="btn btn-default btn-primary product-add-cart noradius" href="#"
-                               onclick="sx.Shop.addProduct(<?= $model->id; ?>, $('#sx-number-<?= $model->id; ?>').val()); return false;"><i
+                           onclick="sx.Shop.addProduct(<?= $model->id; ?>, $('#sx-number-<?= $model->id; ?>').val()); return false;"><i
                                     class="fa fa-cart-plus"></i> В корзину</a>
                     <? else : ?>
-                        <a class="btn btn-default btn-primary product-add-cart noradius" href="<?= $model->url; ?>" data-pjax="0"><i
+                        <a class="btn btn-default btn-primary product-add-cart noradius" href="<?= $model->url; ?>"
+                           data-pjax="0"><i
                                     class="glyphicon glyphicon-eye-open"></i> Выбрать фасовку</a>
                     <? endif; ?>
                 </div>

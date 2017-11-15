@@ -1,7 +1,9 @@
 <?php
+
 use yii\helpers\Html;
 
 use yii\widgets\ActiveForm;
+
 /**
  * index
  *
@@ -23,8 +25,8 @@ $this->title = $model->getDisplayName();
 ?>
 
 <?= \Yii::$app->view->render('_header', [
-    'model'     => $model,
-    'title'     => 'Управление настройками',
+    'model' => $model,
+    'title' => 'Управление настройками',
 ]); ?>
 
 
@@ -43,8 +45,10 @@ $this->title = $model->getDisplayName();
 
             <? $modelForm = $model; ?>
             <? $form = \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::begin([
-                'validationUrl' => \skeeks\cms\helpers\UrlHelper::construct('cms/user/edit-info', ['username' => $model->username])->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
-                'action'        => \skeeks\cms\helpers\UrlHelper::construct('cms/user/edit-info', ['username' => $model->username])->toString(),
+                'validationUrl' => \skeeks\cms\helpers\UrlHelper::construct('cms/user/edit-info',
+                    ['username' => $model->username])->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
+                'action' => \skeeks\cms\helpers\UrlHelper::construct('cms/user/edit-info',
+                    ['username' => $model->username])->toString(),
 
                 'afterValidateCallback' => new \yii\web\JsExpression(<<<JS
     function(jForm, ajax)
@@ -58,28 +62,29 @@ $this->title = $model->getDisplayName();
         {});
     }
 JS
-)
+                )
             ]); ?>
 
-                <?/*= $form->field($model, 'image_id')->widget(
+            <? /*= $form->field($model, 'image_id')->widget(
                     \skeeks\cms\widgets\formInputs\StorageImage::className()
-                ) */?>
+                ) */ ?>
 
-                <?= $form->field($model, 'username')->textInput(['maxlength' => 12])->hint('Уникальное имя пользователя. Используется для авторизации, для формирования ссылки на личный кабинет.'); ?>
-                <?= $form->field($model, 'name')->textInput(); ?>
+            <?= $form->field($model,
+                'username')->textInput(['maxlength' => 12])->hint('Уникальное имя пользователя. Используется для авторизации, для формирования ссылки на личный кабинет.'); ?>
+            <?= $form->field($model, 'name')->textInput(); ?>
 
 
 
-                <?= $form->field($model, 'email')->textInput(); ?>
-                <?= $form->field($model, 'phone')->textInput(); ?>
+            <?= $form->field($model, 'email')->textInput(); ?>
+            <?= $form->field($model, 'phone')->textInput(); ?>
 
-                <?= $form->field($model, 'gender')->radioList([
-                    'men' => 'Муж',
-                    'women' => 'Жен',
-                ]); ?>
-                <?/*= $form->field($model, 'status_of_life')->textarea(); */?>
+            <?= $form->field($model, 'gender')->radioList([
+                'men' => 'Муж',
+                'women' => 'Жен',
+            ]); ?>
+            <? /*= $form->field($model, 'status_of_life')->textarea(); */ ?>
 
-                <button class="btn btn-primary">Сохранить</button>
+            <button class="btn btn-primary">Сохранить</button>
             <? \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::end(); ?>
 
         </div>
@@ -87,48 +92,50 @@ JS
         <div id="passwordTab" class="profile-edit tab-pane fade">
             <? $modelForm = new \skeeks\cms\models\forms\PasswordChangeForm(); ?>
             <? $form = \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::begin([
-                'validationUrl' => \skeeks\cms\helpers\UrlHelper::construct('cms/user/change-password', ['username' => $model->username])->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
-                'action'        => \skeeks\cms\helpers\UrlHelper::construct('cms/user/change-password', ['username' => $model->username])->toString()
+                'validationUrl' => \skeeks\cms\helpers\UrlHelper::construct('cms/user/change-password',
+                    ['username' => $model->username])->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString(),
+                'action' => \skeeks\cms\helpers\UrlHelper::construct('cms/user/change-password',
+                    ['username' => $model->username])->toString()
             ]); ?>
-                <?= $form->field($modelForm, 'new_password')->passwordInput() ?>
-                <?= $form->field($modelForm, 'new_password_confirm')->passwordInput() ?>
-                <button class="btn btn-primary">Изменить</button>
+            <?= $form->field($modelForm, 'new_password')->passwordInput() ?>
+            <?= $form->field($modelForm, 'new_password_confirm')->passwordInput() ?>
+            <button class="btn btn-primary">Изменить</button>
             <? \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::end(); ?>
         </div>
-
 
 
         <? if (\Yii::$app->authClientCollection->clients) : ?>
             <div id="sx-social" class="profile-edit tab-pane fade">
                 <? \yii\bootstrap\Alert::begin([
                     'options' => [
-                      'class' => 'alert-info',
+                        'class' => 'alert-info',
                     ],
-                ])?>
-                    Вы можете подключить профиль социальной сети, или стороннего приложения, и авторизовываться через него на нашем сайте.
-                <? \yii\bootstrap\Alert::end()?>
+                ]) ?>
+                Вы можете подключить профиль социальной сети, или стороннего приложения, и авторизовываться через него
+                на нашем сайте.
+                <? \yii\bootstrap\Alert::end() ?>
 
 
                 <? if (\Yii::$app->user->identity->cmsUserAuthClients) : ?>
                     <h4>Уже подключены:</h4>
                     <?=
-                        \yii\grid\GridView::widget([
-                            'dataProvider' => new \yii\data\ArrayDataProvider([
-                                'allModels' => \Yii::$app->user->identity->cmsUserAuthClients
-                            ]),
-                            'columns' =>
+                    \yii\grid\GridView::widget([
+                        'dataProvider' => new \yii\data\ArrayDataProvider([
+                            'allModels' => \Yii::$app->user->identity->cmsUserAuthClients
+                        ]),
+                        'columns' =>
                             [
                                 'provider'
                             ]
-                        ])
+                    ])
                     ?>
                 <? endif; ?>
 
-                <hr />
+                <hr/>
                 <h4>Подключить еще:</h4>
                 <?= yii\authclient\widgets\AuthChoice::widget([
-                     'baseAuthUrl'  => ['/cms/auth/client'],
-                     'popupMode'    => true,
+                    'baseAuthUrl' => ['/cms/auth/client'],
+                    'popupMode' => true,
                 ]) ?>
             </div>
         <? endif; ?>

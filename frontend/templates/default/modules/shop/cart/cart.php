@@ -52,10 +52,10 @@ JS
                         'dataProvider' => new \yii\data\ActiveDataProvider([
                             'query' => \Yii::$app->shop->shopFuser->getShopBaskets(),
                             'pagination' =>
-                            [
-                                'defaultPageSize' => 100,
-                                'pageSizeLimit' => [1, 100],
-                            ]
+                                [
+                                    'defaultPageSize' => 100,
+                                    'pageSizeLimit' => [1, 100],
+                                ]
                         ]),
 
                     ]); ?>

@@ -25,14 +25,14 @@ $config = [
                 'cookieValidationKey' => 'A-1Lng7i0JtS9Lz4T6KFOuwkSbx1yLOP',
             ],
             'user' =>
-            [
-                'identityClass' => 'common\models\User',
-                /*'identityCookie' => [
-                    'name' => '_identity',
-                    'httpOnly' => true,
-                    'domain' => '.cms.skeeks.com'
-                ]*/
-            ],
+                [
+                    'identityClass' => 'common\models\User',
+                    /*'identityCookie' => [
+                        'name' => '_identity',
+                        'httpOnly' => true,
+                        'domain' => '.cms.skeeks.com'
+                    ]*/
+                ],
 
             'canurl' => [
                 'class' => 'v3project\helpers\CanUrl',

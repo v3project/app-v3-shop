@@ -24,16 +24,16 @@
     <div class="row">
         <div class="col-md-12">
             <? \skeeks\cms\modules\admin\widgets\Pjax::begin(); ?>
-                    <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
-                        'namespace' => 'ContentElementsCmsWidget-search-result',
-                        'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/products-list',
-                        'enabledCurrentTree' => \skeeks\cms\components\Cms::BOOL_N,
-                        'active' => "Y",
-                        'dataProviderCallback' => function (\yii\data\ActiveDataProvider $dataProvider) {
-                            \Yii::$app->cmsSearch->buildElementsQuery($dataProvider->query);
-                            \Yii::$app->cmsSearch->logResult($dataProvider);
-                        },
-                    ]) ?>
+            <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
+                'namespace' => 'ContentElementsCmsWidget-search-result',
+                'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/products-list',
+                'enabledCurrentTree' => \skeeks\cms\components\Cms::BOOL_N,
+                'active' => "Y",
+                'dataProviderCallback' => function (\yii\data\ActiveDataProvider $dataProvider) {
+                    \Yii::$app->cmsSearch->buildElementsQuery($dataProvider->query);
+                    \Yii::$app->cmsSearch->logResult($dataProvider);
+                },
+            ]) ?>
             <? \skeeks\cms\modules\admin\widgets\Pjax::end(); ?>
         </div>
     </div>

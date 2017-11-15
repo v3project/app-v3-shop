@@ -31,17 +31,17 @@ JS
     <div class="row">
         <div class="container sx-border-block">
             <? \skeeks\cms\modules\admin\widgets\Pjax::begin([
-                'id'                    => 'sx-cart-full',
+                'id' => 'sx-cart-full',
             ]) ?>
 
 
             <? if (\Yii::$app->shop->shopFuser->isEmpty()) : ?>
                 <!-- EMPTY CART -->
-                    <div class="panel panel-default">
+                <div class="panel panel-default">
                     <div class="panel-body">
-                        <strong>Ваша корзина пуста!</strong><br />
-                        В вашей корзине нет покупок.<br />
-                        Кликните <a href="/" data-pjax="0">сюда</a> для продолжения покупок. <br />
+                        <strong>Ваша корзина пуста!</strong><br/>
+                        В вашей корзине нет покупок.<br/>
+                        Кликните <a href="/" data-pjax="0">сюда</a> для продолжения покупок. <br/>
                         <!--<span class="label label-warning">this is just an empty cart example</span>-->
                     </div>
                 </div>
@@ -50,7 +50,7 @@ JS
 
                 <?= \skeeks\cms\shopCartStepsWidget\ShopCartStepsWidget::widget(); ?>
 
-                <hr />
+                <hr/>
 
                 <!-- LEFT -->
                 <div class="col-lg-9 col-sm-8">
@@ -60,8 +60,8 @@ JS
                     <!-- cart content -->
                     <div id="cartContent">
 
-    <?
-    $this->registerCss(<<<CSS
+                        <?
+                        $this->registerCss(<<<CSS
     .radio input[type=radio]
     {
         left: 0px;
@@ -72,13 +72,13 @@ JS
         padding-left: 0px;
     }
 CSS
-    );
-    ?>
+                        );
+                        ?>
                         <? $checkout = \skeeks\cms\shopCheckout\ShopCheckoutWidget::begin([
                             'btnSubmitWrapperOptions' =>
-                            [
-                                'style' => 'display: none;'
-                            ]
+                                [
+                                    'style' => 'display: none;'
+                                ]
                         ]); ?>
                         <? \skeeks\cms\shopCheckout\ShopCheckoutWidget::end(); ?>
 
@@ -94,7 +94,7 @@ CSS
                 <!-- RIGHT -->
                 <div class="col-lg-3 col-sm-4">
 
-                    <? $url = \yii\helpers\Url::to(['/shop/cart/payment']) ; ?>
+                    <? $url = \yii\helpers\Url::to(['/shop/cart/payment']); ?>
                     <?= $this->render("_result", [
                         'submit' => <<<HTML
     <a href="#" onclick="$('#{$checkout->formId}').submit(); return false;" class="btn btn-primary btn-lg btn-block size-15" data-pjax="0">

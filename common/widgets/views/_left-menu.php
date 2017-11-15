@@ -11,31 +11,30 @@
 $active = false;
 $parentsIds = \yii\helpers\ArrayHelper::map($activeModel->parents, 'id', 'id');
 $parentsIds[] = $activeModel->id;
-if (in_array($model->id, $parentsIds))
-{
+if (in_array($model->id, $parentsIds)) {
     $active = true;
 }
 
 $children = $model->getChildren()->andWhere(['active' => "Y"])->all();
 ?>
-<li class="<?= $active ? "active": ""?> sx-level-<?= $model->level; ?>">
-    <a href="<?= $model->url; ?>" title="<?= $model->name; ?>" class="<?= $active ? "active": ""?>" data-pjax="0">
+<li class="<?= $active ? "active" : "" ?> sx-level-<?= $model->level; ?>">
+    <a href="<?= $model->url; ?>" title="<?= $model->name; ?>" class="<?= $active ? "active" : "" ?>" data-pjax="0">
         <?= $model->name; ?>
 
         <? if ($children) : ?>
             <span class="caret"></span>
         <? endif; ?>
     </a>
-    <?/* if ($active) : */?><!--
-        <?/* if ($children) : */?>
+    <? /* if ($active) : */ ?><!--
+        <? /* if ($children) : */ ?>
             <ul>
-                <?/* foreach($children as $childTree) : */?>
-                    <?/*= $this->render('_left-menu', [
+                <? /* foreach($children as $childTree) : */ ?>
+                    <? /*= $this->render('_left-menu', [
                         'model'         => $childTree,
                         'activeModel'   => $activeModel,
-                    ]); */?>
-                <?/* endforeach; */?>
+                    ]); */ ?>
+                <? /* endforeach; */ ?>
             </ul>
-        <?/* endif; */?>
-    --><?/* endif; */?>
+        <? /* endif; */ ?>
+    --><? /* endif; */ ?>
 </li>

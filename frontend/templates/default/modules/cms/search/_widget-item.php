@@ -14,13 +14,14 @@
     <div class="col-sm-4 sm-margin-bottom-20">
         <? if ($model->image) : ?>
             <img src="<?= \Yii::$app->imaging->getImagingUrl($model->image->src,
-            new \skeeks\cms\components\imaging\filters\Thumbnail([
-                'w'    => 409,
-                'h'    => 258,
-            ])
-        ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive" />
+                new \skeeks\cms\components\imaging\filters\Thumbnail([
+                    'w' => 409,
+                    'h' => 258,
+                ])
+            ) ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive"/>
         <? else: ?>
-            <img src="<?= \skeeks\cms\helpers\Image::getCapSrc(); ?>" title="<?= $model->name; ?>" alt="<?= $model->name; ?>" class="img-responsive" />
+            <img src="<?= \skeeks\cms\helpers\Image::getCapSrc(); ?>" title="<?= $model->name; ?>"
+                 alt="<?= $model->name; ?>" class="img-responsive"/>
         <? endif; ?>
 
     </div>
@@ -31,13 +32,14 @@
             </h2>
 
             <ul class="list-inline posted-info">
-                <?/* if ($model->createdBy) : */?><!--
-                    <li>Добавил: <a href="<?/*= $model->createdBy->getPageUrl(); */?>" title="<?/*= $model->createdBy->name; */?>"><?/*= $model->createdBy->name; */?></a></li>
-                --><?/* endif; */?>
+                <? /* if ($model->createdBy) : */ ?><!--
+                    <li>Добавил: <a href="<? /*= $model->createdBy->getPageUrl(); */ ?>" title="<? /*= $model->createdBy->name; */ ?>"><? /*= $model->createdBy->name; */ ?></a></li>
+                --><? /* endif; */ ?>
                 <? if ($model->cmsTree) : ?>
-                    <li>Категория: <a href="<?= $model->cmsTree->url; ?>" title="<?= $model->cmsTree->name; ?>"><?= $model->cmsTree->name; ?></a></li>
+                    <li>Категория: <a href="<?= $model->cmsTree->url; ?>"
+                                      title="<?= $model->cmsTree->name; ?>"><?= $model->cmsTree->name; ?></a></li>
                 <? endif; ?>
-                <li>Время публикации: <?= \Yii::$app->formatter->asDate($model->published_at, 'full')?></li>
+                <li>Время публикации: <?= \Yii::$app->formatter->asDate($model->published_at, 'full') ?></li>
                 <? if ($testValue = $model->relatedPropertiesModel->getAttribute('test')) : ?>
                     <li><?= $model->relatedPropertiesModel->getAttributeLabel('test'); ?>: <?= $testValue; ?></li>
                 <? endif; ?>
@@ -50,4 +52,6 @@
     </div>
 </div>
 
-<div class="clearfix margin-bottom-20"><hr></div>
+<div class="clearfix margin-bottom-20">
+    <hr>
+</div>

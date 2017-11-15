@@ -2,9 +2,10 @@
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
+ * @copyright 2010 SkeekS (пїЅпїЅпїЅпїЅпїЅ)
  * @date 25.05.2015
  */
+
 namespace common\widgets\filters;
 
 use skeeks\cms\base\WidgetRenderable;
@@ -22,36 +23,36 @@ use yii\widgets\ActiveForm;
  */
 class ProductFilters extends WidgetRenderable
 {
-    //Какой контент
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public $content_id;
 
-    //Какие атрибуты
-    public $filteredAttributes                  = [];
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public $filteredAttributes = [];
 
-    public $realatedFilteredAttributes          = [];
+    public $realatedFilteredAttributes = [];
 
-    public $type_price_id                       = "";
+    public $type_price_id = "";
 
     /**
-     * @var array (Массив ids записей, для показа только нужных фильтров)
+     * @var array (пїЅпїЅпїЅпїЅпїЅпїЅ ids пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
      */
-    public $elementIds          = [];
+    public $elementIds = [];
 
     /**
      * @var \skeeks\cms\shop\cmsWidgets\filters\models\SearchProductsModel
      */
-    public $searchModel                 = null;
+    public $searchModel = null;
 
 
     /**
      * @var SearchRelatedPropertiesModel
      */
-    public $searchRelatedPropertiesModel  = null;
+    public $searchRelatedPropertiesModel = null;
 
     static public function descriptorConfig()
     {
         return array_merge(parent::descriptorConfig(), [
-            'name'          => 'Фильтры',
+            'name' => 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ',
         ]);
     }
 
@@ -59,8 +60,7 @@ class ProductFilters extends WidgetRenderable
     {
         parent::init();
 
-        if (!$this->searchRelatedPropertiesModel && $this->cmsContent)
-        {
+        if (!$this->searchRelatedPropertiesModel && $this->cmsContent) {
             $this->searchRelatedPropertiesModel = new SearchRelatedPropertiesModel();
             $this->searchRelatedPropertiesModel->initCmsContent($this->cmsContent);
 
@@ -69,34 +69,32 @@ class ProductFilters extends WidgetRenderable
     }
 
 
-
-
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(),
-        [
-            'content_id'                => \skeeks\cms\shop\Module::t('app', 'Content'),
-            'searchModelAttributes'     => \skeeks\cms\shop\Module::t('app', 'Fields'),
-            'realatedProperties'        => \skeeks\cms\shop\Module::t('app', 'Properties'),
-            'type_price_id'             => \skeeks\cms\shop\Module::t('app', 'Types of prices'),
-        ]);
+            [
+                'content_id' => \skeeks\cms\shop\Module::t('app', 'Content'),
+                'searchModelAttributes' => \skeeks\cms\shop\Module::t('app', 'Fields'),
+                'realatedProperties' => \skeeks\cms\shop\Module::t('app', 'Properties'),
+                'type_price_id' => \skeeks\cms\shop\Module::t('app', 'Types of prices'),
+            ]);
     }
 
     public function rules()
     {
         return ArrayHelper::merge(parent::rules(),
-        [
-            [['content_id'], 'integer'],
-            [['searchModelAttributes'], 'safe'],
-            [['realatedProperties'], 'safe'],
-            [['type_price_id'], 'integer'],
-        ]);
+            [
+                [['content_id'], 'integer'],
+                [['searchModelAttributes'], 'safe'],
+                [['realatedProperties'], 'safe'],
+                [['type_price_id'], 'integer'],
+            ]);
     }
 
     public function renderConfigForm(ActiveForm $form)
     {
         echo \Yii::$app->view->renderFile(__DIR__ . '/_form.php', [
-            'form'  => $form,
+            'form' => $form,
             'model' => $this
         ], $this);
     }
@@ -106,8 +104,7 @@ class ProductFilters extends WidgetRenderable
      */
     public function getTypePrice()
     {
-        if (!$this->type_price_id)
-        {
+        if (!$this->type_price_id) {
             return null;
         }
         return ShopTypePrice::find()->where(['id' => $this->type_price_id])->one();
@@ -126,8 +123,7 @@ class ProductFilters extends WidgetRenderable
      */
     public function search(ActiveDataProvider $activeDataProvider)
     {
-        if ($this->searchRelatedPropertiesModel)
-        {
+        if ($this->searchRelatedPropertiesModel) {
             $this->searchRelatedPropertiesModel->search($activeDataProvider);
         }
     }
