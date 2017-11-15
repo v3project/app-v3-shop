@@ -8,19 +8,19 @@ $config = [
         ],
     ],*/
 
-    'bootstrap' => ['debug'],
+    //'bootstrap' => ['debug'],
     'modules' => [
-        'gii' =>
+        /*'gii' =>
             [
                 'allowedIPs' => ['*'],
                 'class' => '\yii\gii\Module',
-            ],
+            ],*/
 
-        'debug' =>
+        /*'debug' =>
             [
                 'allowedIPs' => ['*'], // adjust this to your needs
                 'class' => 'yii\debug\Module',
-            ]
+            ]*/
     ],
 ];
 
