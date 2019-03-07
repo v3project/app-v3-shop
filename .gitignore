@@ -11,8 +11,6 @@ nbproject
 .project
 .settings
 
-global.php
-
 # windows thumbnail cache
 Thumbs.db
 

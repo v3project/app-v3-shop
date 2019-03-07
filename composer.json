@@ -72,11 +72,11 @@
             ],
             "web-dev": [
                 "$web",
-                "?frontend/config/env/dev/main.php"
+                "?frontend/config/main-dev.php"
             ],
             "web-prod": [
                 "$web",
-                "?frontend/config/env/prod/main.php"
+                "?frontend/config/main-prod.php"
             ],
             "console": [
                 "common/config/main.php",
@@ -85,11 +85,11 @@
             ],
             "console-dev": [
                 "$console",
-                "?console/config/env/dev/main.php"
+                "?console/config/main-dev.php"
             ],
             "console-prod": [
                 "$console",
-                "?console/config/env/prod/main.php"
+                "?console/config/main-prod.php"
             ]
         }
     },

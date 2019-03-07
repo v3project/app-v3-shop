@@ -13,12 +13,6 @@ $ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : "";
 //print_r($ip);
 if (in_array($ip, [
     '31.148.139.178',
-    '95.220.214.90',
-    '176.193.252.152',
-    '180.249.39.81',
-    '94.130.32.131',
-    '31.148.139.178',
-    '176.193.242.140',
 ]) && 1 == 1)
 {
     defined('YII_ENV') or define('YII_ENV', 'dev');

@@ -31,28 +31,25 @@ COMPOSER_HOME=.composer php composer.phar create-project --prefer-dist --stabili
 # Going into the project folder
 cd demo.ru
 
+# Download latest version of composer
+curl -sS https://getcomposer.org/installer | COMPOSER_HOME=.composer php
+
 #Edit the file to access the database, it is located at common/config/db.php
 
+#Update configs
+COMPOSER_HOME=.composer php composer.phar self-update && COMPOSER_HOME=.composer php composer.phar du
+
 #Installation of ready-dump
-php yii dbDumper/mysql/restore
+php yii migrate -t=migration_install -p=backup/migrations
 ```
 
-2. Обновить настройки своего домена ``frontend/config/main.php``
 
-```php
-'canurl' => [
-    'class' => 'v3project\helpers\CanUrl',
-    'schema' => 'http', //Указать ваш протокол
-    'host' => 'app-v3-shop.ru.vps69.s2.h.skeeks.com', //Указать ваш хост
-],
-```
-
-3. Прописать ключ сервиса ``dadata.ru``
+2. Прописать ключ сервиса ``dadata.ru``
     * Зарегистрироваться в сервисе dadata.ru
     * Получить ключ
     * Перейти: в систему управелния сайтом -> настройки -> Сервис подсказок dadata.ru -> Авторизационный токен
 
-4. Получить ключ доступа к api системы обработки заказов V3Project.ru
+3. Получить ключ доступа к api системы обработки заказов V3Project.ru
     * Получить ключ можно по запросу
 
 Обновление
