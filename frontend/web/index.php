@@ -1,28 +1,28 @@
 <?php
 /**
+ * @link https://cms.skeeks.com/
+ * @copyright Copyright (c) 2010 SkeekS
+ * @license https://cms.skeeks.com/license/
  * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 19.02.2015
- * @since 1.0.0
  */
-//define('YII_ENV',                 'dev');                   //Необязательная константа, если не будет определена, то определение произойдет по ходу выполнения проекта
-//define('YII_DEBUG',               true);                    //Необязательная константа, если не будет определена, то определение произойдет по ходу выполнения проекта
-//define("VENDOR_DIR",              ROOT_DIR . '/vendor');    //Вендоры
-
-error_reporting(E_ALL);
-// определяем режим вывода ошибок
-ini_set('display_errors', 'On');
+//echo "<h1 style='text-align: center; margin-top: 300px;'>На сайте технические работы.<br />Мы работаем над улучшением нашего сервиса.</h1>";die;
 
 define("ROOT_DIR",              dirname(dirname(__DIR__)));
 
-//Загрузка и запуск web приложения skeeks
-$skeeksFile = ROOT_DIR . '/vendor/skeeks/cms/app-web.php';
-
-if (!file_exists($skeeksFile))
+$ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : "";
+//print_r($ip);
+if (in_array($ip, [
+    '31.148.139.178',
+    '95.220.214.90',
+    '176.193.252.152',
+    '180.249.39.81',
+    '94.130.32.131',
+    '31.148.139.178',
+    '176.193.242.140',
+]) && 1 == 1)
 {
-    //Если нет app-web.php то попробуем начать установку автоматически.
-    die("The project is not complete, not installed vendors.");
+    defined('YII_ENV') or define('YII_ENV', 'dev');
+    defined('YII_DEBUG') or define('YII_DEBUG', true);
+    defined('ENV') or define('ENV', 'dev');
 }
-
-include $skeeksFile;
+include ROOT_DIR . '/vendor/skeeks/cms/app-web.php';

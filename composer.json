@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "v3project/aff-core-app": "~2.0.2"
+        "v3project/aff-core-app": "^3.0.0"
     },
     "minimum-stability" : "dev",
     "prefer-stable" : true,
