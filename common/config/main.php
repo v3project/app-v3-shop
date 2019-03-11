@@ -21,10 +21,6 @@ $config = [
             ],
         ],
 
-        'themeSettings' => [
-            'class' => \v3project\themes\mega\ThemeSettings::class,
-        ],
-
         'money' => [
             'class' => 'common\components\CommonMoney',
         ],

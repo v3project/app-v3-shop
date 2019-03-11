@@ -14,7 +14,8 @@ $config = [
         ],
         'view' => [
             'theme' => [
-                'class' => \v3project\themes\mega\ThemeMega::class
+                'class' => \v3project\themes\mega\ThemeMega::class,
+                'logo' => 'https://hsto.org/getpro/moikrug/uploads/company/100/005/586/5/logo/medium_fbc7e6e2f923f4923190c74711adb75c.png',
             ],
         ],
     ],
