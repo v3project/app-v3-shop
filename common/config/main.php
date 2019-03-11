@@ -21,8 +21,8 @@ $config = [
             ],
         ],
 
-        'settings' => [
-            'class' => 'common\components\SettingsComponent',
+        'themeSettings' => [
+            'class' => \v3project\themes\mega\ThemeSettings::class,
         ],
 
         'money' => [
