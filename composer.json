@@ -18,8 +18,6 @@
     ],
     "require": {
         "v3project/aff-core-app": "^3.0.0",
-
-        "v3project/skeeks": "dev-master",
         "v3project/theme-mega": "dev-master"
     },
     "minimum-stability" : "dev",
