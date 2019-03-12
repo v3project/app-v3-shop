@@ -20,10 +20,6 @@ $config = [
                 ],
             ],
         ],
-
-        'money' => [
-            'class' => 'common\components\CommonMoney',
-        ],
     ],
 ];
 
