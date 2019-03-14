@@ -18,7 +18,9 @@
     ],
     "require": {
         "v3project/aff-core-app": "^3.0.0",
-        "v3project/theme-mega": "dev-master"
+        "v3project/theme-mega": "dev-master",
+
+        "v3toys/parsing": "dev-master"
     },
     "minimum-stability" : "dev",
     "prefer-stable" : true,
@@ -100,6 +102,10 @@
         {
             "type": "git",
             "url": "https://git.skeeks.com/v3project/theme-mega.git"
+        },
+        {
+            "type": "git",
+            "url":  "https://git.skeeks.com/v3toys/parsing.git"
         }
     ],
     "config": {
