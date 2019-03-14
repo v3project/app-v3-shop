@@ -72,6 +72,7 @@ COMPOSER_HOME=.composer php composer.phar update -o
 php yii parsing/parsing
 php yii v3toys/properties/load 1
 php yii v3toysParsing/images/load
+php yii v3toys/prices/load
 ```
 
 
