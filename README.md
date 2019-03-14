@@ -75,6 +75,12 @@ php yii v3toysParsing/images/load
 php yii v3toys/prices/load
 ```
 
+```sql
+SELECT set_config('v3p.current_worker_id', '2', false);
+UPDATE "public"."v3p_shop_affiliate" SET "state" = 'запускается', "is_accept_orders_by_api" = true, "disabled_at" = null WHERE "id" = 143;
+UPDATE "public"."v3p_shop_affiliate" SET "state" = 'запущен_и_работает', "is_accept_orders_by_phone" = true, "main_phone" = 74957222873 WHERE "id" = 143;
+```
+
 
 
 ___
