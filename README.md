@@ -65,6 +65,17 @@ COMPOSER_HOME=.composer php composer.phar update -o
 
 
 
+
+-----------
+
+```bash
+php yii parsing/parsing
+php yii v3toys/properties/load 1
+php yii v3toysParsing/images/load
+```
+
+
+
 ___
 
 > [![skeeks!](https://skeeks.com/img/logo/logo-no-title-80px.png)](https://skeeks.com)  
