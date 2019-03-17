@@ -17,10 +17,13 @@
         }
     ],
     "require": {
-        "v3project/aff-core-app": "^3.0.0",
+        "v3project/aff-core-app": "^3.0.3",
         "v3project/theme-mega": "dev-master",
 
         "v3toys/parsing": "dev-master"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "*"
     },
     "minimum-stability" : "dev",
     "prefer-stable" : true,
