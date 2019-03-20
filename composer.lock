@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f52575f2cd2902822e43b96f505e7cb",
+    "content-hash": "846aa36a167e9e4aa98f1d00b52f829b",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -3117,16 +3117,16 @@
         },
         {
             "name": "skeeks/cms-export-shop-yandex-market",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-export-shop-yandex-market.git",
-                "reference": "6188f1a5dc1b61043c98e9ac67c6bee0db79ee38"
+                "reference": "cb37b08dc63d24db1a9e22780377fe1b8394e7cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-export-shop-yandex-market/zipball/6188f1a5dc1b61043c98e9ac67c6bee0db79ee38",
-                "reference": "6188f1a5dc1b61043c98e9ac67c6bee0db79ee38",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-export-shop-yandex-market/zipball/cb37b08dc63d24db1a9e22780377fe1b8394e7cd",
+                "reference": "cb37b08dc63d24db1a9e22780377fe1b8394e7cd",
                 "shasum": ""
             },
             "require": {
@@ -3165,7 +3165,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2018-07-03T14:12:56+00:00"
+            "time": "2019-03-18T16:45:02+00:00"
         },
         {
             "name": "skeeks/cms-export-sitemap",
@@ -5315,20 +5315,20 @@
         },
         {
             "name": "skeeks/yii2-query-filter",
-            "version": "dev-master",
+            "version": "0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-semenov/yii2-query-filter.git",
-                "reference": "dbd3abbdfed5720bd1449c424af1ba4673a9ea11"
+                "reference": "446a3460d32c21b9aa5310a366897012fb1f2214"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-semenov/yii2-query-filter/zipball/dbd3abbdfed5720bd1449c424af1ba4673a9ea11",
-                "reference": "dbd3abbdfed5720bd1449c424af1ba4673a9ea11",
+                "url": "https://api.github.com/repos/skeeks-semenov/yii2-query-filter/zipball/446a3460d32c21b9aa5310a366897012fb1f2214",
+                "reference": "446a3460d32c21b9aa5310a366897012fb1f2214",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "~2.0.13"
+                "yiisoft/yii2": "^2.0.16 || dev-master"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -5338,7 +5338,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-3.0+"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -5352,8 +5352,7 @@
                 "yii",
                 "yii2"
             ],
-            "abandoned": true,
-            "time": "2018-04-06T11:03:26+00:00"
+            "time": "2019-03-18T20:52:23+00:00"
         },
         {
             "name": "skeeks/yii2-slug-behavior",
@@ -6065,58 +6064,6 @@
             "time": "2018-01-29T09:02:23+00:00"
         },
         {
-            "name": "tburry/pquery",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tburry/pquery.git",
-                "reference": "872339ffd38d261c4417ea1855428b1b4ff9abf1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tburry/pquery/zipball/872339ffd38d261c4417ea1855428b1b4ff9abf1",
-                "reference": "872339ffd38d261c4417ea1855428b1b4ff9abf1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "htmlawed/htmlawed": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "IQuery.php",
-                    "gan_formatter.php",
-                    "gan_node_html.php",
-                    "gan_parser_html.php",
-                    "gan_selector_html.php",
-                    "gan_tokenizer.php",
-                    "gan_xml2array.php",
-                    "pQuery.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.1"
-            ],
-            "authors": [
-                {
-                    "name": "Todd Burry",
-                    "email": "todd@vanillaforums.com",
-                    "role": "developer"
-                }
-            ],
-            "description": "A jQuery like html dom parser written in php.",
-            "keywords": [
-                "dom",
-                "ganon",
-                "php"
-            ],
-            "time": "2016-01-14T20:55:00+00:00"
-        },
-        {
             "name": "tedivm/jshrink",
             "version": "v1.3.1",
             "source": {
@@ -6341,20 +6288,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.skeeks.com/v3project/theme-mega.git",
-                "reference": "39577c64a6ebd5abfc686a9365483e7c725749c1"
+                "reference": "aef0d2d19ac8eda9f98398e6d4ed8402d8448075"
             },
             "require": {
                 "skeeks/cms": "^5.0 || dev-master",
-                "skeeks/cms-authclient": "^2.1.0",
-                "skeeks/yii2-hidden-link-widget": "^1.0.0",
-                "skeeks/yii2-query-filter": "dev-master@dev",
-                "skeeks/youtube-helper": "^1.0.0"
+                "skeeks/cms-authclient": "^2.1.0 || dev-master",
+                "skeeks/yii2-hidden-link-widget": "^1.0.0 || dev-master",
+                "skeeks/yii2-query-filter": "^0.0.2 || dev-master",
+                "skeeks/youtube-helper": "^1.0.0 || dev-master"
             },
             "type": "yii2-extension",
             "extra": {
                 "config-plugin": {
                     "web": [
-                        "src/config/common.php"
+                        "src/config/common.php",
+                        "src/config/web.php"
                     ],
                     "console": [
                         "src/config/common.php"
@@ -6387,7 +6335,7 @@
             "support": {
                 "issues": "https://www.skeeks.com/"
             },
-            "time": "2019-03-16T20:40:28+00:00"
+            "time": "2019-03-20T09:41:14+00:00"
         },
         {
             "name": "v3project/yii2-api",
@@ -6516,58 +6464,6 @@
                 "yii"
             ],
             "time": "2019-03-14T11:20:09+00:00"
-        },
-        {
-            "name": "v3toys/parsing",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://git.skeeks.com/v3toys/parsing.git",
-                "reference": "e5378c48d3f40a8e5b6ad87a9fd3ea5c0c050120"
-            },
-            "require": {
-                "tburry/pquery": "*",
-                "v3project/skeeks": "^3.0.2"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "config-plugin": {
-                    "web": [
-                        "src/config/main.php"
-                    ],
-                    "console": [
-                        "src/config/main-console.php"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "v3toys\\parsing\\": "src/"
-                }
-            },
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Semenov Alexander",
-                    "email": "semenov@skeeks.com"
-                }
-            ],
-            "description": "Module for skeeks cms",
-            "homepage": "http://www.skeeks.com/",
-            "keywords": [
-                "app",
-                "cms",
-                "module",
-                "skeeks",
-                "sx",
-                "yii2"
-            ],
-            "support": {
-                "issues": "http://cms.skeeks.com"
-            },
-            "time": "2019-03-16T15:14:34+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -6986,21 +6882,27 @@
     "packages-dev": [
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.0.14",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "dc5a4a8529de1a41dbb037dbabf1f3f93002f21d"
+                "reference": "426bafcdb0328de66202ae53da1fbe24660d010f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/dc5a4a8529de1a41dbb037dbabf1f3f93002f21d",
-                "reference": "dc5a4a8529de1a41dbb037dbabf1f3f93002f21d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/426bafcdb0328de66202ae53da1fbe24660d010f",
+                "reference": "426bafcdb0328de66202ae53da1fbe24660d010f",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "~2.0.13",
-                "yiisoft/yii2-bootstrap": "~2.0.0"
+                "ext-mbstring": "*",
+                "php": ">=5.4",
+                "yiisoft/yii2": "~2.0.13"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "<7",
+                "yiisoft/yii2-coding-standards": "~2.0",
+                "yiisoft/yii2-swiftmailer": "*"
             },
             "type": "yii2-extension",
             "extra": {
@@ -7021,6 +6923,10 @@
                 {
                     "name": "Qiang Xue",
                     "email": "qiang.xue@gmail.com"
+                },
+                {
+                    "name": "Simon Karlen",
+                    "email": "simi.albi@outlook.com"
                 }
             ],
             "description": "The debugger extension for the Yii framework",
@@ -7029,14 +6935,13 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2018-09-23T21:41:04+00:00"
+            "time": "2019-03-17T17:47:00+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "v3project/theme-mega": 20,
-        "v3toys/parsing": 20
+        "v3project/theme-mega": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
