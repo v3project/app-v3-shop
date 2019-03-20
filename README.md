@@ -27,7 +27,7 @@ Affiliate Shop on SkeekS CMS (Yii2)
 # Download latest version of composer
 curl -sS https://getcomposer.org/installer | COMPOSER_HOME=.composer php
 # Installing the base project SkeekS CMS
-COMPOSER_HOME=.composer php composer.phar create-project --prefer-dist --stability=dev v3project/app-v3-shop demo.ru
+COMPOSER_HOME=.composer php composer.phar create-project --prefer-dist --stability=dev v3project/app-v3-shop=dev-master demo.ru
 # Going into the project folder
 cd demo.ru
 
