@@ -18,9 +18,7 @@
     ],
     "require": {
         "v3project/aff-core-app": "^3.0.3",
-        "v3project/theme-mega": "dev-master",
-
-        "v3toys/parsing": "dev-master"
+        "v3project/theme-mega": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*"
@@ -105,10 +103,6 @@
         {
             "type": "git",
             "url": "https://git.skeeks.com/v3project/theme-mega.git"
-        },
-        {
-            "type": "git",
-            "url":  "https://git.skeeks.com/v3toys/parsing.git"
         }
     ],
     "config": {

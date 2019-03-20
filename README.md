@@ -69,6 +69,15 @@ COMPOSER_HOME=.composer php composer.phar update -o
 -----------
 
 ```bash
+
+,"v3toys/parsing": "dev-master"
+
+,
+{
+    "type": "git",
+    "url":  "https://git.skeeks.com/v3toys/parsing.git"
+}
+
 php yii parsing/parsing
 php yii v3toys/properties/load 1
 php yii v3toysParsing/images/load
