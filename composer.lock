@@ -3907,16 +3907,16 @@
         },
         {
             "name": "skeeks/cms-money",
-            "version": "0.1.3",
+            "version": "0.1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-money.git",
-                "reference": "6f6333840b9b7fed80c1289c4542aff342c037ea"
+                "reference": "8915e30d30cc0ecfe7f72256437a80caa37e9933"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-money/zipball/6f6333840b9b7fed80c1289c4542aff342c037ea",
-                "reference": "6f6333840b9b7fed80c1289c4542aff342c037ea",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-money/zipball/8915e30d30cc0ecfe7f72256437a80caa37e9933",
+                "reference": "8915e30d30cc0ecfe7f72256437a80caa37e9933",
                 "shasum": ""
             },
             "require": {
@@ -3961,7 +3961,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2018-07-17T14:03:30+00:00"
+            "time": "2019-03-21T18:17:04+00:00"
         },
         {
             "name": "skeeks/cms-query-filters",
@@ -4266,16 +4266,16 @@
         },
         {
             "name": "skeeks/cms-shop",
-            "version": "2.2.7",
+            "version": "2.2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skeeks-cms/cms-shop.git",
-                "reference": "a3044bceaae89ccb8b295776fff776729f63bb07"
+                "reference": "e597d85313d9d8af427f1207e38981f509c7beb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skeeks-cms/cms-shop/zipball/a3044bceaae89ccb8b295776fff776729f63bb07",
-                "reference": "a3044bceaae89ccb8b295776fff776729f63bb07",
+                "url": "https://api.github.com/repos/skeeks-cms/cms-shop/zipball/e597d85313d9d8af427f1207e38981f509c7beb5",
+                "reference": "e597d85313d9d8af427f1207e38981f509c7beb5",
                 "shasum": ""
             },
             "require": {
@@ -4322,7 +4322,7 @@
                 "skeeks",
                 "yii2"
             ],
-            "time": "2019-03-13T14:07:14+00:00"
+            "time": "2019-03-21T09:33:28+00:00"
         },
         {
             "name": "skeeks/cms-shop-cart-items-widget",
@@ -6288,7 +6288,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.skeeks.com/v3project/theme-mega.git",
-                "reference": "aef0d2d19ac8eda9f98398e6d4ed8402d8448075"
+                "reference": "b084aa7860edc97089cab0bc7e86c0907126f6ca"
             },
             "require": {
                 "skeeks/cms": "^5.0 || dev-master",
@@ -6335,7 +6335,7 @@
             "support": {
                 "issues": "https://www.skeeks.com/"
             },
-            "time": "2019-03-20T09:41:14+00:00"
+            "time": "2019-03-21T21:02:19+00:00"
         },
         {
             "name": "v3project/yii2-api",
