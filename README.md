@@ -78,7 +78,9 @@ COMPOSER_HOME=.composer php composer.phar update -o
     "url":  "https://git.skeeks.com/v3toys/parsing.git"
 }
 
-php yii parsing/parsing
+COMPOSER_HOME=.composer php composer.phar self-update && COMPOSER_HOME=.composer php composer.phar update -o
+
+php yii v3toysParsing/products/load-by-categories 1050
 php yii v3toys/properties/load 1
 php yii v3toysParsing/images/load
 php yii v3toys/prices/load
