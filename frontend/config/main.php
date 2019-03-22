@@ -11,7 +11,13 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'A-1Lng7i0JtS9Lz4T6KFOuwkSbx1yLOP',
-        ]
+        ],
+        'seo' => [
+            'canUrl' => [
+                //'scheme' => 'https',
+                //'host'   => 'sweet-jam.ru',
+            ],
+        ],
     ],
 ];
 return $config;

@@ -20,6 +20,16 @@ $config = [
                 ],
             ],
         ],
+        /*'mailer' => [
+            'transport' => [
+                'class'      => 'Swift_SmtpTransport',
+                'host'       => 'smtp.yandex.ru',
+                'username'   => 'info@skeeks.com',
+                'password'   => 'pwd',
+                'port'       => '465',
+                'encryption' => 'ssl',
+            ],
+        ],*/
     ],
 ];
 
