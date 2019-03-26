@@ -86,6 +86,22 @@ php yii v3toysParsing/images/load 2
 php yii v3toys/prices/load
 ```
 
+```js
+
+var result = [];
+$('.category_navigation li').each(function() { 
+    if (!$(this).hasClass('with_sub') && ! $(this).hasClass('sub')) { 
+        if ($('a', $(this)).text()) {
+            result.push($('a', $(this)).text());
+        }
+        
+    }; 
+    
+});
+var r = result.join();
+console.log(r);
+```
+
 ```sql
 SELECT set_config('v3p.current_worker_id', '2', false);
 UPDATE "public"."v3p_shop_affiliate" SET "state" = 'запускается', "is_accept_orders_by_api" = true, "disabled_at" = null WHERE "id" = 143;
