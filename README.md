@@ -106,6 +106,44 @@ console.log(r);
 SELECT set_config('v3p.current_worker_id', '2', false);
 UPDATE "public"."v3p_shop_affiliate" SET "state" = 'запускается', "is_accept_orders_by_api" = true, "disabled_at" = null WHERE "id" = 143;
 UPDATE "public"."v3p_shop_affiliate" SET "state" = 'запущен_и_работает', "is_accept_orders_by_phone" = true, "main_phone" = 74957222873 WHERE "id" = 143;
+
+
+SELECT set_config('v3p.current_worker_id', '2', false);
+INSERT INTO "public"."v3p_shop_affiliate" (
+"id", "hperiod", "updated_by_worker_id", "key",
+"disabled_at",
+"title",
+"main_page_url",
+"favicon_image_url",
+"logo_image_url",
+"product_image_url_pattern", "main_phone",
+"site_ip",
+"api_url",
+"for_accrual_pact_id", "dial_prefix", "tff_shop_terminal_extkey", "paysalt", "payurl", "yks_shop_extid", "yks_shop_showcase_extid", "qiwi_shop_project_extid", "rfi_shop_service_extid", "old_paysalt2finish_date_jsoned", "rfi_shop_service_extkey", "product_url_pattern",
+ "is_db_access_should_be_opened",
+ "extra_phones_jsonarrayed",
+"state",
+"is_v3cont_active", "is_accept_orders_by_api", "is_accept_orders_by_phone", "state_checked_at", "mailer_from_email",
+"mailer_from_name",
+"mailer_transport_jsoned", "mailer_text_mural", "is_accept_orders_by_hands", "oldkw_margin_gid", "oldkw_favicon_kw_img_key", "oldkw_logo_kw_img_key", "_del_is_active", "created_at", "updated_at", "sber_api_user_name", "sber_api_user_pass", "yks_shop_secret_key")
+VALUES
+(DEFAULT, DEFAULT, null, 'MYB',
+DEFAULT,
+'Остров детства',
+'https://mybaby-toys.ru/',
+'https://mybaby-toys.ru/img/logo.png',
+'https://mybaby-toys.ru/img/logo.png',
+NULL, NULL,
+'94.130.32.159',
+'https://mybaby-toys.ru/v3toys/api-v04',
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+DEFAULT,
+NULL,
+'до_разработки',
+DEFAULT, DEFAULT, DEFAULT, DEFAULT, NULL,
+NULL,
+NULL, NULL, DEFAULT, NULL, DEFAULT, DEFAULT, DEFAULT, null, null, NULL, NULL, NULL);
+
 ```
 
 
