@@ -11,11 +11,16 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'A-1Lng7i0JtS9Lz4T6KFOuwkSbx1yLOP',
+            'secureProtocolHeaders' => [
+                'X-Forwarded-Proto' => ['https'], // Common
+                'Front-End-Https' => ['on'], // Microsoft
+                'Cf-Visitor' => ['{"scheme":"https"}'],
+            ]
         ],
         'seo' => [
             'canUrl' => [
                 //'scheme' => 'https',
-                //'host'   => 'sweet-jam.ru',
+//                'host'   => 'orange-fox.com.ru',
             ],
         ],
     ],
